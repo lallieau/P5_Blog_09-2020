@@ -12,7 +12,7 @@ class Database
             $connection = new PDO(self::DB_HOST,self::DB_USER,self::DB_PASS);
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            return'Connexion Ok';
+            return $connection;
         }
 
         catch(Exception $errorConnection)

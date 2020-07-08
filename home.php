@@ -1,5 +1,6 @@
 <?php
 require 'Database.php';
+require 'Article.php';
 ?>
 <!DOCTYPE html>
 <html lang="'fr">
@@ -13,10 +14,27 @@ require 'Database.php';
         <p>En construction...</p>
 
         <?php
-        $db = new Database();
+        $article = new Article();
+        $articles = $article->getArticles();
+        while($article = $articles->fetch())
+        {
 
-        echo $db->getConnection();
         ?>
+
+        <div>
+            <h2><?=htmlspecialchars($article['title']);?></h2>
+            <p><?=htmlspecialchars($article['content']);?></p>
+            <p><?=htmlspecialchars($article['author']);?></p>
+            <p>Créé le : <?=htmlspecialchars($article['createdAt']);?></p>
+        </div>
+        <br>
+
+        <?php
+        }
+
+        $articles->closeCursor();
+        ?>
+
     </div>
 </body>
 </html>
