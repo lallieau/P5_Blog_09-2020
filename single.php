@@ -18,7 +18,7 @@ require 'Article.php';
 
     <?php
     $article = new Article();
-    $articles = $article->getArticle(1);
+    $articles = $article->getArticle($_GET['articleId']);
     $article = $articles->fetch()
     ?>
     <div>
