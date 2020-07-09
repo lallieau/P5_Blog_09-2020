@@ -6,7 +6,7 @@ require 'Article.php';
 <html lang="'fr">
 <head>
     <meta charset="'utf-8">
-    <title>Mon blog</title>
+    <title>Blog de Lallie, page d'accueil</title>
 </head>
 <body>
     <div>
