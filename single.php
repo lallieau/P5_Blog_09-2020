@@ -19,13 +19,13 @@ require 'Article.php';
     <?php
     $article = new Article();
     $articles = $article->getArticle($_GET['articleId']);
-    $article = $articles->fetch()
+    $article = $articles->fetch();
     ?>
     <div>
-        <h2><?=htmlspecialchars($article['title']);?></h2>
-        <p><?=htmlspecialchars($article['content']);?></p>
-        <p><?=htmlspecialchars($article['author']);?></p>
-        <p>Créé le : <?=htmlspecialchars($article['createdAt']);?></p>
+        <h2><?=htmlspecialchars($article->title);?></h2>
+        <p><?=htmlspecialchars($article->content);?></p>
+        <p><?=htmlspecialchars($article->author);?></p>
+        <p>Créé le : <?=htmlspecialchars($article->createdAt);?></p>
     </div>
     <br>
 
