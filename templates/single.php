@@ -15,8 +15,7 @@ use App\src\DAO\CommentDAO;
     <p>En construction toujours...</p>
 
     <?php
-    $article = new ArticleDAO();
-    $articles = $article->getArticle($_GET['articleId']);
+
     $article = $articles->fetch();
     ?>
     <div>
@@ -36,8 +35,6 @@ use App\src\DAO\CommentDAO;
         <h3>Commentaires</h3>
 
         <?php
-        $comment = new CommentDAO();
-        $comments = $comment->getCommentsFromArticle($_GET['articleId']);
         while($comment = $comments->fetch())
         {
         ?>

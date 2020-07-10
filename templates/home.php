@@ -13,8 +13,7 @@ use App\src\DAO\ArticleDAO;
         <p>En construction...</p>
 
         <?php
-        $article = new ArticleDAO();
-        $articles = $article->getArticles();
+
         while($article = $articles->fetch())
         {
         ?>
