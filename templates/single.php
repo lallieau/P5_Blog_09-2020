@@ -14,21 +14,14 @@ use App\src\DAO\CommentDAO;
     <h1>Mon blog</h1>
     <p>En construction toujours...</p>
 
-    <?php
-
-    $article = $articles->fetch();
-    ?>
     <div>
-        <h2><?=htmlspecialchars($article->title);?></h2>
-        <p><?=htmlspecialchars($article->content);?></p>
-        <p><?=htmlspecialchars($article->author);?></p>
-        <p>Créé le : <?=htmlspecialchars($article->createdAt);?></p>
+        <h2><?=htmlspecialchars($article->getTitle());?></h2>
+        <p><?=htmlspecialchars($article->getContent());?></p>
+        <p><?=htmlspecialchars($article->getAuthor());?></p>
+        <p>Créé le : <?=htmlspecialchars($article->getCreatedAt());?></p>
     </div>
     <br>
 
-    <?php
-    $articles->closeCursor();
-    ?>
 
     <a href="../public/index.php">Retour à l'acceuil</a>
     <div id="comments" class="text-left" style="margin-left: 50px">
