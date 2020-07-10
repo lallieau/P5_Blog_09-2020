@@ -22,6 +22,7 @@ class ArticleDAO extends DAO
         $result = $this->createQuery($sql);
         $articles =[];
         foreach ($result as $row)
+        // pour chaque iteration la valeur est assignée à $row
         {
             $articleId = $row['id'];
             $articles[$articleId] = $this->buildObject($row);
