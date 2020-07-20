@@ -1,17 +1,18 @@
 <?php
 
 namespace App\src\controller;
+use App\src\model\View;
 
 class ErrorController
 {
     public function errorNotFound()
     {
-        require  '../templates/error_404.php';
+        return $this->view->render('error_404',[]);
     }
 
     public function errorServer()
     {
-        require '../templates/error_500.php';
+        return $this->view->render('error_500',[]);
     }
 
 }

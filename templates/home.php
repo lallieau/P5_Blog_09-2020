@@ -9,6 +9,8 @@ use App\src\DAO\ArticleDAO;
 </head>
 <body>
     <div>
+        <?php $this->title="Accueil"; ?>
+
         <h1>Mon blog</h1>
         <p>En construction...</p>
 

@@ -11,6 +11,8 @@ use App\src\DAO\CommentDAO;
 </head>
 <body>
 <div>
+    <?php $this->title = "Article"; ?>
+
     <h1>Mon blog</h1>
     <p>En construction toujours...</p>
 
