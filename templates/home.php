@@ -13,7 +13,7 @@ use App\src\DAO\ArticleDAO;
 
         <h1>Mon blog</h1>
         <p>En construction...</p>
-
+        <a href="../public/index.php?route=addArticle">Nouvel Article</a>
         <?php
 
         foreach($articles as $article)
