@@ -1,16 +1,15 @@
 <?php
 
 namespace App\src\controller;
+use App\config\Parameter;
 
 class BackController extends Controller
 {
-    public function addArticle($post)
+    public function addArticle(Parameter $post)
     {
-        if(isset($post['submit']))
+        if($post->get('submit'))
         {
-            $articleDAO = new ArticleDAO();
-            $articleDAO->addArticle($post);
-
+            $this->articleDAO->addArticle($post);
             header('Location: ../public/index.php');
 
         }
