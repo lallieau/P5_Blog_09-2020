@@ -3,18 +3,16 @@
 namespace App\src\controller;
 use App\src\model\View;
 
-class ErrorController
+class ErrorController extends Controller
 {
-    private $view;
-
     public function errorNotFound()
     {
-        return $this->view->render('error_404',[]);
+        return $this->view->render('error_404');
     }
 
     public function errorServer()
     {
-        return $this->view->render('error_500',[]);
+        return $this->view->render('error_500');
     }
 
 }

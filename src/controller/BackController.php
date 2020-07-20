@@ -1,18 +1,9 @@
 <?php
 
 namespace App\src\controller;
-use App\src\DAO\ArticleDAO;
-use App\src\model\View;
 
-class BackController
+class BackController extends Controller
 {
-    private $view;
-
-    public function __construct()
-    {
-        $this->view = new View();
-    }
-
     public function addArticle($post)
     {
         if(isset($post['submit']))
