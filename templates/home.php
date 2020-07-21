@@ -1,18 +1,11 @@
-<?php
-use App\src\DAO\ArticleDAO;
-?>
-<!DOCTYPE html>
-<html lang="'fr">
-<head>
-    <meta charset="'utf-8">
-    <title>Blog de Lallie, page d'accueil</title>
-</head>
-<body>
-    <div>
+
         <?php $this->title="Accueil"; ?>
 
         <h1>Mon blog</h1>
         <p>En construction...</p>
+
+        <?= $this->session->get('add_article');?>
+
         <a href="../public/index.php?route=addArticle">Nouvel Article</a>
         <?php
 
@@ -31,7 +24,3 @@ use App\src\DAO\ArticleDAO;
         <?php
         }
         ?>
-
-    </div>
-</body>
-</html>
