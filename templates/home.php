@@ -4,7 +4,7 @@
         <h1>Mon blog</h1>
         <p>En construction...</p>
 
-        <?= $this->session->get('add_article');?>
+        <?= $this->session->show('add_article');?>
 
         <a href="../public/index.php?route=addArticle">Nouvel Article</a>
         <?php
