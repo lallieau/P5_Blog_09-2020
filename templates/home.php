@@ -4,6 +4,7 @@
 <p>En construction...</p>
 
 <?= $this->session->show('add_article');?>
+<?= $this->session->show('edit_article');?>
 
 <a href="../public/index.php?route=addArticle">Nouvel Article</a>
 <?php

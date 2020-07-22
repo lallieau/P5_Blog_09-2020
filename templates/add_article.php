@@ -1,14 +1,3 @@
-<?php
-use App\src\DAO\ArticleDAO;
-?>
-<!DOCTYPE html>
-<html lang="'fr">
-<head>
-    <meta charset="'utf-8">
-    <title>Blog de Lallie, page d'accueil</title>
-</head>
-<body>
-
 <?php $this->title = "Nouvelle article";?>
 <h1>Mon blog</h1>
 <p>En construction...</p>
@@ -28,6 +17,4 @@ use App\src\DAO\ArticleDAO;
 
     <a href="../public/index.php">Retour à l'accueil</a>
 </div>
-</body>
-</html>
 

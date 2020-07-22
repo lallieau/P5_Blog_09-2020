@@ -14,6 +14,7 @@ abstract class DAO
         {
             return $this->getConnection();
         }
+        return $this->connection;
     }
 
     private function getConnection()
@@ -36,13 +37,11 @@ abstract class DAO
         if($parameters)
         {
             $result = $this->checkConnection()->prepare($sql);
-            //$result->setFetchMode(PDO::FETCH_CLASS,static::class);
             $result->execute($parameters);
             return $result;
         }
 
         $result = $this->checkConnection()->query($sql);
-        //$result->setFetchMode(PDO::FETCH_CLASS,static::class);
         return $result;
     }
 }

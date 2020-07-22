@@ -23,6 +23,13 @@ class BackController extends Controller
     {
         $article = $this->articleDAO->getArticle($articleId);
 
+        if($post->get('submit'))
+        {
+            $this->articleDAO->editArticle($post,$articleId);
+            $this->session->set('edit_article', 'L\'article a bien été modifié');
+            header('Location: ../public/index.php');
+
+        }
         return $this->view->render('edit_article', [
             'article' => $article
         ]);
