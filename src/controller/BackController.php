@@ -44,6 +44,21 @@ class BackController extends Controller
                 'errors' => $errors
             ]);
         }
-        return $this->view->render('edit_article');
+        //$post->set('id', $article->getId());
+        //$post->set('title', $article->getTitle());
+        //$post->set('content', $article->getContent());
+        //$post->set('author', $article->getAuthor());
+
+        return $this->view->render('edit_article', [
+            'article' => $article,
+            'post' => $post
+        ]);
+    }
+
+    public function deleteArticle($articleId)
+    {
+        $this->articleDAO->deleteArticle($articleId);
+        $this->session->set('delete_article', 'L\' article a bien été supprimé');
+        header('Location: ../public/index.php');
     }
 }

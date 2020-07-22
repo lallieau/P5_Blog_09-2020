@@ -39,7 +39,6 @@ class ArticleValidation extends Validation
             $error = $this->checkAuthor($name, $value);
             $this->addError($name, $error);
         }
-        return null;
     }
 
     private function addError($name, $error)
