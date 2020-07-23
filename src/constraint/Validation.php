@@ -12,6 +12,12 @@ class Validation
             $errors = $articleValidation->check($data);
             return $errors;
         }
-        return null;
+        elseif ($name === 'Comment')
+        {
+            $commentValidation = new CommentValidation();
+            $errors = $commentValidation->check($data);
+            return $errors;
+        }
     }
+
 }
