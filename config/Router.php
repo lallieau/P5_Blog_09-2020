@@ -64,6 +64,14 @@ class Router
                 {
                     $this->frontController->login($this->request->getPost());
                 }
+                elseif ($route === 'profile')
+                {
+                    $this->backController->profile();
+                }
+                elseif ($route === 'updatePassword')
+                {
+                    $this->backController->updatePassword($this->request->getPost());
+                }
                 else
                 {
                     $this->errorController->errorNotFound();
