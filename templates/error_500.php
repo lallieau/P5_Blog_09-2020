@@ -7,7 +7,6 @@
 <body>
 <div>
     <?php $this->title="Erreur 500"; ?>
-
 </div>
 </body>
 </html>

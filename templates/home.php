@@ -1,5 +1,7 @@
 <?php $this->title="Accueil"; ?>
-
+<a href="../public/index.php?route=register">Inscription</a>
+<a href="../public/index.php?route=login">Connexion</a>
+<br>
 <h1>Mon blog</h1>
 <p>En construction...</p>
 
@@ -9,10 +11,29 @@
 <?= $this->session->show('add_comment'); ?>
 <?= $this->session->show('flag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?>
+<?= $this->session->show('register'); ?>
+<?= $this->session->show('login'); ?>
 
-<a href="../public/index.php?route=addArticle">Nouvel Article</a>
+
 <?php
+if ($this->session->get('pseudo'))
+{
+?>
+<a href="../public/index.php?route=logout">Déconnexion</a>
+<a href="../public/index.php?route=profile">Profil</a>
+<a href="../public/index.php?route=addArticle">Nouvel article</a>
+<?php
+}
+else
+{
+?>
+<a href="../public/index.php?route=register">Inscription</a>
+<a href="../public/index.php?route=login">Connexion</a>
+<?php
+}
+?>
 
+<?php
 foreach($articles as $article)
 {
 ?>
