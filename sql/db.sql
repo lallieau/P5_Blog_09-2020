@@ -43,3 +43,4 @@ INSERT INTO `comment` (`pseudo`,`content`,`article_id`)VALUES
 ('Guillaume', 'Je viens ici pour troller !',3),
 ('Aurore', 'Enfin un blog tranquille, où on ne nous casse pas les pieds !',3),
 ('Jordane', 'Je suis vendéen ! Amateur de mojettes !',3);
+

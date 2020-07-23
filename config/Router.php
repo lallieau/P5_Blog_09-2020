@@ -28,7 +28,8 @@ class Router
         try{
             if(isset($route))
             {
-                if($route === 'article'){
+                if($route === 'article')
+                {
                     $this->frontController->article($this->request->getGet()->get('articleId'));
                 }
                 elseif ($route === 'addArticle')
@@ -47,11 +48,17 @@ class Router
                 {
                     $this->frontController->addComment($this->request->getPost(),$this->request->getGet()->get('articleId'));
                 }
-                else{
+                elseif ($route === 'flagComment')
+                {
+                    $this->frontController->flagComment($this->request->getGet()->get('commentId'));
+                }
+                else
+                {
                     $this->errorController->errorNotFound();
                 }
             }
-            else{
+            else
+            {
                 $this->frontController->home();
             }
         }

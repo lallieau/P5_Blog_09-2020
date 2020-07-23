@@ -5,12 +5,10 @@ namespace App\src\model;
 class Comment
 {
     private $id;
-
     private $pseudo;
-
     private $content;
-
     private $createdAt;
+    private $flag;
 
     public function getId()
     {
@@ -50,5 +48,15 @@ class Comment
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+    }
+
+    public function isFlag()
+    {
+        return $this->flag;
+    }
+
+    public function setFlag($flag)
+    {
+        $this->flag = $flag;
     }
 }
