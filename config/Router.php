@@ -72,6 +72,10 @@ class Router
                 {
                     $this->backController->updatePassword($this->request->getPost());
                 }
+                elseif ($route == 'logout')
+                {
+                    $this->backController->logout();
+                }
                 else
                 {
                     $this->errorController->errorNotFound();
