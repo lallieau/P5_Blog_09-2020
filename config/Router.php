@@ -98,6 +98,10 @@ class Router
                 {
                     $this->backController->administration();
                 }
+                elseif($route === 'articlesPage')
+                {
+                    $this->frontController->articlesPage();
+                }
 
                 else
                 {

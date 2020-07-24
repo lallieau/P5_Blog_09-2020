@@ -1,7 +1,7 @@
 <?php $this->title = "Article"; ?>
 
-<h1>Mon blog</h1>
-<p>En construction toujours...</p>
+<h1>Le blog</h1>
+<h2>Lallie Audry</h2>
 
 <div>
     <h2><?=htmlspecialchars($article->getTitle());?></h2>
