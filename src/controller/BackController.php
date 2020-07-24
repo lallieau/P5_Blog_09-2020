@@ -10,10 +10,12 @@ class BackController extends Controller
     {
         $articles = $this->articleDAO->getArticles();
         $comments = $this->commentDAO->getFlagComments();
+        $users = $this->userDAO->getUsers();
 
         return $this->view->render('administration', [
             'articles' => $articles,
-            'comments' => $comments
+            'comments' => $comments,
+            'users' => $users
         ]);
     }
 
@@ -76,6 +78,13 @@ class BackController extends Controller
         header('Location: ../public/index.php?route=administration');
     }
 
+    public function unflagComment()
+    {
+        $this->commentDAO->unflagComment($commentId);
+        $this->session->set('unflag_comment', 'Le commentaire a bien été désignalé');
+        header('Location: ../public/index.php?route=administration');
+    }
+
     public function profile()
     {
         return $this->view->render('profile');
@@ -102,6 +111,12 @@ class BackController extends Controller
         $this->logoutOrDelete('delete_account');
     }
 
+    public function deleteUser($userId)
+    {
+        $this->userDAO->deleteUser($userId);
+        $this->session->set('delete_user,','L\'utilisateur a bien été supprimé');
+        header('Location: ../public/index.php?route=administration');
+    }
     private function logoutOrDelete($param)
     {
         $this->session->stop();
@@ -114,10 +129,5 @@ class BackController extends Controller
         header('Location: ../public/index.php');
     }
 
-    public function unflagComment()
-    {
-        $this->commentDAO->unflagComment($commentId);
-        $this->session->set('unflag_comment', 'Le commentaire a bien été désignalé');
-        header('Location: ../public/index.php?route=administration');
-    }
+
 }

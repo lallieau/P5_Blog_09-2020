@@ -44,6 +44,8 @@ class Router
                 {
                     $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
                 }
+
+
                 elseif ($route === 'addComment')
                 {
                     $this->frontController->addComment($this->request->getPost(),$this->request->getGet()->get('articleId'));
@@ -60,6 +62,8 @@ class Router
                 {
                     $this->backController->deleteComment($this->request->getGet()->get('commentId'));
                 }
+
+
                 elseif($route === 'register')
                 {
                     $this->frontController->register($this->request->getPost());
@@ -84,6 +88,12 @@ class Router
                 {
                     $this->backController->deleteAccount();
                 }
+                elseif($route === 'deleteUser')
+                {
+                    $this->backController->deleteUser($this->request->getGet()->get('userId'));
+                }
+
+
                 elseif($route === 'administration')
                 {
                     $this->backController->administration();
