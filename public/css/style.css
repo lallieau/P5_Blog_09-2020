@@ -1,0 +1,30 @@
+h1{
+    font-family: 'Yeseva One', cursive;
+}
+
+h2{
+    font-family: 'Khand', sans-serif;
+}
+p{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+/*
+font-family: 'Khand', sans-serif;
+font-family: 'Yeseva One', cursive;
+font-family: 'Fjalla One', sans-serif;
+ */
+
+.header_home{
+    height: 400px;
+    background-image: url("../../public/img/test.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin: 100px;
+}
+
+.header_home h1{
+    vertical-align: middle;
+}
