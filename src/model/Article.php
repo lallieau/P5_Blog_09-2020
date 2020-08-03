@@ -9,6 +9,7 @@ class Article
     private $content;
     private $author;
     private $createdAt;
+    private $chapo;
 
     public function getId()
     {
@@ -53,5 +54,14 @@ class Article
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+    }
+
+    public function getChapo()
+    {
+        return $this->chapo;
+    }
+    public function setChapo($chapo)
+    {
+        $this->chapo = $chapo;
     }
 }

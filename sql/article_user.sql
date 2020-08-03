@@ -6,3 +6,7 @@ ALTER TABLE `article`
 
 ALTER TABLE `article`
   ADD CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+
+ALTER TABLE `article`
+ADD COLUMN `chapo` int(11) NOT NULL;

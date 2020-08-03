@@ -4,5 +4,8 @@
       "App\\config\\": "config/",
       "App\\src\\": "src/"
     }
+  },
+  "require": {
+    "twbs/bootstrap": "^4.5"
   }
 }
