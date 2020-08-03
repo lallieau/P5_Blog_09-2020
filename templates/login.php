@@ -3,6 +3,7 @@
 <p>En construction</p>
 <?= $this->session->show('error_login'); ?>
 <div>
+    <a class="nav-link" href="../public/index.php?route=register">Inscription</a>
     <form method="post" action="../public/index.php?route=login">
         <label for="pseudo">Pseudo</label><br>
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>

@@ -27,35 +27,22 @@
             <?php
             if ($this->session->get('pseudo'))
             {
-                ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="../public/index.php?route=logout">Déconnexion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../public/index.php?route=profile">Profil</a>
-                </li>
-
-                <?php
-                if($this->session->get('role') === 'admin')
-                { ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../public/index.php?route=administration">Administration</a>
-                    </li>
-                <?php } ?>
-                <?php
+            ?>
+            <li class="nav-item">
+                <a class="nav-link" href="../public/index.php?route=profile">Profil</a>
+            </li>
+            <?php
             }
             else
             {
-                ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="../public/index.php?route=register">Inscription</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../public/index.php?route=login">Connexion</a>
-                </li>
-                <?php
+            ?>
+            <li class="nav-item">
+                <a class="nav-link" href="../public/index.php?route=login">Profil</a>
+            </li>
+            <?php
             }
             ?>
+
         </ul>
     </div>
 </nav>
