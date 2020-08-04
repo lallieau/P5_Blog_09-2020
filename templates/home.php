@@ -14,6 +14,7 @@
 <?= $this->session->show('delete_account'); ?>
 
 <h2><a href="../public/index.php?route=articlesPage">tous les articles</a> </h2>
+<h2><a href="../public/pdf/cv-lallie-audry.pdf">cv</a> </h2>
 <form>
     <label>Formulaire de contact</label><br>
     <input type="text">

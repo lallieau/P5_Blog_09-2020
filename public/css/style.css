@@ -16,15 +16,15 @@ font-family: 'Fjalla One', sans-serif;
  */
 
 .header_home{
-    height: 400px;
+    height: 160px;
     background-image: url("../../public/img/test.jpg");
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
     text-align: center;
-    margin: 100px;
+    margin: 50px;
 }
 
 .header_home h1{
-    vertical-align: middle;
+    padding-top: 25px;
 }

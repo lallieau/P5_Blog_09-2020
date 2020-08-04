@@ -34,6 +34,11 @@ class ArticleValidation extends Validation
             $error = $this->checkContent($name, $value);
             $this->addError($name, $error);
         }
+        elseif($name === 'chapo')
+        {
+            $error = $this->checkChapo($name, $value);
+            $this->addError($name, $error);
+        }
     }
 
     private function addError($name, $error)
@@ -62,6 +67,19 @@ class ArticleValidation extends Validation
         if($this->constraint->maxLength($name, $value, 255))
         {
             return $this->constraint->maxLength('titre', $value, 255);
+        }
+    }
+
+    private function checkChapo($name, $value)
+    {
+        if($this->constraint->notBlank($name, $value))
+        {
+            return $this->constraint->notBlank('chapo', $value);
+        }
+
+        if($this->constraint->minLength($name, $value, 2))
+        {
+            return $this->constraint->minLength('chapo', $value, 2);
         }
     }
 
