@@ -1,4 +1,4 @@
-<?php $this->title="Accueil"; ?>
+<?php $this->title="Page Articles"; ?>
 
 <?php
 foreach($articles as $article)

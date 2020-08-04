@@ -34,10 +34,12 @@ class FrontController extends Controller
 
     public function addComment(Parameter $post, $articleId)
     {
-        if ($post->get('submit')) {
+        if ($post->get('submit'))
+        {
             $errors = $this->validation->validate($post, 'Comment');
 
-            if (!$errors) {
+            if (!$errors)
+            {
                 $this->commentDAO->addComment($post, $articleId);
                 $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
                 header('Location: ../public/index.php');
@@ -50,6 +52,27 @@ class FrontController extends Controller
                 'article' => $article,
                 'comments' => $comments,
                 'post' => $post,
+                'errors' => $errors
+            ]);
+        }
+    }
+    public function contactPage()
+    {
+        return $this->view->render('contact');
+    }
+    public function newContact(Parameter $post)
+    {
+        if ($post->get('submit'))
+        {
+            $errors = $this->validation->validate($post, 'Contact');
+
+            if (!$errors)
+            {
+                $this->contactDAO->newContact($post);
+                $this->session->set('contact', 'Votre message a bien été envoyé');
+                header('Location: ../public/index.php');
+            }
+            return $this->view->render('contact', [
                 'errors' => $errors
             ]);
         }

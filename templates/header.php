@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -21,7 +20,7 @@
                 <a class="nav-link" href="../public/index.php?route=articlesPage">Articles</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="../index.php?route=contactPage">Contact</a>
             </li>
 
             <?php

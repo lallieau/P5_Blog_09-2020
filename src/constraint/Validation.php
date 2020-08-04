@@ -24,6 +24,12 @@ class Validation
             $errors = $userValidation->check($data);
             return $errors;
         }
+        elseif ($name === 'Contact')
+        {
+            $contactValidation = new ContactValidation();
+            $errors = $contactValidation->check($data);
+            return $errors;
+        }
     }
 
 }

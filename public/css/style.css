@@ -1,5 +1,6 @@
 h1{
     font-family: 'Yeseva One', cursive;
+    color: white;
 }
 
 h2{
@@ -16,7 +17,7 @@ font-family: 'Fjalla One', sans-serif;
  */
 
 .header_home{
-    height: 160px;
+    height: 1000px;
     background-image: url("../../public/img/test.jpg");
     background-size: cover;
     background-position: top;

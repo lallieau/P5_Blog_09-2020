@@ -103,6 +103,16 @@ class Router
                     $this->frontController->articlesPage();
                 }
 
+                elseif ($route === 'contactPage')
+                {
+                    $this->frontController->contactPage();
+                }
+
+                elseif ($route === 'newContact')
+                {
+                    $this->frontController->newContact();
+                }
+
                 else
                 {
                     $this->errorController->errorNotFound();
