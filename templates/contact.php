@@ -1,5 +1,4 @@
 <?php $this->title="Page Contact"; ?>
-
 <h1>Mon blog</h1>
 <p>En construction...</p>
 <div>
