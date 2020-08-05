@@ -1,4 +1,3 @@
-
 <?php
 $route = isset($post) && $post->get('id') ? 'editArticle&articleId='.$post->get('id') : 'addArticle';
 $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';

@@ -9,7 +9,20 @@ foreach($articles as $article)
         <h2><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>"><?=htmlspecialchars($article->getTitle());?></a></h2>
         <p><?=htmlspecialchars($article->getChapo());?></p>
         <p><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire l'article</a></p>
-        <p>Créé le : <?=htmlspecialchars($article->getCreatedAt());?></p>
+        <?php
+        if (!$article->getEditAt())
+        {
+            ?>
+            <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
+            <?php
+        }
+        else
+        {
+            ?>
+            <td>Modifié le : <?= htmlspecialchars($article->getEditAt());?></td>
+            <?php
+        }
+        ?>
     </div>
     <br>
 

@@ -8,7 +8,20 @@
     <p><?=htmlspecialchars($article->getChapo());?></p>
     <p><?=htmlspecialchars($article->getContent());?></p>
     <p><?=htmlspecialchars($article->getAuthor());?></p>
-    <p>Créé le : <?=htmlspecialchars($article->getCreatedAt());?></p>
+    <?php
+    if (!$article->getEditAt())
+    {
+        ?>
+        <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
+        <?php
+    }
+    else
+    {
+        ?>
+        <td>Modifié le : <?= htmlspecialchars($article->getEditAt());?></td>
+        <?php
+    }
+    ?>
 </div>
 <br>
 

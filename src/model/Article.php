@@ -6,10 +6,11 @@ class Article
 {
     private $id;
     private $title;
+    private $chapo;
     private $content;
     private $author;
     private $createdAt;
-    private $chapo;
+    private $editAt;
 
     public function getId()
     {
@@ -27,6 +28,15 @@ class Article
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    public function getChapo()
+    {
+        return $this->chapo;
+    }
+    public function setChapo($chapo)
+    {
+        $this->chapo = $chapo;
     }
 
     public function getContent()
@@ -56,12 +66,13 @@ class Article
         $this->createdAt = $createdAt;
     }
 
-    public function getChapo()
+    public function getEditAt()
     {
-        return $this->chapo;
+        return $this->editAt;
     }
-    public function setChapo($chapo)
+    public function setEditAt($editAt)
     {
-        $this->chapo = $chapo;
+        $this->editAt = $editAt;
     }
+
 }

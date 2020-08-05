@@ -30,7 +30,20 @@
             <td><?= substr(htmlspecialchars($article->getChapo()), 0, 150);?></td>
             <td><?= substr(htmlspecialchars($article->getContent()), 0, 150);?></td>
             <td><?= htmlspecialchars($article->getAuthor());?></td>
+            <?php
+            if (!$article->getEditAt())
+            {
+            ?>
             <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
+            <?php
+            }
+            else
+            {
+            ?>
+            <td>Modifié le : <?= htmlspecialchars($article->getEditAt());?></td>
+            <?php
+            }
+            ?>
             <td>
                 <a href="index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
                 <a href="index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
