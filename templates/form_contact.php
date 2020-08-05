@@ -1,4 +1,4 @@
-<form method="post" action="../public/index.php?route=newContact">
+<form method="post" action="index.php?route=newContact">
     <label for="name">Nom</label><br>
     <input type="text" id="name" name="name" value="<?= isset($post) ? htmlspecialchars($post->get('name')): ''; ?>"><br>
     <?= isset($errors['name']) ? $errors['name'] : ''; ?>

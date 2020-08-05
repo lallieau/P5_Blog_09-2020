@@ -10,7 +10,7 @@
 <?= $this->session->show('delete_user'); ?>
 
 <h2>Articles</h2>
-<a href="../public/index.php?route=addArticle">Nouvel article</a>
+<a href="index.php?route=addArticle">Nouvel article</a>
 <table>
     <tr>
         <td>Id</td>
@@ -26,14 +26,14 @@
         ?>
         <tr>
             <td><?= htmlspecialchars($article->getId());?></td>
-            <td><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></td>
+            <td><a href="index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></td>
             <td><?= substr(htmlspecialchars($article->getChapo()), 0, 150);?></td>
             <td><?= substr(htmlspecialchars($article->getContent()), 0, 150);?></td>
             <td><?= htmlspecialchars($article->getAuthor());?></td>
             <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
             <td>
-                <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
-                <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
+                <a href="index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+                <a href="index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
             </td>
         </tr>
         <?php
@@ -62,8 +62,8 @@
             <td>Créé le : <?= htmlspecialchars($comment->getCreatedAt());?></td>
             <td>En construction</td>
             <td>
-                <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler le commentaire</a>
-                <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a>
+                <a href="index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler le commentaire</a>
+                <a href="index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a>
             </td>
         </tr>
         <?php
@@ -93,7 +93,7 @@
                 <?php
                 if($user->getRole() != 'admin') {
                     ?>
-                    <a href="../public/index.php?route=deleteUser&userId=<?= $user->getId(); ?>">Supprimer</a>
+                    <a href="index.php?route=deleteUser&userId=<?= $user->getId(); ?>">Supprimer</a>
                 <?php }
                 else {
                     ?>

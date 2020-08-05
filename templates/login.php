@@ -3,8 +3,8 @@
 <p>En construction</p>
 <?= $this->session->show('error_login'); ?>
 <div>
-    <a class="nav-link" href="../public/index.php?route=register">Inscription</a>
-    <form method="post" action="../public/index.php?route=login">
+    <a class="nav-link" href="index.php?route=register">Inscription</a>
+    <form method="post" action="index.php?route=login">
         <label for="pseudo">Pseudo</label><br>
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
 
@@ -13,5 +13,5 @@
 
         <input type="submit" value="Connexion" id="submit" name="submit">
     </form>
-    <a href="../public/index.php">Retour à l'accueil</a>
+    <a href="index.php">Retour à l'accueil</a>
 </div>
