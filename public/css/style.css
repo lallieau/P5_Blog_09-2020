@@ -1,31 +1,96 @@
-h1{
-    font-family: 'Yeseva One', cursive;
-    color: white;
-}
+/* Général */
 
-h2{
-    font-family: 'Khand', sans-serif;
-}
-p{
-    font-family: 'Fjalla One', sans-serif;
-}
-
-/*
-font-family: 'Khand', sans-serif;
-font-family: 'Yeseva One', cursive;
-font-family: 'Fjalla One', sans-serif;
- */
-
-.header_home{
-    height: 1000px;
-    background-image: url("../../public/img/test.jpg");
-    background-size: cover;
-    background-position: top;
+body{
+    background: rgb(199,234,253);
+    background: linear-gradient(135deg, rgba(199,234,253,1) 0%, rgba(211,235,206,1) 42%, rgba(230,236,125,1) 73%, rgba(252,238,33,1) 100%);
+    margin: 0 auto;
     background-repeat: no-repeat;
-    text-align: center;
-    margin: 50px;
+    background-size: cover;
 }
 
-.header_home h1{
-    padding-top: 25px;
+h1{font-family: 'Francois One', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #FFFFFF;
+    display: inline-block;
+    position: relative;
+    padding: 10px 10px 0 15px;
 }
+h1:after,
+h1:before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 30%;
+    top: 60%;
+    right: 100%;
+    background: #FFFFFF;
+}
+h1:after { left: 100%; }
+
+h2{font-family: 'Yeseva One', cursive;font-size: 1.8rem}
+
+h2 span{font-family: 'Francois One', sans-serif;
+    font-size: 20px;
+    color: #FFFFFF;
+    display: inline-block;
+    position: relative;
+    padding: 10px 10px 0 15px;
+}
+h2 span:after,
+h2 span:before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 30%;
+    top: 60%;
+    right: 130%;
+    background: #FFFFFF;
+}
+h2 span:after { left: 100%; }
+
+p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
+a{font-family: 'Francois One', sans-serif;font-size: 1.1rem;color: #ace3fc}
+
+/* Home Page */
+
+.container{padding: 0;margin: 0;}
+
+.home_card_theme{
+    margin: 10px 10px;
+    padding: 5px;
+    background : #FFFFFF;
+    border-radius : 20px;
+    -moz-border-radius : 20px;
+    -webkit-border-radius : 20px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.home_card_theme_text{position: absolute; padding: 30px;}
+.home_card_theme_text p{padding-bottom: 10px}
+.home_card_theme_img img{width: 80px;height: 320px;}
+
+.home_card_article {
+    background-color: #FFFFFF;
+    padding: 5px 0 5px;
+}
+
+.home_card_article p{padding-bottom: 50px}
+
+.card{
+    margin: 10px 10px;
+    padding: 5px;
+    border-radius : 20px;
+    -moz-border-radius : 20px;
+    -webkit-border-radius : 20px;
+    border: none;
+    background : #c7eafd;
+}
+
+.card a{color: #000000 }
+
+
+
+
+
