@@ -8,7 +8,7 @@
 <?= $this->session->show('logout'); ?>
 <?= $this->session->show('delete_account'); ?>
 
-<div class="container">
+<div class="home_container">
     <h1>Le blog de lallie</h1>
     <div class="home_card_theme">
         <div class="home_card_theme_text">
@@ -31,39 +31,6 @@
                         ?>
 
                         <h2><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>"><?=htmlspecialchars($article->getTitle());?></a></h2>
-                        <p>dfghj</p>
-                    <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire plus...</a><br>
-                    <?php
-                    if (!$article->getEditAt())
-                    {
-                    ?>
-                    <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
-                    <?php
-                    }
-                    else
-                    {
-                    ?>
-                    <td>Modifié le : <?= htmlspecialchars($article->getEditAt());?></td>
-                    <?php
-                    }
-                    ?>
-                    <?php
-                    }
-                    ?>
-
-
-                </div>
-            </li>
-            <li class="slide">
-                <div class="parallax">
-                    <?php
-                    foreach($articles as $article)
-                    {
-                        ?>
-
-                        <h2><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>"><?=htmlspecialchars($article->getTitle());?></a></h2>
-                        <p>dfghj</p>
-                        <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire plus...</a>
                         <?php
                         if (!$article->getEditAt())
                         {
@@ -81,6 +48,9 @@
                         <?php
                     }
                     ?>
+                    <p>dfghj</p>
+                    <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire plus...</a>
+
 
 
                 </div>
@@ -93,8 +63,6 @@
                         ?>
 
                         <h2><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>"><?=htmlspecialchars($article->getTitle());?></a></h2>
-                        <p>dfghj</p>
-                        <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire plus...</a>
                         <?php
                         if (!$article->getEditAt())
                         {
@@ -112,10 +80,47 @@
                         <?php
                     }
                     ?>
+                    <p>dfghj</p>
+                    <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire plus...</a>
+
 
 
                 </div>
             </li>
+            <li class="slide">
+                <div class="parallax">
+                    <?php
+                    foreach($articles as $article)
+                    {
+                        ?>
+
+                        <h2><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>"><?=htmlspecialchars($article->getTitle());?></a></h2>
+                        <?php
+                        if (!$article->getEditAt())
+                        {
+                            ?>
+                            <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
+                            <?php
+                        }
+                        else
+                        {
+                            ?>
+                            <td>Modifié le : <?= htmlspecialchars($article->getEditAt());?></td>
+                            <?php
+                        }
+                        ?>
+                        <?php
+                    }
+                    ?>
+                    <p>dfghj</p>
+                    <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire plus...</a>
+
+
+
+                </div>
+            </li>
+
+
         </ul>
     </div>
 

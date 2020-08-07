@@ -1,5 +1,7 @@
 /* Général */
-
+* {
+    box-sizing: border-box;
+}
 body{
     background: rgb(199,234,253);
     background: linear-gradient(135deg, rgba(199,234,253,1) 0%, rgba(211,235,206,1) 42%, rgba(230,236,125,1) 73%, rgba(252,238,33,1) 100%);
@@ -17,17 +19,7 @@ h1{
     position: relative;
     padding: 10px 10px 0 15px;
 }
-h1:after,
-h1:before {
-    content: "";
-    position: absolute;
-    height: 3px;
-    width: 30%;
-    top: 60%;
-    right: 100%;
-    background: #FFFFFF;
-}
-h1:after { left: 100%; }
+
 
 h2{font-family: 'Yeseva One', cursive;font-size: 1.8rem}
 
@@ -55,7 +47,7 @@ p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
 
 /* Home Page */
 
-.container{padding: 0;margin: 0;}
+.home_container{padding: 0;margin: 0;}
 
 .home_card_theme{
     margin: 10px 10px;

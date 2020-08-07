@@ -11,10 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
 </head>
 <?php include 'header.php';?>
+
 <body>
 <div id="content">
     <?= $content ?>
 </div>
-
+<?php include 'navbar_mobil.php';?>
 </body>
 </html>
