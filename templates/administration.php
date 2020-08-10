@@ -84,7 +84,7 @@
                 else
                 {
                     ?>
-                    <p><a href="index.php?route=validateComment&commentId=<?= $comment->getId(); ?>">Signaler le commentaire</a></p>
+                    <p><a href="index.php?route=validateComment&commentId=<?= $comment->getId(); ?>">Valider le commentaire</a></p>
                     <?php
                 }
                 ?>

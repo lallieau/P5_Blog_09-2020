@@ -31,7 +31,7 @@ class BackController extends Controller
     {
         if($this->checkAdmin()) {
             $articles = $this->articleDAO->getArticles();
-            $comments = $this->commentDAO->getFlagComments();
+            $comments = $this->commentDAO->getValidateComments();
             $users = $this->userDAO->getUsers();
 
             return $this->view->render('administration', [
