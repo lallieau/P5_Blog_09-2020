@@ -19,10 +19,7 @@ h1{
     position: relative;
     padding: 10px 10px 0 15px;
 }
-
-
-h2{font-family: 'Yeseva One', cursive;font-size: 1.8rem}
-
+h2{font-family: 'Yeseva One', cursive;font-size: 1.8rem; color: #000000;}
 h2 span{font-family: 'Francois One', sans-serif;
     font-size: 20px;
     color: #FFFFFF;
@@ -41,9 +38,7 @@ h2 span:before {
     background: #FFFFFF;
 }
 h2 span:after { left: 100%; }
-
 p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
-
 
 /* Home Page */
 
@@ -65,8 +60,7 @@ p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
 .home_card_theme_text p{padding-bottom: 10px}
 .home_card_theme_img img{width: 80px;height: 320px;}
 
-/*  test slider*/
-
+/* Home Page - slider */
 
 .slider {
     box-sizing: border-box;
@@ -120,7 +114,6 @@ p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
     -moz-border-radius : 20px;
     -webkit-border-radius : 20px;
     border: none;
-    background : #c7eafd;
 }
 
 .slider .slide.current {
@@ -162,8 +155,6 @@ p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
 .slider .slide:nth-child(6n+4) { background: #c7eafd; }
 .slider .slide:nth-child(6n+5) { background: #c7eafd; }
 .slider .slide:nth-child(6n+6) { background: #c7eafd; }
-/* fin test slider */
-
 
 /*
 
@@ -187,6 +178,5 @@ p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
 .card a{color: #000000 }
 
  */
-
 
 

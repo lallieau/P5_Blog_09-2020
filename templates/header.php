@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8"/>
     <title>header</title>
-    <link href="twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light">
