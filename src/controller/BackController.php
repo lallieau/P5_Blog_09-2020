@@ -15,7 +15,6 @@ class BackController extends Controller
             return true;
         }
     }
-
     private function checkAdmin()
     {
         $this->checkLoggedIn();
@@ -63,7 +62,6 @@ class BackController extends Controller
             return $this->view->render('add_article');
         }
     }
-
     public function editArticle(Parameter $post, $articleId)
     {
         if($this->checkAdmin()) {
@@ -92,7 +90,6 @@ class BackController extends Controller
             ]);
         }
     }
-
     public function deleteArticle($articleId)
     {
         if($this->checkAdmin()) {
@@ -117,7 +114,6 @@ class BackController extends Controller
             header('Location: index.php?route=administration');
         }
     }
-
     public function deleteComment($commentId)
     {
         if($this->checkAdmin()) {
@@ -133,7 +129,6 @@ class BackController extends Controller
             return $this->view->render('profile');
         }
     }
-
     public function updatePassword(Parameter $post)
     {
         if($this->checkLoggedIn()) {
@@ -162,7 +157,6 @@ class BackController extends Controller
             $this->logoutOrDelete('delete_account');
         }
     }
-
     public function deleteUser($userId)
     {
         if($this->checkAdmin()) {

@@ -26,24 +26,21 @@
 <br>
 
 <a href="index.php">Retour à l'acceuil</a>
-<div id="comments" class="text-left" style="margin-left: 50px">
+<div id="comments" class="text-left">
     <h3>Ajouter un commentaire</h3>
     <?php include('form_comment.php'); ?>
 
     <h3>Commentaires</h3>
-
     <?php
     foreach($comments as $comment)
     {
-    ?>
-    <h4><?=htmlspecialchars($comment->getPseudo());?></h4>
-    <p><?=htmlspecialchars($comment->getContent());?></p>
-    <p>Posté le <?=htmlspecialchars($comment->getCreatedAt());?></p>
+        if($comment->isValidation())
+        {
+        ?>
 
-    <?php
-    if($comment->isValidation())
-    {
-    ?>
+            <h4><?=htmlspecialchars($comment->getPseudo());?></h4>
+            <p><?=htmlspecialchars($comment->getContent());?></p>
+            <p>Posté le <?=htmlspecialchars($comment->getCreatedAt());?></p>
         <p><a href="index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a></p>
         <?php
     }

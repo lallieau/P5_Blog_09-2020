@@ -56,7 +56,6 @@
 </table>
 
 <h2>Commentaires</h2>
-
 <table>
     <tr>
         <td>Id</td>
