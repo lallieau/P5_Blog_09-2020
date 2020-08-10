@@ -55,10 +55,12 @@ class FrontController extends Controller
             ]);
         }
     }
+
     public function contactPage()
     {
         return $this->view->render('contact');
     }
+
     public function newContact(Parameter $post)
     {
         if ($post->get('submit'))
@@ -75,13 +77,6 @@ class FrontController extends Controller
                 'errors' => $errors
             ]);
         }
-    }
-
-    public function flagComment($commentId)
-    {
-        $this->commentDAO->flagComment($commentId);
-        $this->session->set('flag_comment', 'Le commentaire a bien été signalé');
-        header('Location: index.php');
     }
 
     public function register(Parameter $post)

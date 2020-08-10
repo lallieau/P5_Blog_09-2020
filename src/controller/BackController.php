@@ -102,11 +102,18 @@ class BackController extends Controller
         }
     }
 
-    public function unflagComment($commentId)
+
+    public function validateComment($commentId)
+    {
+        $this->commentDAO->validateComment($commentId);
+        $this->session->set('validate_comment', 'Le commentaire a bien été validé');
+        header('Location: index.php?route=administration');
+    }
+    public function noValidateComment($commentId)
     {
         if($this->checkAdmin()) {
-            $this->commentDAO->unflagComment($commentId);
-            $this->session->set('unflag_comment', 'Le commentaire a bien été désignalé');
+            $this->commentDAO->noValidateComment($commentId);
+            $this->session->set('no_validate_comment', 'Le commentaire n\'est plus validé');
             header('Location: index.php?route=administration');
         }
     }
