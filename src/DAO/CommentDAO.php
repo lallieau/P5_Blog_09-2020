@@ -53,7 +53,7 @@ class CommentDAO extends DAO
     public function getValidateComments()
     {
         $sql = 'SELECT id, pseudo, content, createdAt, validation FROM comment  ORDER BY createdAt DESC';
-        $result = $this->createQuery($sql,);
+        $result = $this->createQuery($sql);
         $comments = [];
 
         foreach ($result as $row)
