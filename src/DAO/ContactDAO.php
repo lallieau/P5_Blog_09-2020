@@ -8,6 +8,7 @@ class ContactDAO extends DAO
 {
     public function newContact(Parameter $post)
     {
+
         $to      = 'lallie.audry@gmail.com';
         $message = $post->get('content');
         $headers = array(
@@ -16,6 +17,6 @@ class ContactDAO extends DAO
             'X-Mailer' => 'PHP/' . phpversion()
         );
 
-        mail($to, $message, $headers);
+        return mail($to, $message, implode($headers));
     }
 }
