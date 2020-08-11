@@ -3,7 +3,7 @@ $route = isset($post) && $post->get('id') ? 'editComment' : 'addComment';
 $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
 ?>
 
-<form method="post" action="index.php?route=<?= $route; ?>">
+<form method="post" action="index.php?route=<?= $route ?>">
 
     <label for="pseudo">Pseudo</label><br>
     <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
@@ -13,5 +13,5 @@ $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
     <textarea id="content" name="content"><?= isset($post) ? htmlspecialchars($post->get('content')): ''; ?></textarea><br>
     <?= isset($errors['content']) ? $errors['content'] : ''; ?>
 
-    <input type="submit" value="<?= $submit; ?>" id="submit" name="submit">
+    <input type="submit" value="<?= $submit ?>" id="submit" name="submit">
 </form>

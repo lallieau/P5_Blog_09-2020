@@ -8,7 +8,7 @@ class Comment
     private $pseudo;
     private $content;
     private $createdAt;
-    private $flag;
+    private $validation;
 
     public function getId()
     {
@@ -50,13 +50,14 @@ class Comment
         $this->createdAt = $createdAt;
     }
 
-    public function isFlag()
+    public function isValidation()
     {
-        return $this->flag;
+        return $this->validation;
     }
 
-    public function setFlag($flag)
+    public function setValidation($validation)
     {
-        $this->flag = $flag;
+        $this->validation = $validation;
     }
+
 }

@@ -41,14 +41,17 @@ class FrontController extends Controller
         if ($post->get('submit'))
         {
             $errors = $this->validation->validate($post, 'Comment');
+            $article = $this->articleDAO->getArticle($articleId);
 
             if (!$errors)
             {
-                $this->commentDAO->addComment($post, $articleId);
+
+                $this->commentDAO->addComment($post, $article->getId());
                 $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
                 header('Location: index.php');
+
             }
-            $article = $this->articleDAO->getArticle($articleId);
+
             $comments = $this->commentDAO->getCommentsFromArticle($articleId);
 
             return $this->view->render('single', [
@@ -59,10 +62,12 @@ class FrontController extends Controller
             ]);
         }
     }
+
     public function contactPage()
     {
         return $this->view->render('contact');
     }
+
     public function newContact(Parameter $post)
     {
         if ($post->get('submit'))
@@ -79,13 +84,6 @@ class FrontController extends Controller
                 'errors' => $errors
             ]);
         }
-    }
-
-    public function flagComment($commentId)
-    {
-        $this->commentDAO->flagComment($commentId);
-        $this->session->set('flag_comment', 'Le commentaire a bien été signalé');
-        header('Location: index.php');
     }
 
     public function register(Parameter $post)

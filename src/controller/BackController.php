@@ -15,7 +15,6 @@ class BackController extends Controller
             return true;
         }
     }
-
     private function checkAdmin()
     {
         $this->checkLoggedIn();
@@ -31,7 +30,7 @@ class BackController extends Controller
     {
         if($this->checkAdmin()) {
             $articles = $this->articleDAO->getArticles();
-            $comments = $this->commentDAO->getFlagComments();
+            $comments = $this->commentDAO->getValidateComments();
             $users = $this->userDAO->getUsers();
 
             return $this->view->render('administration', [
@@ -63,7 +62,6 @@ class BackController extends Controller
             return $this->view->render('add_article');
         }
     }
-
     public function editArticle(Parameter $post, $articleId)
     {
         if($this->checkAdmin()) {
@@ -92,7 +90,6 @@ class BackController extends Controller
             ]);
         }
     }
-
     public function deleteArticle($articleId)
     {
         if($this->checkAdmin()) {
@@ -102,15 +99,21 @@ class BackController extends Controller
         }
     }
 
-    public function unflagComment($commentId)
+
+    public function validateComment($commentId)
+    {
+        $this->commentDAO->validateComment($commentId);
+        $this->session->set('validate_comment', 'Le commentaire a bien été validé');
+        header('Location: index.php?route=administration');
+    }
+    public function noValidateComment($commentId)
     {
         if($this->checkAdmin()) {
-            $this->commentDAO->unflagComment($commentId);
-            $this->session->set('unflag_comment', 'Le commentaire a bien été désignalé');
+            $this->commentDAO->noValidateComment($commentId);
+            $this->session->set('no_validate_comment', 'Le commentaire n\'est plus validé');
             header('Location: index.php?route=administration');
         }
     }
-
     public function deleteComment($commentId)
     {
         if($this->checkAdmin()) {
@@ -126,7 +129,6 @@ class BackController extends Controller
             return $this->view->render('profile');
         }
     }
-
     public function updatePassword(Parameter $post)
     {
         if($this->checkLoggedIn()) {
@@ -155,7 +157,6 @@ class BackController extends Controller
             $this->logoutOrDelete('delete_account');
         }
     }
-
     public function deleteUser($userId)
     {
         if($this->checkAdmin()) {

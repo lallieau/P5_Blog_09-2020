@@ -50,13 +50,13 @@ class Router
                 {
                     $this->frontController->addComment($this->request->getPost(),$this->request->getGet()->get('articleId'));
                 }
-                elseif ($route === 'flagComment')
+                elseif ($route === 'validateComment')
                 {
-                    $this->frontController->flagComment($this->request->getGet()->get('commentId'));
+                    $this->backController->validateComment($this->request->getGet()->get('commentId'));
                 }
-                elseif($route === 'unflagComment')
+                elseif($route === 'noValidateComment')
                 {
-                    $this->backController->unflagComment($this->request->getGet()->get('commentId'));
+                    $this->backController->noValidateComment($this->request->getGet()->get('commentId'));
                 }
                 elseif ($route === 'deleteComment')
                 {
@@ -107,7 +107,6 @@ class Router
                 {
                     $this->frontController->contactPage();
                 }
-
                 elseif ($route === 'newContact')
                 {
                     $this->frontController->newContact();

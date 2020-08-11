@@ -5,9 +5,10 @@
 <?= $this->session->show('add_article'); ?>
 <?= $this->session->show('edit_article'); ?>
 <?= $this->session->show('delete_article'); ?>
-<?= $this->session->show('unflag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?>
 <?= $this->session->show('delete_user'); ?>
+<?= $this->session->show('validate_comment'); ?>
+<?= $this->session->show('no_validate_comment'); ?>
 
 <h2>Articles</h2>
 <a href="index.php?route=addArticle">Nouvel article</a>
@@ -54,15 +55,13 @@
     ?>
 </table>
 
-<h2>Commentaires signalés</h2>
-
+<h2>Commentaires</h2>
 <table>
     <tr>
         <td>Id</td>
         <td>Pseudo</td>
         <td>Message</td>
         <td>Date</td>
-        <td>Actions</td>
     </tr>
     <?php
     foreach ($comments as $comment)
@@ -73,15 +72,28 @@
             <td><?= htmlspecialchars($comment->getPseudo());?></td>
             <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150);?></td>
             <td>Créé le : <?= htmlspecialchars($comment->getCreatedAt());?></td>
-            <td>En construction</td>
             <td>
-                <a href="index.php?route=unflagComment&commentId=<?= $comment->getId(); ?>">Désignaler le commentaire</a>
-                <a href="index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a>
-            </td>
+                <?php
+                if($comment->isValidation())
+                {
+                    ?>
+                    <p><a href="index.php?route=noValidateComment&commentId=<?= $comment->getId(); ?>">Ne plus valider le commentaire</a></p>
+                    <?php
+                }
+                else
+                {
+                    ?>
+                    <p><a href="index.php?route=validateComment&commentId=<?= $comment->getId(); ?>">Valider le commentaire</a></p>
+                    <?php
+                }
+                ?>
+                <p><a href="index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a></p>
+                <br>
+                <?php
+                }
+                ?>
+                 </td>
         </tr>
-        <?php
-    }
-    ?>
 </table>
 
 <h2>Utilisateurs</h2>
