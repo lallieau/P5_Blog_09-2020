@@ -26,17 +26,17 @@ class ContactValidation extends Validation
     {
         if($name === 'name')
         {
-            $error = $this->checkTitle($name, $value);
+            $error = $this->checkName($name, $value);
             $this->addError($name, $error);
         }
         elseif($name === 'email')
         {
-            $error = $this->checkContent($name, $value);
+            $error = $this->checkEmail($name, $value);
             $this->addError($name, $error);
         }
         elseif($name === 'content')
         {
-            $error = $this->checkChapo($name, $value);
+            $error = $this->checkContent($name, $value);
             $this->addError($name, $error);
         }
     }
