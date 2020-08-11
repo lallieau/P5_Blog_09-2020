@@ -37,14 +37,17 @@ class FrontController extends Controller
         if ($post->get('submit'))
         {
             $errors = $this->validation->validate($post, 'Comment');
+            $article = $this->articleDAO->getArticle($articleId);
 
             if (!$errors)
             {
-                $this->commentDAO->addComment($post, $articleId);
+
+                $this->commentDAO->addComment($post, $article->getId());
                 $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
                 header('Location: index.php');
+
             }
-            $article = $this->articleDAO->getArticle($articleId);
+
             $comments = $this->commentDAO->getCommentsFromArticle($articleId);
 
             return $this->view->render('single', [
