@@ -10,25 +10,27 @@
 
 <div class="home_container">
     <h1>Le blog de lallie</h1>
-    <div class="home_card_theme">
-        <div class="home_card_theme_text">
+    <div class="card_theme">
+        <div class="card_theme_text">
             <h2>Un ton seul n'est qu'une couleur, deux tons c'est un accord, c'est la vie.</h2>
             <p>Henri Matisse</p>
             <br>
-            <a href="index.php?route=articlesPage">Articles <span>&rarr;</span></a>
+            <p><a href="index.php?route=articlesPage">Articles <span>&rarr;</span></a></p>
         </div>
-        <div class="home_card_theme_img">
+        <div class="card_theme_img">
             <img src="img/test3.png" alt="photo ou logo">
         </div>
     </div>
+<div class="test">
+    <?php
+    foreach($articles as $article)
+    {
+    ?>
     <div class="slider">
         <ul class="slides-container">
             <li class="slide">
                 <div class="parallax">
-                    <?php
-                    foreach($articles as $article)
-                    {
-                        ?>
+
 
                         <h2><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>"><?=htmlspecialchars($article->getTitle());?></a></h2>
                         <?php
@@ -45,9 +47,6 @@
                             <?php
                         }
                         ?>
-                        <?php
-                    }
-                    ?>
                     <p>dfghj</p>
                     <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire plus...</a>
 
@@ -55,76 +54,14 @@
 
                 </div>
             </li>
-            <li class="slide">
-                <div class="parallax">
-                    <?php
-                    foreach($articles as $article)
-                    {
-                        ?>
-
-                        <h2><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>"><?=htmlspecialchars($article->getTitle());?></a></h2>
-                        <?php
-                        if (!$article->getEditAt())
-                        {
-                            ?>
-                            <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
-                            <?php
-                        }
-                        else
-                        {
-                            ?>
-                            <td>Modifié le : <?= htmlspecialchars($article->getEditAt());?></td>
-                            <?php
-                        }
-                        ?>
-                        <?php
-                    }
-                    ?>
-                    <p>dfghj</p>
-                    <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire plus...</a>
-
-
-
-                </div>
-            </li>
-            <li class="slide">
-                <div class="parallax">
-                    <?php
-                    foreach($articles as $article)
-                    {
-                        ?>
-
-                        <h2><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>"><?=htmlspecialchars($article->getTitle());?></a></h2>
-                        <?php
-                        if (!$article->getEditAt())
-                        {
-                            ?>
-                            <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
-                            <?php
-                        }
-                        else
-                        {
-                            ?>
-                            <td>Modifié le : <?= htmlspecialchars($article->getEditAt());?></td>
-                            <?php
-                        }
-                        ?>
-                        <?php
-                    }
-                    ?>
-                    <p>dfghj</p>
-                    <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire plus...</a>
-
-
-
-                </div>
-            </li>
-
-
         </ul>
     </div>
 
 
+        <?php
+    }
+    ?>
+</div>
     <br>
 
     <h2><a href="pdf/cv-lallie-audry.pdf">cv</a> </h2>
