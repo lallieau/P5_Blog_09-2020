@@ -39,11 +39,11 @@ class ArticleValidation extends Validation
             $error = $this->checkChapo($name, $value);
             $this->addError($name, $error);
         }
-        elseif($name === 'img')
+        /*elseif($name === 'img')
         {
             $error = $this->checkImg($name, $value);
             $this->addError($name, $error);
-        }
+        }*/
     }
 
     private function addError($name, $error)
@@ -101,10 +101,10 @@ class ArticleValidation extends Validation
         }
     }
 
-    private function checkImg($name, $value)
+    /*private function checkImg($name, $value)
     {
 
-        // vérifier si image
+        vérifier si image
     }
-
+ */
 }

@@ -18,7 +18,7 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 
     <label for="img">Image</label><br>
     <input id="img" name="img" type="file"><br>
-    <?= isset($errors['img']) ? $errors['img'] : ''; ?>
+
 
     <input type="submit" value="<?= $submit; ?>" id="submit" name="submit">
 </form>

@@ -65,12 +65,16 @@ class BackController extends Controller
     }
     public function editArticle(Parameter $post, $articleId)
     {
-        if($this->checkAdmin()) {
+        if($this->checkAdmin())
+        {
             $article = $this->articleDAO->getArticle($articleId);
 
-            if ($post->get('submit')) {
+            if ($post->get('submit'))
+            {
                 $errors = $this->validation->validate($post, 'Article');
-                if (!$errors) {
+
+                if (!$errors)
+                {
                     $this->articleDAO->editArticle($post, $articleId, $this->session->get('id'));
                     $this->session->set('edit_article', 'L\' article a bien été modifié');
                     header('Location: index.php?route=administration');
@@ -80,6 +84,7 @@ class BackController extends Controller
                     'errors' => $errors
                 ]);
             }
+
             $post->set('id', $article->getId());
             $post->set('title', $article->getTitle());
             $post->set('chapo', $article->getChapo());

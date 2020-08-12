@@ -74,8 +74,8 @@ class ArticleDAO extends DAO
             'content' => $post->get('content'),
             'chapo' => $post->get('chapo'),
             'user_id' => $userId,
-            'articleId' => $articleId,
-            'img' => $img
+            'img' => $img,
+            'articleId' => $articleId
         ]);
     }
 
