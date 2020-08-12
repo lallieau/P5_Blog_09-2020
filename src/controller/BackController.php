@@ -46,6 +46,7 @@ class BackController extends Controller
         if($this->checkAdmin()) {
             if ($post->get('submit'))
             {
+
                 $errors = $this->validation->validate($post, 'Article');
 
                 if (!$errors)

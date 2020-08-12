@@ -11,6 +11,7 @@ class Article
     private $author;
     private $createdAt;
     private $editAt;
+    private $img;
 
     public function getId()
     {
@@ -73,6 +74,16 @@ class Article
     public function setEditAt($editAt)
     {
         $this->editAt = $editAt;
+    }
+
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    public function setImg($img)
+    {
+        $this->img = $img;
     }
 
 }

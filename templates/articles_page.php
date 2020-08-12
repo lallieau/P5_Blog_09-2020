@@ -27,7 +27,17 @@ foreach($articles as $article)
 
         </div>
         <div class="card_theme_img">
-            <img src="img/test3.png" alt="photo ou logo">
+            <img src="<?php
+            if($article->getImg())
+            {
+                echo htmlspecialchars($article->getImg());
+            }
+            else
+                {
+                    echo "img/test3.png";
+                }
+
+            ?>" alt="">
         </div>
 
     </div>

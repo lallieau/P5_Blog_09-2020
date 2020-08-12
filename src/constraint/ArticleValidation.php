@@ -39,6 +39,11 @@ class ArticleValidation extends Validation
             $error = $this->checkChapo($name, $value);
             $this->addError($name, $error);
         }
+        elseif($name === 'img')
+        {
+            $error = $this->checkImg($name, $value);
+            $this->addError($name, $error);
+        }
     }
 
     private function addError($name, $error)
@@ -94,6 +99,12 @@ class ArticleValidation extends Validation
         {
             return $this->constraint->minLength('content', $value, 2);
         }
+    }
+
+    private function checkImg($name, $value)
+    {
+
+        // vérifier si image
     }
 
 }
