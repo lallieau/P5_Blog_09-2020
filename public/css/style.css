@@ -44,10 +44,24 @@ p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
 
 .home_container{padding: 0;margin: 0;}
 
-.card_theme{
+
+/* Single Page */
+.cactus{
     margin: 10px 10px;
     padding: 5px;
     background : #FFFFFF;
+    border-radius : 20px;
+    -moz-border-radius : 20px;
+    -webkit-border-radius : 20px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.fleur{padding: 20px;}
+
+.card_theme{
+    margin: 10px 10px;
+    padding: 5px;
+    background : #red;
     border-radius : 20px;
     -moz-border-radius : 20px;
     -webkit-border-radius : 20px;
@@ -180,5 +194,3 @@ p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
 
  */
 
-
-/* Article Page */

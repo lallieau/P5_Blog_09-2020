@@ -1,9 +1,10 @@
 <?php $this->title = "Article"; ?>
 
-<h1>Le blog</h1>
-<h2>Lallie Audry</h2>
 
-<div>
+<div class="cactus">
+
+    <div class="fleur">
+
     <h2><?=htmlspecialchars($article->getTitle());?></h2>
     <p><?=htmlspecialchars($article->getChapo());?></p>
     <p><?=htmlspecialchars($article->getContent());?></p>
@@ -22,6 +23,7 @@
         <?php
     }
     ?>
+    </div>
 </div>
 <br>
 
