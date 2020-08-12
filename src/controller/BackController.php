@@ -67,6 +67,7 @@ class BackController extends Controller
     {
         if($this->checkAdmin()) {
             $article = $this->articleDAO->getArticle($articleId);
+
             if ($post->get('submit')) {
                 $errors = $this->validation->validate($post, 'Article');
                 if (!$errors) {
@@ -78,13 +79,13 @@ class BackController extends Controller
                     'post' => $post,
                     'errors' => $errors
                 ]);
-
             }
             $post->set('id', $article->getId());
             $post->set('title', $article->getTitle());
             $post->set('chapo', $article->getChapo());
             $post->set('content', $article->getContent());
             $post->set('author', $article->getAuthor());
+            $post->set('img', $article->getImg());
 
             return $this->view->render('edit_article', [
                 'post' => $post

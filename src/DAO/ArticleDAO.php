@@ -63,13 +63,19 @@ class ArticleDAO extends DAO
 
     public function editArticle(Parameter $post, $articleId, $userId)
     {
-        $sql = 'UPDATE article SET title = :title, content = :content, chapo = :chapo, editAt = NOW(), user_id = :user_id WHERE id = :articleId';
+        $uploads_dir = 'img/';
+        $name = $_FILES['img']['name'];
+        move_uploaded_file($_FILES['img']['tmp_name'], "$uploads_dir.$name");
+        $img = "$uploads_dir.$name";
+
+        $sql = 'UPDATE article SET title = :title, content = :content, chapo = :chapo, editAt = NOW(), user_id = :user_id, img = :img WHERE id = :articleId';
         $this->createQuery($sql, [
             'title' => $post->get('title'),
             'content' => $post->get('content'),
             'chapo' => $post->get('chapo'),
             'user_id' => $userId,
-            'articleId' => $articleId
+            'articleId' => $articleId,
+            'img' => $img
         ]);
     }
 
