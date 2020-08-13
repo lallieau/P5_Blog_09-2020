@@ -19,6 +19,8 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
     <label for="img">Image</label><br>
     <input id="img" name="img" type="file"><br>
 
+    <label for="bg">Background</label><br>
+    <input id="bg" name="bg" type="file"><br>
 
     <input type="submit" value="<?= $submit; ?>" id="submit" name="submit">
 </form>

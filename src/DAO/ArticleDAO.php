@@ -17,12 +17,13 @@ class ArticleDAO extends DAO
         $article->setCreatedAt($row['createdAt']);
         $article->setEditAt($row['editAt']);
         $article->setImg($row['img']);
+        $article->setBg($row['bg']);
 
         return $article;
     }
     public function getArticles()
     {
-        $sql = 'SELECT article.id, article.title, article.content, article.chapo, user.pseudo, article.createdAt, article.editAt, article.img FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC';
+        $sql = 'SELECT article.id, article.title, article.content, article.chapo, user.pseudo, article.createdAt, article.editAt, article.img, article.bg FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC';
         $result = $this->createQuery($sql);
         $articles =[];
         foreach ($result as $row)
@@ -36,7 +37,7 @@ class ArticleDAO extends DAO
 
     public function getArticle($articleId)
     {
-        $sql = 'SELECT article.id, article.title, article.content, article.chapo, user.pseudo, article.createdAt, article.editAt, article.img FROM article INNER JOIN user ON article.user_id = user.id WHERE article.id = ?';
+        $sql = 'SELECT article.id, article.title, article.content, article.chapo, user.pseudo, article.createdAt, article.editAt, article.img, article.bg FROM article INNER JOIN user ON article.user_id = user.id WHERE article.id = ?';
         $result = $this->createQuery($sql, [$articleId]);
 
         $article = $result->fetch();
@@ -47,17 +48,23 @@ class ArticleDAO extends DAO
     public function addArticle(Parameter $post, $userId)
     {
         $uploads_dir = 'img/';
+
         $name = $_FILES['img']['name'];
         move_uploaded_file($_FILES['img']['tmp_name'], "$uploads_dir.$name");
         $img = "$uploads_dir.$name";
 
-        $sql = 'INSERT INTO article (title, content, createdAt, user_id, chapo, editAt, img) VALUES (?,?, NOW(), ?, ?, null, ?)';
+        $nom = $_FILES['bg']['name'];
+        move_uploaded_file($_FILES['bg']['tmp_name'], "$uploads_dir.$nom");
+        $bg = "$uploads_dir.$nom";
+
+        $sql = 'INSERT INTO article (title, content, createdAt, user_id, chapo, editAt, img, bg) VALUES (?,?, NOW(), ?, ?, null, ?, ?)';
         $this->createQuery($sql,[
             $post->get('title'),
             $post->get('content'),
             $userId,
             $post->get('chapo'),
-            $img
+            $img,
+            $bg
         ]);
     }
 

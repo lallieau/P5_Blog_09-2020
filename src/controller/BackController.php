@@ -90,7 +90,10 @@ class BackController extends Controller
             $post->set('chapo', $article->getChapo());
             $post->set('content', $article->getContent());
             $post->set('author', $article->getAuthor());
+
+            //ne fonctionne pas
             $post->set('img', $article->getImg());
+            $post->set('bg', $article->getBg());
 
             return $this->view->render('edit_article', [
                 'post' => $post
