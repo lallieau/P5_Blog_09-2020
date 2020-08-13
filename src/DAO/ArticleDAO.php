@@ -47,15 +47,16 @@ class ArticleDAO extends DAO
 
     public function addArticle(Parameter $post, $userId)
     {
+
         $uploads_dir = 'img/';
 
-        $name = $_FILES['img']['name'];
-        move_uploaded_file($_FILES['img']['tmp_name'], "$uploads_dir.$name");
-        $img = "$uploads_dir.$name";
+        $imgName = $_FILES['img']['name'];
+        move_uploaded_file($_FILES['img']['tmp_name'], "$uploads_dir.$imgName");
+        $img = "$uploads_dir.$imgName";
 
-        $nom = $_FILES['bg']['name'];
-        move_uploaded_file($_FILES['bg']['tmp_name'], "$uploads_dir.$nom");
-        $bg = "$uploads_dir.$nom";
+        $bgName = $_FILES['bg']['name'];
+        move_uploaded_file($_FILES['bg']['tmp_name'], "$uploads_dir.$bgName");
+        $bg = "$uploads_dir.$bgName";
 
         $sql = 'INSERT INTO article (title, content, createdAt, user_id, chapo, editAt, img, bg) VALUES (?,?, NOW(), ?, ?, null, ?, ?)';
         $this->createQuery($sql,[
@@ -71,23 +72,30 @@ class ArticleDAO extends DAO
     public function editArticle(Parameter $post, $articleId, $userId)
     {
         $uploads_dir = 'img/';
-        $name = $_FILES['img']['name'];
-        move_uploaded_file($_FILES['img']['tmp_name'], "$uploads_dir.$name");
-        $img = "$uploads_dir.$name";
 
-        $sql = 'UPDATE article SET title = :title, content = :content, chapo = :chapo, editAt = NOW(), user_id = :user_id, img = :img WHERE id = :articleId';
+        $imgName = $_FILES['img']['name'];
+        move_uploaded_file($_FILES['img']['tmp_name'], "$uploads_dir.$imgName");
+        $img = "$uploads_dir.$imgName";
+
+        $bgName = $_FILES['bg']['name'];
+        move_uploaded_file($_FILES['bg']['tmp_name'], "$uploads_dir.$bgName");
+        $bg = "$uploads_dir.$bgName";
+
+        $sql = 'UPDATE article SET title = :title, content = :content, chapo = :chapo, editAt = NOW(), user_id = :user_id, img = :img, bg = :bg WHERE id = :articleId';
         $this->createQuery($sql, [
             'title' => $post->get('title'),
             'content' => $post->get('content'),
             'chapo' => $post->get('chapo'),
             'user_id' => $userId,
             'img' => $img,
+            'bg' => $bg,
             'articleId' => $articleId
         ]);
     }
 
     public function deleteArticle($articleId)
     {
+
         $sql = 'DELETE FROM comment WHERE article_id = ?';
         $this->createQuery($sql, [$articleId]);
 

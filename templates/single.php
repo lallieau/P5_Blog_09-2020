@@ -1,5 +1,11 @@
 <?php $this->title = "Article"; ?>
 
+<style type="text/css">
+    body{
+        background-image: url("<?= $article->getBg()?>");
+    }
+</style>
+
 <div class="card_theme">
 
     <div class="card_theme_text_single">
@@ -25,7 +31,6 @@
     </div>
 </div>
 <br>
-
 <a href="index.php">Retour à l'acceuil</a>
 
     <p><a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Commentaires</a></p>
@@ -47,11 +52,10 @@
                         }
                     }
                     ?>
+
+
                 </div>
             </div>
         </div>
     </div>
-
 <?php include('form_comment.php'); ?>
-
-

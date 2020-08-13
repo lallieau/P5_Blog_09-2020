@@ -3,8 +3,12 @@
     box-sizing: border-box;
 }
 body{
+    /*
     background: rgb(199,234,253);
     background: linear-gradient(135deg, rgba(199,234,253,1) 0%, rgba(211,235,206,1) 42%, rgba(230,236,125,1) 73%, rgba(252,238,33,1) 100%);
+    */
+    background-color: #F4F4F4;
+
     margin: 0 auto;
     background-repeat: no-repeat;
     background-size: cover;
