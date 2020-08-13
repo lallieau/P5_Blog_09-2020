@@ -18,13 +18,13 @@
     if (!$article->getEditAt())
     {
         ?>
-        <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
+        <h5>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></h5>
         <?php
     }
     else
     {
         ?>
-        <td>Modifié le : <?= htmlspecialchars($article->getEditAt());?></td>
+        <h5>Modifié le : <?= htmlspecialchars($article->getEditAt());?></h5>
         <?php
     }
     ?>
@@ -40,25 +40,25 @@
                 </div>
 
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <?php
-                        foreach($comments as $comment)
+                    <?php
+                    foreach($comments as $comment)
+                    {
+                        if($comment->isValidation())
                         {
-                            if($comment->isValidation())
-                            {
-                                ?>
-
-                                <h4><?=htmlspecialchars($comment->getPseudo());?></h4>
-                                <p><?=htmlspecialchars($comment->getContent());?></p>
-                                <p>Posté le <?=htmlspecialchars($comment->getCreatedAt());?></p>
-                                <?php
-                            }
-                        }
                         ?>
+                    <div class="card-body">
+                            <h4><?=htmlspecialchars($comment->getPseudo());?></h4>
+                            <p><?=htmlspecialchars($comment->getContent());?></p>
+                            <h5>Posté le <?=htmlspecialchars($comment->getCreatedAt());?></h5>
 
-                        <?php include('form_comment.php'); ?>
                     </div>
+                        <?php
+                        }
+                    }
+                    ?>
+                    <?php include('form_comment.php'); ?>
                 </div>
+
             </div>
         </div>
 

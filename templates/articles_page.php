@@ -12,13 +12,13 @@ foreach($articles as $article)
             if (!$article->getEditAt())
             {
                 ?>
-                <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
+                <h5>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></h5>
                 <?php
             }
             else
             {
                 ?>
-                <td>Modifié le : <?= htmlspecialchars($article->getEditAt());?></td>
+                <h5>Modifié le : <?= htmlspecialchars($article->getEditAt());?></h5>
                 <?php
             }
             ?>

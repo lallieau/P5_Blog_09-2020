@@ -43,7 +43,8 @@ h2 span:before {
 }
 h2 span:after { left: 100%; }
 p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
-
+h5{font-family: 'News Cycle', sans-serif;font-size: 0.8rem; color: #000000;}
+h4{font-family: 'News Cycle', sans-serif;font-size: 1.2rem; color: #000000;}
 /* Home Page */
 
 .home_container{padding: 0;margin: 0;}
@@ -186,6 +187,13 @@ p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
 
 /* Single Page */
 .card{border: none}
-.card_theme_text_single{padding: 20px;}
-.card-header{background-color: #FFFFFF}
-.btn-link{font-family: 'Yeseva One', cursive;font-size: 1.5rem; color: #000000;}
+.card-body{
+    background-color: #F4F4F4;
+    margin: 5px;
+    border-radius : 20px;
+    -moz-border-radius : 20px;
+    -webkit-border-radius : 20px;
+}
+.card_theme_text_single{padding: 10px;}
+.card-header{background-color: #FFFFFF; padding: 0px}
+.btn-link{font-family: 'Yeseva One', cursive;font-size: 1.5rem; color: #000000;padding: 0px}
