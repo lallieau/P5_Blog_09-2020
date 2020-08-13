@@ -185,5 +185,7 @@ p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
  */
 
 /* Single Page */
-
+.card{border: none}
 .card_theme_text_single{padding: 20px;}
+.card-header{background-color: #FFFFFF}
+.btn-link{font-family: 'Yeseva One', cursive;font-size: 1.5rem; color: #000000;}

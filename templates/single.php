@@ -28,34 +28,43 @@
         <?php
     }
     ?>
-    </div>
-</div>
-<br>
-<a href="index.php">Retour à l'acceuil</a>
+        <a href="index.php?route=articlesPage">Tous les articles</a>
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2>
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Commentaires
+                        </button>
+                    </h2>
+                </div>
 
-    <p><a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Commentaires</a></p>
-    <div class="row">
-        <div class="col">
-            <div class="collapse multi-collapse" id="multiCollapseExample1">
-                <div class="card card-body">
-                    <?php
-                    foreach($comments as $comment)
-                    {
-                        if($comment->isValidation())
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <?php
+                        foreach($comments as $comment)
                         {
-                            ?>
+                            if($comment->isValidation())
+                            {
+                                ?>
 
-                            <h4><?=htmlspecialchars($comment->getPseudo());?></h4>
-                            <p><?=htmlspecialchars($comment->getContent());?></p>
-                            <p>Posté le <?=htmlspecialchars($comment->getCreatedAt());?></p>
-                            <?php
+                                <h4><?=htmlspecialchars($comment->getPseudo());?></h4>
+                                <p><?=htmlspecialchars($comment->getContent());?></p>
+                                <p>Posté le <?=htmlspecialchars($comment->getCreatedAt());?></p>
+                                <?php
+                            }
                         }
-                    }
-                    ?>
+                        ?>
 
-
+                        <?php include('form_comment.php'); ?>
+                    </div>
                 </div>
             </div>
         </div>
+
+
     </div>
-<?php include('form_comment.php'); ?>
+</div>
+<br>
+
+
