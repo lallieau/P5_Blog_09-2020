@@ -18,7 +18,6 @@ h1{
     font-family: 'Francois One', sans-serif;
     text-transform: uppercase;
     font-size: 20px;
-    color: #FFFFFF;
     display: inline-block;
     position: relative;
     padding: 10px 10px 0 15px;
@@ -72,10 +71,16 @@ h4{font-family: 'News Cycle', sans-serif;font-size: 1.2rem; color: #000000;}
 
 
 /* Home Page - Card Article */
+.article{background-color: #FFFFFF;margin-top: 20px;padding: 20px 0 20px}
+.article span{
+    font-family: 'Francois One', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 10px 10px 0 15px;
 
+}
 .home_card_article {
-    background-color: #FFFFFF;
-    padding: 5px 0 5px;
+    padding: 5px;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -99,7 +104,6 @@ overflow: -moz-scrollbars-none;  // Firefox
 }
 
 .card_article a{color: #000000 }
-
 
 /* Single Page */
 .card{border: none}

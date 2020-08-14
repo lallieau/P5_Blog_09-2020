@@ -10,7 +10,7 @@
 
 <div class="home_container">
     <h1>Le blog de lallie</h1>
-    <div class="card_theme">
+    <section class="card_theme">
         <div class="card_theme_text">
             <h2>Un ton seul n'est qu'une couleur, deux tons c'est un accord, c'est la vie.</h2>
             <p>Henri Matisse</p>
@@ -20,10 +20,12 @@
         <div class="card_theme_img">
             <img src="img/test3.png" alt="photo ou logo">
         </div>
-    </div>
+    </section>
 
-
+    <section class="article">
+    <span>Les derniers articles</span>
     <div class="home_card_article">
+
         <?php
         foreach($articles as $article)
         {
@@ -52,7 +54,7 @@
         }
         ?>
     </div>
-
+    </section>
     <br>
 
     <h2><a href="pdf/cv-lallie-audry.pdf">cv</a> </h2>
