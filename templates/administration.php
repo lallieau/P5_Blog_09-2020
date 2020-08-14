@@ -1,7 +1,6 @@
 <?php $this->title = 'Administration'; ?>
 
-<h1>Mon blog</h1>
-<p>En construction</p>
+<h1>Administration</h1>
 <?= $this->session->show('add_article'); ?>
 <?= $this->session->show('edit_article'); ?>
 <?= $this->session->show('delete_article'); ?>
@@ -12,49 +11,83 @@
 
 <h2>Articles</h2>
 <a href="index.php?route=addArticle">Nouvel article</a>
+<?php
+foreach ($articles as $article)
+{
+?>
 <table>
     <tr>
-        <td>Id</td>
-        <td>Titre</td>
-        <td>Contenu</td>
-        <td>Auteur</td>
-        <td>Date</td>
-        <td>Actions</td>
-    </tr>
-    <?php
-    foreach ($articles as $article)
-    {
-        ?>
-        <tr>
-            <td><?= htmlspecialchars($article->getId());?></td>
-            <td><a href="index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></td>
-            <td><?= substr(htmlspecialchars($article->getChapo()), 0, 150);?></td>
-            <td><?= substr(htmlspecialchars($article->getContent()), 0, 150);?></td>
-            <td><?= htmlspecialchars($article->getAuthor());?></td>
-            <?php
-            if (!$article->getEditAt())
-            {
+        <td class="title">Id</td>
+        <td><?= htmlspecialchars($article->getId());?></td>
+        <td class="title">Titre</td>
+        <td><a href="index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></td>
+        <td class="title">Chapô</td>
+        <td><?= substr(htmlspecialchars($article->getChapo()), 0, 150);?>...</td>
+        <td class="title">Contenu</td>
+        <td><?= substr(htmlspecialchars($article->getContent()), 0, 150);?>...</td>
+        <td class="title">Auteur</td>
+        <td><?= htmlspecialchars($article->getAuthor());?></td>
+        <td class="title">Date</td>
+        <?php
+        if (!$article->getEditAt())
+        {
             ?>
             <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
             <?php
-            }
-            else
-            {
+        }
+        else
+        {
             ?>
             <td>Modifié le : <?= htmlspecialchars($article->getEditAt());?></td>
             <?php
+        }
+        ?>
+        <td class="title">Actions</td>
+        <td>
+            <a href="index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+            <a href="index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
+        </td>
+    </tr>
+
+
+</table><br>
+    <?php
+}
+?>
+
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h3>
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <?= htmlspecialchars($article->getTitle());?><br> <span>&darr;</span>
+                </button>
+            </h3>
+        </div>
+
+        <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
+            <?php
+            foreach($comments as $comment)
+            {
+                if($comment->isValidation())
+                {
+                    ?>
+                    <div class="card-body">
+                        <h4><?=htmlspecialchars($comment->getPseudo());?></h4>
+                        <p><?=htmlspecialchars($comment->getContent());?></p>
+                        <h5>Posté le <?=htmlspecialchars($comment->getCreatedAt());?></h5>
+
+                    </div>
+                    <?php
+                }
             }
             ?>
-            <td>
-                <a href="index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
-                <a href="index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
-            </td>
-        </tr>
-        <?php
-    }
-    ?>
-</table>
+            <h3>&Eacute;crire un commentaire</h3>
+            <?php include('form_comment.php'); ?>
+        </div>
 
+    </div>
+</div>
 <h2>Commentaires</h2>
 <table>
     <tr>

@@ -10,6 +10,10 @@
 
 <div class="home_container">
     <h1>Le blog de lallie</h1>
+    <h2><a href="pdf/cv-lallie-audry.pdf">cv</a> </h2>
+    <p>lien réseaux sociaux</p>
+
+
     <section class="card_theme">
         <div class="card_theme_text">
             <h2>Un ton seul n'est qu'une couleur, deux tons c'est un accord, c'est la vie.</h2>
@@ -55,10 +59,5 @@
         ?>
     </div>
     </section>
-    <br>
-
-    <h2><a href="pdf/cv-lallie-audry.pdf">cv</a> </h2>
-    <p>lien réseaux sociaux</p>
-
 </div>
 

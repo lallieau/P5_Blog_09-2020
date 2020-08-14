@@ -61,6 +61,7 @@ h4{font-family: 'News Cycle', sans-serif;font-size: 1.2rem; color: #000000;}
     -webkit-border-radius : 20px;
     display: flex;
     flex-direction: row-reverse;
+    box-shadow:0px 5px 10px #DCDCDC;
 }
 
 .card_theme_text{position: absolute; padding: 30px;}
@@ -87,6 +88,7 @@ h4{font-family: 'News Cycle', sans-serif;font-size: 1.2rem; color: #000000;}
     overflow-y: hidden;
     -ms-overflow-style: none;  // IE 10+
 overflow: -moz-scrollbars-none;  // Firefox
+
 }
 
 .home_card_article::-webkit-scrollbar{display: none;}
@@ -101,6 +103,7 @@ overflow: -moz-scrollbars-none;  // Firefox
     border: none;
     background : #c7eafd;
     width: 80%;
+    box-shadow:0px 5px 10px #DCDCDC;
 }
 
 .card_article a{color: #000000 }
@@ -155,3 +158,21 @@ overflow: -moz-scrollbars-none;  // Firefox
     font-size: 1rem
 }
 .form_comment textarea{height: 100px}
+
+/* Administration Page */
+
+td { display: flex; padding: 5px 15px 0px 15px}
+.title{
+    font-weight: bold;
+    font-family: 'News Cycle', sans-serif;
+    font-size: 1.1rem;
+    color: #000000;
+}
+table{
+    background-color: #FFFFFF;
+    border-radius : 20px;
+    -moz-border-radius : 20px;
+    -webkit-border-radius : 20px;
+    box-shadow:0px 5px 10px #DCDCDC;
+    width: 100%;
+}
