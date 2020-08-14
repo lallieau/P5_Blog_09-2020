@@ -11,35 +11,37 @@
     <div class="card_theme_text_single">
 
     <h2><?=htmlspecialchars($article->getTitle());?></h2>
+        <?php
+        if (!$article->getEditAt())
+        {
+            ?>
+            <h5>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></h5>
+            <?php
+        }
+        else
+        {
+            ?>
+            <h5>Modifié le : <?= htmlspecialchars($article->getEditAt());?></h5>
+            <?php
+        }
+        ?>
+
     <p><?=htmlspecialchars($article->getChapo());?></p>
     <p><?=htmlspecialchars($article->getContent());?></p>
-    <p><?=htmlspecialchars($article->getAuthor());?></p>
-    <?php
-    if (!$article->getEditAt())
-    {
-        ?>
-        <h5>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></h5>
-        <?php
-    }
-    else
-    {
-        ?>
-        <h5>Modifié le : <?= htmlspecialchars($article->getEditAt());?></h5>
-        <?php
-    }
-    ?>
+    <p><?=ucfirst(htmlspecialchars($article->getAuthor()));?></p>
+
         <a href="index.php?route=articlesPage">Tous les articles</a>
         <div class="accordion" id="accordionExample">
             <div class="card">
                 <div class="card-header" id="headingOne">
-                    <h2>
+                    <h3>
                         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Commentaires
+                            Commentaires <br> <span>&darr;</span>
                         </button>
-                    </h2>
+                    </h3>
                 </div>
 
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
                     <?php
                     foreach($comments as $comment)
                     {
@@ -56,6 +58,7 @@
                         }
                     }
                     ?>
+                    <h3>&Eacute;crire un commentaire</h3>
                     <?php include('form_comment.php'); ?>
                 </div>
 

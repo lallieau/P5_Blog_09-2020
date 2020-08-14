@@ -24,7 +24,8 @@ h1{
     padding: 10px 10px 0 15px;
 }
 h2{font-family: 'Yeseva One', cursive;font-size: 1.8rem; color: #000000;}
-h2 span{font-family: 'Francois One', sans-serif;
+h2 span{
+    font-family: 'Francois One', sans-serif;
     font-size: 20px;
     color: #FFFFFF;
     display: inline-block;
@@ -42,6 +43,7 @@ h2 span:before {
     background: #FFFFFF;
 }
 h2 span:after { left: 100%; }
+h3{font-family: 'Francois One', sans-serif;font-size: 1.4rem; color: #000000;}
 p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
 h5{font-family: 'News Cycle', sans-serif;font-size: 0.8rem; color: #000000;}
 h4{font-family: 'News Cycle', sans-serif;font-size: 1.2rem; color: #000000;}
@@ -195,5 +197,44 @@ h4{font-family: 'News Cycle', sans-serif;font-size: 1.2rem; color: #000000;}
     -webkit-border-radius : 20px;
 }
 .card_theme_text_single{padding: 10px;}
-.card-header{background-color: #FFFFFF; padding: 0px}
-.btn-link{font-family: 'Yeseva One', cursive;font-size: 1.5rem; color: #000000;padding: 0px}
+.card_theme_text_single a{
+    border-bottom: 10px solid #F4F4F4;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-family: 'News Cycle', sans-serif;
+    font-size: 1rem;
+    color: #000000;
+}
+.card_theme_text_single a:hover{
+    font-family: 'News Cycle', sans-serif;
+    font-size: 1rem; color: #000000;
+    text-decoration: none
+}
+
+.accordion{margin-top: 20px}
+.card-header{
+    background-color: #FFFFFF;
+    padding: 0px;
+    border: none;
+}
+.btn-link{font-family: 'Francois One', sans-serif;font-size: 1.5rem; color: #000000;padding: 0px}
+.btn-link:hover{font-family: 'Francois One', sans-serif;font-size: 1.5rem; color: #000000;padding: 0px; text-decoration: none}
+.collapse h3{padding-top: 10px}
+.btn-link span {padding-left: 20px}
+
+.form_comment {margin: 5px;}
+.form_comment input, textarea {
+    overflow: hidden;
+    border: none;
+    background-color: #F4F4F4;
+    border-radius : 10px;
+    -moz-border-radius : 10px;
+    -webkit-border-radius : 10px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: 'News Cycle', sans-serif;
+    font-size: 1rem
+}
+.form_comment textarea{height: 100px}
