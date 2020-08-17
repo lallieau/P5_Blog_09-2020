@@ -1,40 +1,30 @@
 /* Général */
-* {
-    box-sizing: border-box;
-}
+* {box-sizing: border-box;}
 body{
-    /*
-    background: rgb(199,234,253);
-    background: linear-gradient(135deg, rgba(199,234,253,1) 0%, rgba(211,235,206,1) 42%, rgba(230,236,125,1) 73%, rgba(252,238,33,1) 100%);
-    */
     background-color: #F4F4F4;
-
     margin: 0 auto;
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 h1{
     font-family: 'Francois One', sans-serif;
     text-transform: uppercase;
     font-size: 20px;
-    display: inline-block;
-    position: relative;
     padding: 10px 10px 0 15px;
+
 }
 h2{
     font-family: 'Yeseva One', cursive;
     font-size: 1.8rem;
     color: #000000;
-    padding-bottom: 5px;
-    border-bottom: 5px solid #000000;
-    width: 80px;
-    margin: 10px;
+    margin-top: 15px;
+    margin-left: 15px;
 }
+
+/*
 h2 span{
     font-family: 'Francois One', sans-serif;
     font-size: 20px;
-    color: #FFFFFF;
     display: inline-block;
     position: relative;
     padding: 10px 10px 0 15px;
@@ -50,18 +40,22 @@ h2 span:before {
     background: #FFFFFF;
 }
 h2 span:after { left: 100%; }
-h3{font-family: 'Francois One', sans-serif;font-size: 1.4rem; color: #000000;}
-p{font-family: 'News Cycle', sans-serif;font-size: 1rem}
-h5{font-family: 'News Cycle', sans-serif;font-size: 0.8rem; color: #000000;}
-h4{font-family: 'News Cycle', sans-serif;font-size: 1.2rem; color: #000000;}
+*/
 
+p{font-family: 'News Cycle', sans-serif;font-size: 1rem; margin: 0}
+a{font-family: 'News Cycle', sans-serif;font-size: 1rem; color: #000000; font-weight: bold;}
+
+.container{padding: 0;}
 
 /* Home Page */
-
-.home_container{padding: 0;margin: 0;}
-
-.card_theme{
+.citation{ font-family: 'Yeseva One', cursive;
+    font-size: 1.8rem;
+    line-height: normal;
+    color: #000000;
+}
+.card{
     margin: 10px 10px;
+    position: static;
     padding: 5px;
     background : #ffffff;
     border-radius : 20px;
@@ -72,21 +66,15 @@ h4{font-family: 'News Cycle', sans-serif;font-size: 1.2rem; color: #000000;}
     box-shadow:0px 5px 10px #DCDCDC;
 }
 
-.card_theme_text{position: absolute; padding: 30px;}
-.card_theme_text a{color: #000000; }
-.card_theme_text p a{color: #000000; font-weight: bold}
-.card_theme_text p{padding-bottom: 10px}
-.card_theme_img img{width: 80px;height: 320px;}
+.card_text{position: absolute; padding: 30px;}
+.card_img img{width: 80px;height: 320px;}
 
-
-/* Home Page - Card Article */
-.article{background-color: #FFFFFF;margin-top: 20px;padding: 20px 0 20px}
+.article{background-color:#FFFFFF;margin-top: 20px;padding: 20px 0 20px}
 .article span{
     font-family: 'Francois One', sans-serif;
     text-transform: uppercase;
     font-size: 20px;
     padding: 10px 10px 0 15px;
-
 }
 .home_card_article {
     padding: 5px;
@@ -96,11 +84,9 @@ h4{font-family: 'News Cycle', sans-serif;font-size: 1.2rem; color: #000000;}
     overflow-y: hidden;
     -ms-overflow-style: none;  // IE 10+
 overflow: -moz-scrollbars-none;  // Firefox
-
 }
-
 .home_card_article::-webkit-scrollbar{display: none;}
-
+.card_article h3 a{font-family: 'Yeseva One', cursive;font-size: 1.6rem;font-weight: normal}
 .card_article {
     flex: 0 0 auto;
     margin: 10px 10px;
@@ -113,20 +99,34 @@ overflow: -moz-scrollbars-none;  // Firefox
     width: 80%;
     box-shadow:0px 5px 10px #DCDCDC;
 }
-
-.card_article a{color: #000000 }
-
-/* Single Page */
-.card{border: none}
-.card-body{
-    background-color: #F4F4F4;
-    margin: 5px;
-    border-radius : 20px;
-    -moz-border-radius : 20px;
-    -webkit-border-radius : 20px;
+/* Articles Page */
+.card_text h2 a{
+    font-family: 'Yeseva One', cursive;
+    font-size: 1.8rem;
+    color: #000000;
+    font-weight: normal;
 }
-.card_theme_text_single{padding: 10px;}
-.card_theme_text_single a{
+
+.card_text h2 {
+    font-family: 'Yeseva One', cursive;
+    font-size: 1.8rem;
+    color: #000000;
+    margin: 0;
+}
+
+
+
+/* Single Page - Article */
+
+.card_single{padding: 10px;}
+.card_single h1{
+    font-family: 'Yeseva One', cursive;
+    font-size: 1.8rem;
+    color: #000000;
+    padding: 0;
+    text-transform: none;
+}
+.card_single a{
     border-bottom: 10px solid #F4F4F4;
     margin-bottom: 30px;
     font-weight: bold;
@@ -134,23 +134,28 @@ overflow: -moz-scrollbars-none;  // Firefox
     font-size: 1rem;
     color: #000000;
 }
-.card_theme_text_single a:hover{
+.card_single a:hover{
     font-family: 'News Cycle', sans-serif;
     font-size: 1rem; color: #000000;
     text-decoration: none
 }
-.accordion{margin-top: 20px}
-.card-header{
-    background-color: #FFFFFF;
-    padding: 0px;
-    border: none;
+/* Single Page - Comments - Form comments */
+
+.card-body{
+    background-color: #F4F4F4;
+    margin: 5px;
+    border-radius : 20px;
+    -moz-border-radius : 20px;
+    -webkit-border-radius : 20px;
 }
+.accordion{margin-top: 20px}
+.card-header{background-color: #FFFFFF;padding: 0px;border: none;}
+
 .btn-link{font-family: 'Francois One', sans-serif;font-size: 1.5rem; color: #000000;padding: 0px}
 .btn-link:hover{font-family: 'Francois One', sans-serif;font-size: 1.5rem; color: #000000;padding: 0px; text-decoration: none}
-.collapse h3{padding-top: 10px}
+.collapse h3{padding-top: 10px;font-family: 'Francois One', sans-serif;font-size: 1.4rem; color: #000000;}
 .btn-link span {padding-left: 20px}
 
-.form_comment {margin: 5px;}
 .form_comment input, textarea {
     overflow: hidden;
     border: none;
@@ -183,9 +188,11 @@ td { display: flex;
     -webkit-border-radius : 20px;
     box-shadow:0px 5px 10px #DCDCDC;
 }
+.card_admin h3 a{font-family: 'Yeseva One', cursive;font-size: 1.4rem; color: #000000;text-decoration: none;font-weight: normal}
 
+.card_admin h3{font-size: 1.2rem}
 .add_article{
-    background-color: #FFFFFF;
+    background-color: #c7eafd;
     padding: 10px;
     margin: 10px;
     border-radius : 10px;
@@ -195,4 +202,19 @@ td { display: flex;
     text-align: center;
 }
 .add_article:hover{background-color: #F4F4F4;}
-.add_article a{font-family: 'Francois One', sans-serif;font-size: 1rem; color: #000000;}
+.add_article a{font-family: 'Francois One', sans-serif;font-size: 1rem; color: #000000;font-weight: normal}
+
+.card_admin button a{font-family: 'News Cycle', sans-serif;font-size: 1rem; color: #000000;font-weight: normal; text-decoration: none}
+.card_admin button {
+    background-color: #c7eafd;
+    padding: 5px 15px 5px 15px;
+    border-radius : 10px;
+    -moz-border-radius : 10px;
+    -webkit-border-radius : 10px;
+    box-shadow:0px 5px 10px #DCDCDC;
+    text-align: center;
+    border: none;
+}
+.card_admin button:hover{background-color: #F4F4F4;}
+
+

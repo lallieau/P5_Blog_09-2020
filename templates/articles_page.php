@@ -1,32 +1,38 @@
 <?php $this->title="Page Articles"; ?>
 
-<?php
-foreach($articles as $article)
-{
-    ?>
-    <div class="card_theme">
+<div class="container">
 
-        <div class="card_theme_text">
+    <h1>les articles</h1>
+
+    <?php
+    foreach($articles as $article)
+    {
+    ?>
+
+    <article class="card">
+        <div class="card_text">
             <h2><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>"><?=htmlspecialchars($article->getTitle());?></a></h2>
             <?php
             if (!$article->getEditAt())
             {
                 ?>
-                <h5>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></h5>
+                <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
                 <?php
             }
             else
             {
                 ?>
-                <h5>Modifié le : <?= htmlspecialchars($article->getEditAt());?></h5>
+                <p>Modifié le : <?= htmlspecialchars($article->getEditAt());?></p>
                 <?php
             }
             ?>
+            <br>
             <p><?=substr(htmlspecialchars($article->getChapo()), 0, 200).'...';?></p>
-            <p><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire l'article...</a></p>
 
+            <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire l'article...</a>
         </div>
-        <div class="card_theme_img">
+
+        <div class="card_img">
             <img src="<?php
             if($article->getImg())
             {
@@ -40,9 +46,9 @@ foreach($articles as $article)
             ?>" alt="">
         </div>
 
-    </div>
+    </article>
 
-
-<?php
-}
-?>
+    <?php
+    }
+    ?>
+</div>

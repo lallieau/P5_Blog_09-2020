@@ -8,45 +8,46 @@
 <?= $this->session->show('logout'); ?>
 <?= $this->session->show('delete_account'); ?>
 
-<div class="home_container">
+<div class="container">
+
     <h1>Le blog de lallie</h1>
-    <h2><a href="pdf/cv-lallie-audry.pdf">cv</a> </h2>
+<!--
+    <a href="pdf/cv-lallie-audry.pdf">cv</a>
     <p>lien réseaux sociaux</p>
-
-
-    <section class="card_theme">
-        <div class="card_theme_text">
-            <h2>Un ton seul n'est qu'une couleur, deux tons c'est un accord, c'est la vie.</h2>
+-->
+    <section class="card">
+        <div class="card_text">
+            <span class="citation">Un ton seul n'est qu'une couleur, deux tons c'est un accord, c'est la vie.</span>
             <p>Henri Matisse</p>
             <br>
-            <p><a href="index.php?route=articlesPage">Articles <span>&rarr;</span></a></p>
+            <a href="index.php?route=articlesPage">Articles <span>&rarr;</span></a>
         </div>
-        <div class="card_theme_img">
+
+        <div class="card_img">
             <img src="img/test3.png" alt="photo ou logo">
         </div>
     </section>
 
     <section class="article">
-    <span>Les derniers articles</span>
-    <div class="home_card_article">
-
+        <span>Les derniers articles</span>
+        <article class="home_card_article">
         <?php
         foreach($articles as $article)
         {
         ?>
             <div class="card_article">
-                <h2><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>"><?=htmlspecialchars($article->getTitle());?></a></h2>
+                <h3><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>"><?=htmlspecialchars($article->getTitle());?></a></h3>
                 <?php
                 if (!$article->getEditAt())
                 {
                     ?>
-                    <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
+                    <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
                     <?php
                 }
                 else
                 {
                     ?>
-                    <td>Modifié le : <?= htmlspecialchars($article->getEditAt());?></td>
+                    <p>Modifié le : <?= htmlspecialchars($article->getEditAt());?></p>
                     <?php
                 }
                 ?>
@@ -57,7 +58,7 @@
             <?php
         }
         ?>
-    </div>
+        </article>
     </section>
 </div>
 
