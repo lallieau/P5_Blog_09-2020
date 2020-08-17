@@ -22,7 +22,15 @@ h1{
     position: relative;
     padding: 10px 10px 0 15px;
 }
-h2{font-family: 'Yeseva One', cursive;font-size: 1.8rem; color: #000000;}
+h2{
+    font-family: 'Yeseva One', cursive;
+    font-size: 1.8rem;
+    color: #000000;
+    padding-bottom: 5px;
+    border-bottom: 5px solid #000000;
+    width: 80px;
+    margin: 10px;
+}
 h2 span{
     font-family: 'Francois One', sans-serif;
     font-size: 20px;
@@ -161,18 +169,30 @@ overflow: -moz-scrollbars-none;  // Firefox
 
 /* Administration Page */
 
-td { display: flex; padding: 5px 15px 0px 15px}
-.title{
-    font-weight: bold;
+td { display: flex;
     font-family: 'News Cycle', sans-serif;
-    font-size: 1.1rem;
-    color: #000000;
+    font-size: 1rem;
 }
-table{
-    background-color: #FFFFFF;
+
+.card_admin{
+    margin: 10px 10px;
+    padding: 15px;
+    background : #ffffff;
     border-radius : 20px;
     -moz-border-radius : 20px;
     -webkit-border-radius : 20px;
     box-shadow:0px 5px 10px #DCDCDC;
-    width: 100%;
 }
+
+.add_article{
+    background-color: #FFFFFF;
+    padding: 10px;
+    margin: 10px;
+    border-radius : 10px;
+    -moz-border-radius : 10px;
+    -webkit-border-radius : 10px;
+    box-shadow:0px 5px 10px #DCDCDC;
+    text-align: center;
+}
+.add_article:hover{background-color: #F4F4F4;}
+.add_article a{font-family: 'Francois One', sans-serif;font-size: 1rem; color: #000000;}
