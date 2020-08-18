@@ -33,7 +33,7 @@ class CommentDAO extends DAO
     }
 
     public function addComment(Parameter $post, $articleId)
-    {
+    {var_dump($articleId);die;
         //var_dump($post->get('pseudo'), $post->get('content'), $articleId); die;
         $sql = 'INSERT INTO comment (pseudo, content, createdAt, validation, article_id) VALUES (?,?,NOW(),?,?)';
 

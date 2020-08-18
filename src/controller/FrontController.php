@@ -41,6 +41,8 @@ class FrontController extends Controller
         if ($post->get('submit'))
         {
             $errors = $this->validation->validate($post, 'Comment');
+            $article_id = $_GET['id_post'];
+            var_dump($article_id); die;
             $article = $this->articleDAO->getArticle($articleId);
 
             if (!$errors)
