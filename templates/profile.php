@@ -6,8 +6,8 @@
     <?= $this->session->show('need_login'); ?>
     <div class="card_admin">
         <h2><?= $this->session->get('pseudo'); ?></h2>
-        <button type="button">
-        <a href="index.php?route=updatePassword">Modifier son mot de passe</a>
+        <button type="button" data-toggle="modal" data-target="#staticBackdrop">
+        Modifier son mot de passe
         </button><br><br>
         <button type="button">
         <a href="index.php?route=deleteAccount">Supprimer mon compte</a>
@@ -25,3 +25,20 @@
     <a href="index.php?route=logout">Déconnexion</a>
     </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Mot de passe</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?php include('update_password.php'); ?>
+            </div>
+        </div>
+    </div>
