@@ -4,7 +4,11 @@
 
 /* display the anchor link side by side  */
 nav {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
     display: flex;
+    justify-content: center;
     background: #fff;
     /* considerable whitespace surrounding the navigation's items */
     padding: 5px;
@@ -25,8 +29,7 @@ nav a {
     /* position relative for the pseudo element */
     position: relative;
     /* custom properties for the colors picked up by the elements when clicked (and updated for each link in the script) */
-    --hover-bg: #5b37b720;
-    --hover-c: #5b37b7;
+
 }
 
 /* include considerable negative margin to have the svg icon overlapping with the span element */
@@ -59,16 +62,11 @@ nav a:before {
     transform: translate(0%, -50%) scale(0);
     visibility: visible;
     opacity: 1;
-
 }
 /* when active */
-/* specify the colors dictated by the custom properties */
-nav a.active {
-    background: var(--hover-bg);
-    color: var(--hover-c);
-}
+
 /* using the color specified by the then updated custom property show the circle of the pseudo element increasing its size and highlighting it momentarily */
-nav a.active:before {
+nav a:active:before {
     background: var(--hover-c);
     opacity: 0;
     visibility: hidden;
@@ -76,14 +74,24 @@ nav a.active:before {
     /* transition only when the class is applied */
     transition: all 0.4s ease-out;
 }
+/* specify the colors dictated by the custom properties */
+nav a:active {
+    background: #00cc00;
+    color: #0f6674;
+}
 /* remove the margin applied to the svg to make it overlay atop the anchor link */
-a.active svg {
+a:active svg {
     margin-right: 0;
 }
 /* show the span element */
-a.active span {
+a:active span {
     visibility: visible;
     opacity: 1;
     transition: all 0.2s ease-out;
+
 }
+
+
+/* animation hover */
+
 
