@@ -218,3 +218,69 @@ td { display: flex;
 .card_admin button:hover{background-color: #F4F4F4;}
 
 
+/* Add Article - Edit Article */
+.form_basic{margin: 10px}
+.form_basic input, textarea {
+    border: none;
+    background-color: #FFFFFF;
+    border-radius : 10px;
+    -moz-border-radius : 10px;
+    -webkit-border-radius : 10px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: 'News Cycle', sans-serif;
+    font-size: 1rem
+}
+.form_basic textarea{height: 300px}
+
+#submit{
+    background-color: #c7eafd;
+    padding: 5px 15px 5px 15px;
+    border-radius : 10px;
+    -moz-border-radius : 10px;
+    -webkit-border-radius : 10px;
+    box-shadow:0px 5px 10px #DCDCDC;
+    text-align: center;
+    border: none;
+}
+#submit:hover{background-color: #F4F4F4;}
+
+.link_admin a{
+    border-bottom: 5px solid #000000;
+    margin-left: 10px;
+    font-weight: normal;
+    font-family: 'News Cycle', sans-serif;
+    font-size: 1rem;
+    color: #000000;
+}
+.link_admin a:hover{
+    font-family: 'News Cycle', sans-serif;
+    font-size: 1rem; color: #000000;
+    text-decoration: none
+}
+
+/* Profil */
+
+
+.card_admin .btn_admin a{font-family: 'News Cycle', sans-serif;font-size: 1rem; color: #000000;font-weight: normal; text-decoration: none}
+.card_admin .btn_admin {
+    background-color: #bef48c;
+    padding: 5px 15px 5px 15px;
+    border-radius : 10px;
+    -moz-border-radius : 10px;
+    -webkit-border-radius : 10px;
+    box-shadow:0px 5px 10px #DCDCDC;
+    text-align: center;
+    border: none;
+    margin-top: 80px;
+}
+.card_admin .btn_admin:hover{background-color: #F4F4F4;}
+
+
+/* update password */
+
+.update_password p {
+    margin-left: 10px;
+}

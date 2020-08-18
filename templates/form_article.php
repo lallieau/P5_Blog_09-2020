@@ -3,7 +3,7 @@ $route = isset($post) && $post->get('id') ? 'editArticle&articleId='.$post->get(
 $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 ?>
 
-<form method="post" action="index.php?route=<?= $route; ?>" enctype="multipart/form-data">
+<form method="post" action="index.php?route=<?= $route; ?>" enctype="multipart/form-data" class="form_basic">
     <label for="title">Titre</label><br>
     <input type="text" id="title" name="title" value="<?= isset($post) ? htmlspecialchars($post->get('title')): ''; ?>"><br>
     <?= isset($errors['title']) ? $errors['title'] : ''; ?>

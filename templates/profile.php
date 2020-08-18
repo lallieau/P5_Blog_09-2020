@@ -1,23 +1,27 @@
 <?php $this->title = 'Mon profil'; ?>
-<h1>Mon blog</h1>
-<p>En construction</p>
-<?= $this->session->show('update_password'); ?>
-<?= $this->session->show('not_admin'); ?>
-<?= $this->session->show('need_login'); ?>
-<div>
-    <h2><?= $this->session->get('pseudo'); ?></h2>
-    <p><?= $this->session->get('id'); ?></p>
-    <a href="index.php?route=updatePassword">Modifier son mot de passe</a>
-    <a href="index.php?route=deleteAccount">Supprimer mon compte</a>
-    <a class="nav-link" href="index.php?route=logout">Déconnexion</a>
-
-    <?php
-    if($this->session->get('role') === 'admin')
-    { ?>
-        <li class="nav-item">
-            <a class="nav-link" href="index.php?route=administration">Administration</a>
-        </li>
-    <?php } ?>
+<div class="container">
+    <h1>Profil</h1>
+    <?= $this->session->show('update_password'); ?>
+    <?= $this->session->show('not_admin'); ?>
+    <?= $this->session->show('need_login'); ?>
+    <div class="card_admin">
+        <h2><?= $this->session->get('pseudo'); ?></h2>
+        <button type="button">
+        <a href="index.php?route=updatePassword">Modifier son mot de passe</a>
+        </button><br><br>
+        <button type="button">
+        <a href="index.php?route=deleteAccount">Supprimer mon compte</a>
+        </button>
+        <?php
+        if($this->session->get('role') === 'admin')
+        { ?>
+        <button type="button" class="btn_admin">
+            <a href="index.php?route=administration">Administration</a>
+        </button>
+        <?php } ?>
+    </div>
+    <br>
+    <div class="card_admin">
+    <a href="index.php?route=logout">Déconnexion</a>
+    </div>
 </div>
-<br>
-<a href="index.php">Retour à l'accueil</a>

@@ -1,8 +1,8 @@
-<?php $this->title = "Nouvelle article";?>
-<h1>Mon blog</h1>
-<p>En construction...</p>
-<div>
+<?php $this->title = "Nouvel article";?>
+<div class="container">
+    <h1>Nouvel Article</h1>
     <?php include('form_article.php'); ?>
-    <a href="index.php">Retour à l'accueil</a>
+    <div class="link_admin">
+        <a href="index.php?route=administration">Retour à l'admin</a>
+    </div>
 </div>
-
