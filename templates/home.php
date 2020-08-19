@@ -20,7 +20,7 @@
             <span class="citation">Un ton seul n'est qu'une couleur, deux tons c'est un accord, c'est la vie.</span>
             <p>Henri Matisse</p>
             <br>
-            <a href="index.php?route=articlesPage">Articles <span>&rarr;</span></a>
+            <a href="index.php?route=articlesPage">Articles &rarr;</a>
         </div>
 
         <div class="card_img">
