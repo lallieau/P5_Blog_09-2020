@@ -1,10 +1,90 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8"/>
-    <title>header</title>
-</head>
-<body>
+<?php $this->title="Navbar mobile"; ?>
+<div class="screen">
+    <div class="navbar"></div>
+
+
+    <div class="circle"></div>
+    <div class="menu">
+        <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">Share</a></li>
+            <li><a href="">Activity</a></li>
+            <li><a href="">Settings</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </div>
+    <div class="burger">
+        <div class="x"></div>
+        <div class="y"></div>
+        <div class="z"></div>
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+if( 'ontouchstart' in window ){ var click = 'touchstart'; }
+else { var click = 'click'; }
+
+
+$('div.burger').on(click, function(){
+
+if( !$(this).hasClass('open') ){ openMenu(); }
+else { closeMenu(); }
+
+});
+
+
+$('div.menu ul li a').on(click, function(e){
+e.preventDefault();
+closeMenu();
+});
+
+
+function openMenu(){
+
+$('div.circle').addClass('expand');
+
+$('div.burger').addClass('open');
+$('div.x, div.y, div.z').addClass('collapse');
+$('.menu li').addClass('animate');
+
+setTimeout(function(){
+$('div.y').hide();
+$('div.x').addClass('rotate30');
+$('div.z').addClass('rotate150');
+}, 70);
+setTimeout(function(){
+$('div.x').addClass('rotate45');
+$('div.z').addClass('rotate135');
+}, 120);
+
+
+
+}
+
+function closeMenu(){
+
+$('div.burger').removeClass('open');
+$('div.x').removeClass('rotate45').addClass('rotate30');
+$('div.z').removeClass('rotate135').addClass('rotate150');
+$('div.circle').removeClass('expand');
+$('.menu li').removeClass('animate');
+
+setTimeout(function(){
+$('div.x').removeClass('rotate30');
+$('div.z').removeClass('rotate150');
+}, 50);
+setTimeout(function(){
+$('div.y').show();
+$('div.x, div.y, div.z').removeClass('collapse');
+}, 70);
+
+}
+</script>
+
+
+<!--
 <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="index.php"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,6 +147,4 @@
         </ul>
     </div>
 </nav>
-</body>
-</html>
 
