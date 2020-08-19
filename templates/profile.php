@@ -1,4 +1,5 @@
 <?php $this->title = 'Mon profil'; ?>
+
 <div class="container">
     <h1>Profil</h1>
     <?= $this->session->show('update_password'); ?>
@@ -7,7 +8,7 @@
     <div class="card_admin">
         <h2><?= $this->session->get('pseudo'); ?></h2>
         <button type="button" data-toggle="modal" data-target="#staticBackdrop">
-        Modifier son mot de passe
+        Modifier mon mot de passe
         </button><br><br>
         <button type="button">
         <a href="index.php?route=deleteAccount">Supprimer mon compte</a>
@@ -25,6 +26,7 @@
     <a href="index.php?route=logout">Déconnexion</a>
     </div>
 
+
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -41,5 +43,4 @@
             </div>
         </div>
 </div>
-
 

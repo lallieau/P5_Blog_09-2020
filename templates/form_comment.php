@@ -12,5 +12,5 @@ $submit = $route === 'addComment' ? 'Envoyer' : 'Mettre à jour';
     <textarea id="content" name="content" placeholder="Votre message"><?= isset($post) ? htmlspecialchars($post->get('content')): ''; ?></textarea><br>
     <?= isset($errors['content']) ? $errors['content'] : ''; ?>
 
-    <input type="submit" value="<?= $submit ?>>" id="submit" name="submit">
+    <input type="submit" value="<?= $submit ?>" id="submit" name="submit">
 </form>

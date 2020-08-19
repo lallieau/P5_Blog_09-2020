@@ -1,8 +1,8 @@
 <?php $this->title = "Inscription"; ?>
-<h1>Mon blog</h1>
-<p>En construction</p>
-<div>
-    <form method="post" action="index.php?route=register">
+<div class="container">
+<h1>S'inscrire</h1>
+
+    <form method="post" action="index.php?route=register" class="form_basic">
         <label for="pseudo">Pseudo</label><br>
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
         <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
@@ -11,8 +11,7 @@
         <input type="password" id="password" name="password"><br>
         <?= isset($errors['password']) ? $errors['password'] : ''; ?>
 
-        <input type="submit" value="Inscription" id="submit" name="submit">
+        <input type="submit" value="S'inscrire" id="submit" name="submit">
     </form>
-    <a href="index.php">Retour à l'accueil</a>
 </div>
 

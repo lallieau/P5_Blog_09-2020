@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
-
-nav {
+.mobil {
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -12,7 +10,7 @@ nav {
     border-radius: 30px 30px 0 0 ;
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
 }
-nav a {
+.mobil a {
     color: inherit;
     text-decoration: none;
     /* display the svg icon and span elements side by side, vertically aligned */
@@ -28,7 +26,6 @@ nav a {
 
 }
 
-/* include considerable negative margin to have the svg icon overlapping with the span element */
 a svg {
     margin-right: -2.5rem;
     width: 28px;
@@ -37,6 +34,42 @@ a svg {
     /* transition for the change in margin */
     transition: margin 0.2s ease-out;
 }
+
+a span {
+    opacity: 0;
+    visibility: hidden;
+    font-size: 0.9rem;
+    margin-left: 0.9rem;
+}
+.mobil a:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    height: 70px;
+    border-radius: 50%;
+    /* positioned to the left of the anchor link and scaled to 0 */
+    transform: translate(0%, -50%) scale(0);
+    visibility: visible;
+    opacity: 1;
+}
+.mobil a:active:before {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0%, -50%) scale(2);
+    /* transition only when the class is applied */
+    transition: all 0.4s ease-out;
+}
+.mobil a:active{
+
+}
+
+a:active svg {
+    margin-right: 0;
+}
+
+/* Home link */
+
 a.page_active svg {
     margin-right: -2.5rem;
     width: 28px;
@@ -45,22 +78,14 @@ a.page_active svg {
     /* transition for the change in margin */
     transition: margin 0.2s ease-out;
 }
-/* by default hide the span element */
-a span {
-    opacity: 0;
-    visibility: hidden;
-    font-size: 0.9rem;
-    margin-left: 0.9rem;
-}
 a.page_active span {
     opacity: 0;
     visibility: hidden;
     font-size: 0.9rem;
     margin-left: 0.9rem;
 }
-/* include with a pseudo element relative to the anchor link a circle, with a fixed with and height */
-nav a:before {
 
+.mobil a .page_active:before {
     position: absolute;
     content: "";
     top: 50%;
@@ -72,58 +97,21 @@ nav a:before {
     visibility: visible;
     opacity: 1;
 }
-nav a .page_active:before {
-
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 0;
-    height: 70px;
-    border-radius: 50%;
-    /* positioned to the left of the anchor link and scaled to 0 */
-    transform: translate(0%, -50%) scale(0);
-    visibility: visible;
-    opacity: 1;
-}
-/* when active */
-
-/* using the color specified by the then updated custom property show the circle of the pseudo element increasing its size and highlighting it momentarily */
-nav a:active:before {
+.mobil a .page_active:active:before {
     opacity: 0;
     visibility: hidden;
     transform: translate(0%, -50%) scale(2);
     /* transition only when the class is applied */
     transition: all 0.4s ease-out;
 }
-nav a .page_active:active:before {
-    opacity: 0;
-    visibility: hidden;
-    transform: translate(0%, -50%) scale(2);
-    /* transition only when the class is applied */
-    transition: all 0.4s ease-out;
-}
-
-/* specify the colors dictated by the custom properties */
-nav a:active{
-    border: .1rem solid #4190BB;
-    background: #c7eafd;
-    color: #4190BB;
-}
-nav a.page_active{
-    border: .1rem solid #4190BB;
-    background: #c7eafd;
-    color: #4190BB;
-}
-
-
-/* remove the margin applied to the svg to make it overlay atop the anchor link */
-a:active svg {
-    margin-right: 0;
+.mobil a.page_active{
+    background: #5B37B720;
+    color: #5B37B7;
 }
 a.page_active:active svg {
     margin-right: 0;
 }
-/* show the span element */
+
 a.page_active span {
     opacity:1;
     visibility: visible;
@@ -131,5 +119,18 @@ a.page_active span {
     transition: all 0.2s ease-out;
 }
 
-/* animation hover */
+/* Articles link */
 
+.mobil a.articles{
+    background: #C9379D20;
+    color: #C9379D;
+}
+
+.mobil a.contact{
+    background: #E6A91920;
+    color: #E6A919;
+}
+.mobil a.profil{
+    background: #1892A620;
+    color: #1892A6;
+}

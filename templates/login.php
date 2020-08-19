@@ -1,17 +1,17 @@
 <?php $this->title = "Connexion"; ?>
-<h1>Mon blog</h1>
-<p>En construction</p>
+<div class="container">
+<h1>Se connecter</h1>
 <?= $this->session->show('error_login'); ?>
-<div>
-    <a class="nav-link" href="index.php?route=register">Inscription</a>
-    <form method="post" action="index.php?route=login">
+
+    <form method="post" action="index.php?route=login" class="form_basic">
         <label for="pseudo">Pseudo</label><br>
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
 
         <label for="password">Mot de passe</label><br>
         <input type="password" id="password" name="password"><br>
 
-        <input type="submit" value="Connexion" id="submit" name="submit">
+        <input type="submit" value="Se connecter" id="submit" name="submit">
     </form>
-    <a href="index.php">Retour à l'accueil</a>
+
+    <a class="nav-link" href="index.php?route=register">Pas encore inscrit</a>
 </div>
