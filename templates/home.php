@@ -1,16 +1,28 @@
 <?php $this->title='Accueil'; ?>
 
-<?= $this->session->show('add_comment'); ?>
-<?= $this->session->show('flag_comment'); ?>
-<?= $this->session->show('delete_comment'); ?>
-<?= $this->session->show('register'); ?>
-<?= $this->session->show('login'); ?>
-<?= $this->session->show('logout'); ?>
-<?= $this->session->show('delete_account'); ?>
-
 <div class="container">
 
-    <h1>Le blog de lallie</h1>
+    <?php
+    if($this->session->get('logout') || $this->session->get('add_comment'))
+    {
+    ?>
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            <?= $this->session->show('logout'); ?>
+            <?= $this->session->show('add_comment'); ?>
+        </div>
+    </div>
+        <?php
+        }
+        ?>
+
+
+        <h1>Le blog de lallie</h1>
 <!--
     <a href="pdf/cv-lallie-audry.pdf">cv</a>
     <p>lien réseaux sociaux</p>
@@ -60,5 +72,6 @@
         ?>
         </article>
     </section>
+
 </div>
 

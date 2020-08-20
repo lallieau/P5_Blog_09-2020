@@ -1,14 +1,29 @@
 <?php $this->title = 'Administration'; ?>
 <div class="container">
     <h1>Administration</h1>
-
-    <?= $this->session->show('add_article'); ?>
-    <?= $this->session->show('edit_article'); ?>
-    <?= $this->session->show('delete_article'); ?>
-    <?= $this->session->show('delete_comment'); ?>
-    <?= $this->session->show('delete_user'); ?>
-    <?= $this->session->show('validate_comment'); ?>
-    <?= $this->session->show('no_validate_comment'); ?>
+    <?php
+    if($this->session->get('delete_comment'))
+    {
+    ?>
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            <?= $this->session->show('add_comment'); ?>
+            <?= $this->session->show('flag_comment'); ?>
+            <?= $this->session->show('delete_comment'); ?>
+            <?= $this->session->show('register'); ?>
+            <?= $this->session->show('login'); ?>
+            <?= $this->session->show('logout'); ?>
+            <?= $this->session->show('delete_account'); ?>
+        </div>
+    </div>
+    <?php
+    }
+?>
 
     <h2>Articles</h2>
 

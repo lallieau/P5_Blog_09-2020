@@ -299,3 +299,7 @@ td { display: flex;
     border: none;
     border-radius: 20px;
 }
+
+.toast{
+    opacity: 1;
+}

@@ -2,9 +2,30 @@
 
 <div class="container">
     <h1>Profil</h1>
-    <?= $this->session->show('update_password'); ?>
-    <?= $this->session->show('not_admin'); ?>
-    <?= $this->session->show('need_login'); ?>
+
+    <?php
+    if($this->session->get('login') || $this->session->get('update_password') || $this->session->get('register'))
+    {
+        ?>
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="..." class="rounded mr-2" alt="...">
+                <strong class="mr-auto">Bootstrap</strong>
+                <small>11 mins ago</small>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                <?= $this->session->show('login'); ?>
+                <?= $this->session->show('update_password'); ?>
+                <?= $this->session->show('register'); ?>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+
     <div class="card_admin">
         <h2><?= $this->session->get('pseudo'); ?></h2>
         <button type="button" data-toggle="modal" data-target="#staticBackdrop">
@@ -38,7 +59,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <?php include('update_password.php'); ?>
+
+                    <div class="container">
+                        <div class="update_password">
+                            <p>Le mot de passe de <?= $this->session->get('pseudo'); ?> sera modifié</p>
+                            <form method="post" action="index.php?route=updatePassword" class="form_basic">
+                                <label for="password">Mot de passe</label><br>
+                                <input type="password" id="password" name="password"><br>
+                                <input type="submit" value="Mettre à jour" id="submit" name="submit">
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 <?php $this->title = 'Modifier mot mot de passe'; ?>
-
+<!--
 <div class="container">
     <div class="update_password">
         <p>Le mot de passe de <?= $this->session->get('pseudo'); ?> sera modifié</p>
@@ -10,3 +10,4 @@
         </form>
     </div>
 </div>
+

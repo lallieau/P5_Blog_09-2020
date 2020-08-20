@@ -38,6 +38,7 @@ class FrontController extends Controller
 
     public function addComment(Parameter $post, $articleId)
     {
+
         if ($post->get('submit'))
         {
             $errors = $this->validation->validate($post, 'Comment');

@@ -61,7 +61,8 @@
                     }
                     ?>
                     <h3>&Eacute;crire un commentaire</h3>
-                    <?php include('form_comment.php'); ?>
+                    <?php include 'form_comment.php';?>
+
                 </div>
             </div>
 
