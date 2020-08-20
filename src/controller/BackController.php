@@ -9,7 +9,7 @@ class BackController extends Controller
     private function checkLoggedIn()
     {
         if(!$this->session->get('pseudo')) {
-            $this->session->set('need_login', 'Vous devez vous connecter pour accéder à cette page');
+            $this->session->set('need_login', 'Vous devez vous connecter');
             header('Location: index.php?route=login');
         } else {
             return true;

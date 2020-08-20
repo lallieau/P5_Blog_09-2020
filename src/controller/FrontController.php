@@ -48,7 +48,7 @@ class FrontController extends Controller
             {
 
                 $this->commentDAO->addComment($post, $articleId);
-                $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
+                $this->session->set('add_comment', 'Le commentaire a bien été envoyé');
                 header('Location: index.php');
 
             }
