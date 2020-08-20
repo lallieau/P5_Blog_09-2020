@@ -35,6 +35,20 @@ class ArticleDAO extends DAO
         return $articles;
     }
 
+    public function getArticlesHome()
+    {
+        $sql = 'SELECT article.id, article.title, article.content, article.chapo, user.pseudo, article.createdAt, article.editAt, article.img, article.bg FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC LIMIT 3';
+        $result = $this->createQuery($sql);
+        $articles =[];
+        foreach ($result as $row)
+        {
+            $articleId = $row['id'];
+            $articles[$articleId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $articles;
+    }
+
     public function getArticle($articleId)
     {
         $sql = 'SELECT article.id, article.title, article.content, article.chapo, user.pseudo, article.createdAt, article.editAt, article.img, article.bg FROM article INNER JOIN user ON article.user_id = user.id WHERE article.id = ?';
@@ -44,6 +58,8 @@ class ArticleDAO extends DAO
         $result->closeCursor();
         return $this->buildObject($article);
     }
+
+
 
     public function addArticle(Parameter $post, $userId)
     {

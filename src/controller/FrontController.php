@@ -9,7 +9,7 @@ class FrontController extends Controller
 {
     public function home()
     {
-        $articles = $this->articleDAO->getArticles();
+        $articles = $this->articleDAO->getArticlesHome();
         return $this->view->render('home',[
             'articles' => $articles
         ]);
