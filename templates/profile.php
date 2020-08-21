@@ -35,7 +35,7 @@
         </button><br><br>
         <button type="button">
         <a href="index.php?route=deleteAccount">Supprimer mon compte</a>
-        </button>
+        </button><br><br>
         <?php
         if($this->session->get('role') === 'admin')
         { ?>

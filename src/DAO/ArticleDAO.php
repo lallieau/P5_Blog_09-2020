@@ -37,7 +37,7 @@ class ArticleDAO extends DAO
 
     public function getArticlesHome()
     {
-        $sql = 'SELECT article.id, article.title, article.content, article.chapo, user.pseudo, article.createdAt, article.editAt, article.img, article.bg FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC LIMIT 3';
+        $sql = 'SELECT article.id, article.title, article.content, article.chapo, user.pseudo, article.createdAt, article.editAt, article.img, article.bg FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC LIMIT 4';
         $result = $this->createQuery($sql);
         $articles =[];
         foreach ($result as $row)

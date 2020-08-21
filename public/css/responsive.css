@@ -1,0 +1,105 @@
+@media screen and (min-width: 480px){
+
+    .card {margin: 0px 60px 10px;}
+    .article {
+        margin: 0px 50px 10px;
+        margin-top: 20px;
+        padding: 20px 0 20px;
+    }
+    .form_basic {margin: 0px 60px 10px;}
+    .card_admin {margin: 0px 60px 10px;}
+}
+
+
+@media screen and (min-width: 640px){
+    .form_basic {margin: 0px 10px 10px;}
+    .card_admin {margin: 0px 10px 10px;}
+    .card{margin: 0px 10px 10px}
+
+    .article {
+        margin: 0px 20px 10px;
+    }
+
+}
+
+@media screen and (min-width: 680px){
+
+    .card_text span p {padding-bottom: 50px}
+}
+
+@media screen and (min-width: 740px){
+    .card{
+        margin: 0px 10px 10px
+    }
+    .card_admin{
+        margin: 0px 10px 10px
+    }
+    .form_basic{
+        margin: 0px 10px 10px
+    }
+
+    .card_article{height: 300px}
+    p {font-size: 1.1rem}
+
+    .article {
+        margin: 0px 10px 10px;
+    }
+}
+
+@media screen and (min-width: 768px){
+
+.home_card_article {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    justify-content: center;
+}
+
+.card_article {
+    width: 40%;
+    height: 450px;
+}
+
+}
+
+
+@media screen and (min-width: 870px){
+    .article {
+            margin: 0px 10px 10px;
+    }
+
+    .form_basic {
+        margin: 0px 10px 10px;
+    }
+    .card_admin {
+        margin: 0px 10px 10px;
+    }
+
+}
+
+
+@media screen and (min-width: 992px) {
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+    .navbar-expand-lg .navbar-nav {
+        -ms-flex-direction: column;
+        flex-direction: column;}
+    .navbar-expand-lg .navbar-collapse:not(.show){display: none!important;}
+
+    .card_article{height: 100%}
+    .card {
+        margin: 0px 80px 10px;}
+    .card_admin {
+        margin: 0px 80px 10px;}
+    .form_basic {
+        margin: 0px 80px 10px;}
+    .add_article{
+        margin: 0px 80px 10px;}
+}
+
+@media screen and (min-width: 1280px) {
+    p {font-size: 1.3rem}
+
+}

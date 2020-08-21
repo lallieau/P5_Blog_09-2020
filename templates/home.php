@@ -30,9 +30,9 @@
     <section class="card">
         <div class="card_text">
             <span class="citation">Un ton seul n'est qu'une couleur, deux tons c'est un accord, c'est la vie.</span>
-            <p>Henri Matisse</p>
+            <span><p>Henri Matisse</p></span>
             <br>
-            <a href="index.php?route=articlesPage">Articles &rarr;</a>
+           <a href="index.php?route=articlesPage">Articles &rarr;</a>
         </div>
 
         <div class="card_img">
@@ -63,7 +63,7 @@
                     <?php
                 }
                 ?>
-                <p><?= htmlspecialchars($article->getChapo());?></p>
+                <p><?=substr(htmlspecialchars($article->getChapo()), 0, 120).'...';?></p>
                 <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire plus...</a>
 
             </div>

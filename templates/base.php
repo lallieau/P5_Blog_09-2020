@@ -6,7 +6,9 @@
     <title><?= $title ?></title>
 
     <link href="twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
     <link href="css/navbar.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
@@ -17,8 +19,9 @@
 
 
 <body>
+<?php include 'header.php';?>
 <div id="content">
-    <?php include 'header.php';?>
+
     <?= $content ?>
     <?php include 'navbar_mobil.php' ; ?>
 </div>

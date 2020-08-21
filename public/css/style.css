@@ -46,11 +46,10 @@ button{font-family: 'Roboto', sans-serif;font-size: 1rem; color: #000000; }
     -moz-border-radius : 20px;
     -webkit-border-radius : 20px;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     box-shadow:0px 5px 10px #DCDCDC;
 }
-
-.card_text{position: absolute; padding: 30px;}
+.card_text{padding: 20px;}
 .card_img img{width: 80px;height: 320px;}
 
 .article{
@@ -181,7 +180,7 @@ td { display: flex;
 
 .card_admin h3{font-size: 1.2rem}
 .add_article{
-    background-color: #c7eafd;
+    background-color: #e3eeff;
     padding: 10px;
     margin: 10px;
     border-radius : 10px;
@@ -306,3 +305,4 @@ td { display: flex;
 .toast-body{
     padding: 0px 10px 10px 10px;
 }
+
