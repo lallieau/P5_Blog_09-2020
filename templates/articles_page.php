@@ -31,7 +31,7 @@
 
             <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire l'article...</a>
         </div>
-
+<!--
         <div class="card_img">
             <img src="<?php
             if($article->getImg())
@@ -45,7 +45,7 @@
 
             ?>" alt="">
         </div>
-
+-->
     </article>
 
     <?php

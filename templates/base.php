@@ -23,6 +23,7 @@
 <div id="content">
 
     <?= $content ?>
+    <?php include 'footer.php';?>
     <?php include 'navbar_mobil.php' ; ?>
 </div>
 </body>

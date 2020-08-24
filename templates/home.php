@@ -1,43 +1,51 @@
 <?php $this->title='Accueil'; ?>
 
-<div class="container">
+<div class="illustration">
 
+    <img src="img/illustration_blog_accueil.svg">
+    <h1>Le blog de lallie</h1>
+    <p>Bienvenue sur mon blog !</p>
+    <p>Ici, vous trouverez plusieurs articles avec différentes thématiques...</p>
+</div>
+
+<div class="container">
     <?php
     if($this->session->get('logout') || $this->session->get('add_comment'))
     {
     ?>
-    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="toast-body">
-            <?= $this->session->show('logout'); ?>
-            <?= $this->session->show('add_comment'); ?>
+    <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center">
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="mr-auto">Infos</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                <p>
+                <?= $this->session->show('logout'); ?>
+                <?= $this->session->show('add_comment'); ?>
+                </p>
+            </div>
         </div>
     </div>
         <?php
         }
         ?>
 
-
-        <h1>Le blog de lallie</h1>
-<!--
-    <a href="pdf/cv-lallie-audry.pdf">cv</a>
-    <p>lien réseaux sociaux</p>
--->
     <section class="card">
         <div class="card_text">
+            <p>Thème n°1 : La couleur</p>
             <span class="citation">Un ton seul n'est qu'une couleur, deux tons c'est un accord, c'est la vie.</span>
             <span><p>Henri Matisse</p></span>
             <br>
            <a href="index.php?route=articlesPage">Articles &rarr;</a>
         </div>
-
+<!--
         <div class="card_img">
-            <img src="img/test3.png" alt="photo ou logo">
+            <img src="img/.img_accueil.png" alt="photo ou logo">
         </div>
+        -->
     </section>
 
     <section class="article">
@@ -72,6 +80,4 @@
         ?>
         </article>
     </section>
-
 </div>
-
