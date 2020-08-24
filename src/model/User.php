@@ -55,4 +55,14 @@ class User
     {
         $this->role = $role;
     }
+
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar($avatar)
+    {
+        $this->avatar = $avatar;
+    }
 }

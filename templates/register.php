@@ -7,6 +7,13 @@
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
         <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
 
+        <label for="femme">Femme</label>
+        <input type="checkbox" id="femme" name="femme">
+
+        <label for="homme">Homme</label>
+        <input type="checkbox" id="homme" name="homme">
+        <br>
+
         <label for="password">Mot de passe</label><br>
         <input type="password" id="password" name="password"><br>
         <?= isset($errors['password']) ? $errors['password'] : ''; ?>

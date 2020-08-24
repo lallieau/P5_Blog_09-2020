@@ -22,3 +22,8 @@ ALTER TABLE `role`
 
 ALTER TABLE `role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+CREATE TABLE `avatar` ( `id` int(11) NOT NULL, `sexe` varchar(15),`img_avatar` text ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+ALTER TABLE `avatar`
+  ADD PRIMARY KEY (`id`);
