@@ -7,10 +7,8 @@
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
         <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
 
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Sexe</label>
-            </div>
+        <label for="inputGroupSelect01">Sexe</label>
+        <div class="input-group">
             <select class="custom-select" id="inputGroupSelect01" name="sexe">
                 <option value="1">Homme</option>
                 <option value="2">Femme</option>

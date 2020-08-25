@@ -325,3 +325,16 @@ footer img {width: 30px;margin: 10px}
 .img_profil img{
     width: 50%;
 }
+
+.custom-select {
+    color: #000000;
+    background-color: #f5f7fa;
+    border: none;
+    border-radius: 10px;
+}
+
+.input-group{
+    box-shadow: 0px 5px 10px #DCDCDC;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
