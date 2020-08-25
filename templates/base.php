@@ -32,4 +32,14 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="twbs/bootstrap/dist/js/bootstrap.bundle.js"></script>
 <script src="twbs/bootstrap/dist/js/bootstrap.js"></script>
+<script>
+console.log('c');
+$('.toast').toast({
+animation: true,
+autohide: true,
+delay: 20000,
+});
+
+$('.toast').toast('show');
+</script>
 </html>

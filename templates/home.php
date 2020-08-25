@@ -13,8 +13,9 @@
     if($this->session->get('logout') || $this->session->get('add_comment'))
     {
     ?>
+
     <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center">
-        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast" role="status" aria-live="polite" aria-atomic="true">
             <div class="toast-header">
                 <strong class="mr-auto">Infos</strong>
                 <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
