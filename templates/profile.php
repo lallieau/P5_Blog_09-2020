@@ -31,16 +31,20 @@
     <div class="card_admin">
         <?php
 
-        if($this->session->get('pseudo'))
+        if($this->session->get('sexe') === '1')
         {
         ?>
-            <p>H</p>
+        <div class="img_profil">
+            <img src="img/avatar_homme.svg">
+        </div>
         <?php
         }
         else
         {
         ?>
-            <p>F</p>
+        <div class="img_profil">
+            <img src="img/avatar_femme.svg">
+        </div>
         <?php
         }
 

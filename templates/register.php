@@ -12,8 +12,8 @@
                 <label class="input-group-text" for="inputGroupSelect01">Sexe</label>
             </div>
             <select class="custom-select" id="inputGroupSelect01" name="sexe">
-                <option value="<?= isset($post) ? $post->get('sexe'): '1'?>">Homme</option>
-                <option value="<?= isset($post) ? $post->get('sexe'): '2'?>">Femme</option>
+                <option value="1">Homme</option>
+                <option value="2">Femme</option>
             </select>
         </div>
 
