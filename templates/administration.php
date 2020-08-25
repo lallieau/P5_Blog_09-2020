@@ -2,28 +2,38 @@
 <div class="container">
     <h1>Administration</h1>
     <?php
-    if($this->session->get('delete_comment'))
+    if($this->session->get('add_article')
+        || $this->session->get('delete_user')
+        || $this->session->get('edit_article')
+        || $this->session->get('delete_article')
+        || $this->session->get('delete_comment')
+        || $this->session->get('no_validate_comment')
+        || $this->session->get('validate_comment'))
     {
-    ?>
-    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+        ?>
+        <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center">
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="mr-auto">Infos</strong>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    <?= $this->session->show('add_article'); ?>
+                    <?= $this->session->show('delete_article'); ?>
+                    <?= $this->session->show('edit_article'); ?>
+                    <?= $this->session->show('delete_comment'); ?>
+                    <?= $this->session->show('delete_user'); ?>
+                    <?= $this->session->show('no_validate_comment'); ?>
+                    <?= $this->session->show('validate_comment'); ?>
+                </div>
+            </div>
         </div>
-        <div class="toast-body">
-            <?= $this->session->show('add_comment'); ?>
-            <?= $this->session->show('flag_comment'); ?>
-            <?= $this->session->show('delete_comment'); ?>
-            <?= $this->session->show('register'); ?>
-            <?= $this->session->show('login'); ?>
-            <?= $this->session->show('logout'); ?>
-            <?= $this->session->show('delete_account'); ?>
-        </div>
-    </div>
-    <?php
+        <?php
     }
-?>
+    ?>
+
 
     <h2>Articles</h2>
 
