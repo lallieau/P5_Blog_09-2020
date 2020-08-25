@@ -9,6 +9,7 @@ class User
     private $password;
     private $createdAt;
     private $role;
+    private $sexe;
 
     public function getId()
     {
@@ -56,13 +57,14 @@ class User
         $this->role = $role;
     }
 
-    public function getAvatar()
+    public function getSexe()
     {
-        return $this->avatar;
+        return $this->sexe;
     }
 
-    public function setAvatar($avatar)
+    public function setSexe($sexe)
     {
-        $this->avatar = $avatar;
+        $this->sexe = $sexe;
     }
+
 }

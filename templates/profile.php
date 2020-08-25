@@ -29,6 +29,23 @@
     ?>
 
     <div class="card_admin">
+        <?php
+
+        if($this->session->get('pseudo'))
+        {
+        ?>
+            <p>H</p>
+        <?php
+        }
+        else
+        {
+        ?>
+            <p>F</p>
+        <?php
+        }
+
+        ?>
+
         <h2><?= $this->session->get('pseudo'); ?></h2>
         <button type="button" data-toggle="modal" data-target="#staticBackdrop">
         Modifier mon mot de passe

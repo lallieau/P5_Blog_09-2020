@@ -14,12 +14,12 @@ class UserDAO extends DAO
         $user->setPseudo($row['pseudo']);
         $user->setCreatedAt($row['createdAt']);
         $user->setRole($row['name']);
-        $user->setAvatar($row['sexe']);
+        $user->setSexe($row['sexe']);
         return $user;
     }
     public function getUsers()
     {
-        $sql = 'SELECT users.id, users.pseudo, users.createdAt, role.name, avatar.sexe FROM users INNER JOIN role, avatar ON users.role_id = role.id, users.avatar_id = avatar.id ORDER BY users.id DESC';
+        $sql = 'SELECT user.id, user.pseudo, user.createdAt, role.name, user.sexe FROM user INNER JOIN role ON user.role_id = role.id ORDER BY user.id DESC';
         $result = $this->createQuery($sql);
         $users = [];
 
@@ -35,13 +35,13 @@ class UserDAO extends DAO
     public function register(Parameter $post)
     {
         $this->checkUser($post);
-        $sql = 'INSERT INTO users (pseudo, password, createdAt, role_id, avatar_id) VALUES (?, ?, NOW(), ?, ?)';
-        $this->createQuery($sql, [$post->get('pseudo'), password_hash($post->get('password'), PASSWORD_BCRYPT), 2, 3]);
+        $sql = 'INSERT INTO user (pseudo, password, createdAt, role_id, sexe) VALUES (?, ?, NOW(), ?, ?)';
+        $this->createQuery($sql, [$post->get('pseudo'), password_hash($post->get('password'), PASSWORD_BCRYPT), 2, $post->get('sexe')]);
     }
 
     public function checkUser(Parameter $post)
     {
-        $sql = 'SELECT COUNT(pseudo) FROM users WHERE pseudo = ?';
+        $sql = 'SELECT COUNT(pseudo) FROM user WHERE pseudo = ?';
         $result = $this->createQuery($sql, [$post->get('pseudo')]);
         $isUnique = $result->fetchColumn();
 
@@ -53,7 +53,7 @@ class UserDAO extends DAO
 
     public function login(Parameter $post)
     {
-        $sql = 'SELECT users.id, users.role_id, users.password, role.name FROM users INNER JOIN role ON role.id = users.role_id WHERE pseudo = ?';
+        $sql = 'SELECT user.id, user.role_id, user.password, role.name, user.sexe FROM user INNER JOIN role ON role.id = user.role_id WHERE pseudo = ?';
         $data = $this->createQuery($sql, [$post->get('pseudo')]);
         $result = $data->fetch();
         $isPasswordValid = password_verify($post->get('password'), $result['password']);
@@ -65,19 +65,19 @@ class UserDAO extends DAO
 
     public function updatePassword(Parameter $post, $pseudo)
     {
-        $sql = 'UPDATE users SET password = ? WHERE pseudo = ?';
+        $sql = 'UPDATE user SET password = ? WHERE pseudo = ?';
         $this->createQuery($sql, [password_hash($post->get('password'), PASSWORD_BCRYPT), $pseudo]);
     }
 
     public function deleteAccount($pseudo)
     {
-        $sql = 'DELETE FROM users WHERE pseudo = ?';
+        $sql = 'DELETE FROM user WHERE pseudo = ?';
         $this->createQuery($sql, [$pseudo]);
     }
 
     public function deleteUser($userId)
     {
-        $sql = 'DELETE FROM users WHERE id = ?';
+        $sql = 'DELETE FROM user WHERE id = ?';
         $this->createQuery($sql, [$userId]);
     }
 

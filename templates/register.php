@@ -7,12 +7,15 @@
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
         <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
 
-        <label for="femme">Femme</label>
-        <input type="checkbox" id="femme" name="femme">
-
-        <label for="homme">Homme</label>
-        <input type="checkbox" id="homme" name="homme">
-        <br>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Sexe</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01" name="sexe">
+                <option value="<?= isset($post) ? $post->get('sexe'): '1'?>">Homme</option>
+                <option value="<?= isset($post) ? $post->get('sexe'): '2'?>">Femme</option>
+            </select>
+        </div>
 
         <label for="password">Mot de passe</label><br>
         <input type="password" id="password" name="password"><br>
