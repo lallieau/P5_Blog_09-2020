@@ -179,14 +179,7 @@ div.y{top: 15px;}
 div.z{top: 29px; left: 35px}
 
 
-div.burger {
-    height: 30px;
-    width: 40px;
-    position: absolute;
-    top: 11px;
-    left: 21px;
-    cursor: pointer;
-}
+
 
 .navbar-brand{display: none}
 .navbar-light .navbar-toggler{color: transparent;border-color: transparent;}
@@ -214,4 +207,22 @@ color: #000000;
 padding-right: 0;
 padding-left: 70px;
 padding-bottom: 30px;
+}
+
+@media screen and (min-width: 1280px) {
+    .mobil{display: none;}
+
+
+
+    .navbar-nav{
+        padding-top: 170px;
+        padding-left: 200px;
+    }
+    .navbar-toggler {
+        padding-left: 120px;
+        padding-top: 120px;
+        position: absolute;
+        z-index: 2;
+    }
+    div.z{top: 29px; left: 135px;}
 }

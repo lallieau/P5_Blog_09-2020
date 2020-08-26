@@ -1,8 +1,7 @@
 <?php $this->title="Page Articles"; ?>
 
 <div class="container">
-
-    <h1>les articles</h1>
+    <h1>Les articles</h1>
 
     <?php
     foreach($articles as $article)

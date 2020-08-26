@@ -1,81 +1,40 @@
 @media screen and (min-width: 480px){
-
-    .card {margin: 0px 60px 10px;}
-    .article {
-        margin: 0px 50px 10px;
-        padding: 20px 0 20px;
-    }
-    .form_basic {margin: 0px 60px 10px;}
-    .card_admin {margin: 0px 60px 10px;}
+    .card {margin: 0px 50px 10px;}
+    .article {margin: 0px 50px 10px;}
+    .form_basic {margin: 0px 50px 10px;}
+    .card_admin {margin: 0px 50px 10px;}
 }
-
 
 @media screen and (min-width: 640px){
     .form_basic {margin: 0px 10px 10px;}
     .card_admin {margin: 0px 10px 10px;}
     .card{margin: 0px 10px 10px}
+    .article {margin: 0px 20px 10px;}
 
-    .article {
-        margin: 0px 20px 10px;
-    }
-
-}
-
-@media screen and (min-width: 680px){
-
-    .card_text span p {padding-bottom: 50px}
-}
-
-@media screen and (min-width: 740px){
-    .card{
-        margin: 0px 10px 10px
-    }
-    .card_admin{
-        margin: 0px 10px 10px
-    }
-    .form_basic{
-        margin: 0px 10px 10px
-    }
-
-    .card_article{height: 300px}
-    p {font-size: 1.1rem}
-
-    .article {
-        margin: 0px 10px 10px;
-    }
 }
 
 @media screen and (min-width: 768px){
 
-.home_card_article {
-    padding: 5px;
-    display: flex;
-    flex-wrap: wrap;
-    overflow-x: hidden;
-    justify-content: center;
-}
-
-.card_article {
-    width: 40%;
-}
-
-}
-
-
-@media screen and (min-width: 870px){
-    .article {
-            margin: 0px 10px 10px;
+    .home_card_article {
+        padding: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: hidden;
+        justify-content: center;
     }
 
-    .form_basic {
-        margin: 0px 10px 10px;
-    }
-    .card_admin {
-        margin: 0px 10px 10px;
+    .card_article {
+        width: 40%;
     }
 
+    .img_profil img{
+        width: 30%;
+    }
+    .illustration img {
+        width: 60%;
+    }
+    .illustration_article img{width: 40%;}
 }
-
 
 @media screen and (min-width: 992px) {
     .navbar-expand-lg .navbar-toggler {
@@ -93,11 +52,31 @@
         margin: 0px 80px 10px;}
     .form_basic {
         margin: 0px 80px 10px;}
+    .update_password .form_basic {
+        margin: 30px 10px 10px;
+    }
     .add_article{
         margin: 0px 80px 10px;}
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
     p {font-size: 1.3rem}
+    label {font-size: 1.3rem;}
+    .form_basic textarea {font-size: 1.3rem;}
+    .illustration img {
+        width: 50%;
+    }
+    .img_profil img{
+        width: 20%;
+    }
+    .illustration_article img{width: 20%;}
+
+}
+
+@media screen and (min-width: 1880px)
+{
+    .illustration img {
+        width: 40%;
+    }
 
 }
