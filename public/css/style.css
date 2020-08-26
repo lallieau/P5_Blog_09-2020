@@ -100,8 +100,6 @@ overflow: -moz-scrollbars-none;  // Firefox
     margin: 0;
 }
 
-
-
 /* Single Page - Article */
 
 .card_single{padding: 10px;}
@@ -321,3 +319,4 @@ footer img {width: 30px;margin: 10px}
 .illustration p {
     margin: 10px 10px;
 }
+
