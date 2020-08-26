@@ -29,6 +29,27 @@
     ?>
 
     <div class="card_admin">
+        <?php
+
+        if($this->session->get('sexe') === '1')
+        {
+        ?>
+        <div class="img_profil">
+            <img src="img/avatar_homme.svg">
+        </div>
+        <?php
+        }
+        else
+        {
+        ?>
+        <div class="img_profil">
+            <img src="img/avatar_femme.svg">
+        </div>
+        <?php
+        }
+
+        ?>
+
         <h2><?= $this->session->get('pseudo'); ?></h2>
         <button type="button" data-toggle="modal" data-target="#staticBackdrop">
         Modifier mon mot de passe

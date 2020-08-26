@@ -7,6 +7,14 @@
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
         <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
 
+        <label for="inputGroupSelect01">Sexe</label>
+        <div class="input-group">
+            <select class="custom-select" id="inputGroupSelect01" name="sexe">
+                <option value="1">Homme</option>
+                <option value="2">Femme</option>
+            </select>
+        </div>
+
         <label for="password">Mot de passe</label><br>
         <input type="password" id="password" name="password"><br>
         <?= isset($errors['password']) ? $errors['password'] : ''; ?>

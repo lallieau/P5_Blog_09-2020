@@ -1,5 +1,6 @@
 /* Général */
 * {box-sizing: border-box;}
+
 body{
     /*background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
     background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);*/
@@ -8,13 +9,14 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 h1{
     font-family: 'Francois One', sans-serif;
     text-transform: uppercase;
     font-size: 20px;
     padding: 10px 10px 0 15px;
-
 }
+
 h2{
     font-family: 'Yeseva One', cursive;
     font-size: 1.8rem;
@@ -25,7 +27,9 @@ h2{
 
 
 p{font-family: 'Roboto', sans-serif;font-size: 1rem; margin: 0; font-weight: 300;}
+
 a{font-family: 'Roboto', sans-serif;font-size: 1rem; color: #000000; }
+
 button{font-family: 'Roboto', sans-serif;font-size: 1rem; color: #000000; }
 
 .container{padding: 0px 0px 0px 0;margin-top: 40px}
@@ -36,6 +40,7 @@ button{font-family: 'Roboto', sans-serif;font-size: 1rem; color: #000000; }
     line-height: normal;
     color: #000000;
 }
+
 .card{
     border: none;
     margin: 0px 10px 10px;
@@ -49,19 +54,23 @@ button{font-family: 'Roboto', sans-serif;font-size: 1rem; color: #000000; }
     flex-direction: row;
     box-shadow:0px 5px 10px #DCDCDC;
 }
+
 .card_text{padding: 10px;}
+
 .card_img img{width: 80px;height: 320px;}
 
 .article{
      margin-top: 20px;
-    padding: 20px 0 20px
+    padding: 20px 10px 20px
 }
+
 .article span{
     font-family: 'Francois One', sans-serif;
     text-transform: uppercase;
     font-size: 20px;
     padding: 10px 10px 0 15px;
 }
+
 .home_card_article {
     padding: 5px;
     display: flex;
@@ -71,8 +80,11 @@ button{font-family: 'Roboto', sans-serif;font-size: 1rem; color: #000000; }
     -ms-overflow-style: none;  // IE 10+
 overflow: -moz-scrollbars-none;  // Firefox
 }
+
 .home_card_article::-webkit-scrollbar{display: none;}
+
 .card_article h3 a{font-family: 'Yeseva One', cursive;font-size: 1.6rem;font-weight: normal}
+
 .card_article {
     flex: 0 0 auto;
     margin: 10px 10px;
@@ -85,7 +97,9 @@ overflow: -moz-scrollbars-none;  // Firefox
     width: 80%;
     box-shadow:0px 5px 10px #DCDCDC;
 }
+
 /* Articles Page */
+
 .card_text h2 a{
     font-family: 'Yeseva One', cursive;
     font-size: 1.8rem;
@@ -103,6 +117,7 @@ overflow: -moz-scrollbars-none;  // Firefox
 /* Single Page - Article */
 
 .card_single{padding: 10px;}
+
 .card_single h1{
     font-family: 'Yeseva One', cursive;
     font-size: 1.8rem;
@@ -110,6 +125,7 @@ overflow: -moz-scrollbars-none;  // Firefox
     padding: 0;
     text-transform: none;
 }
+
 .card_single a{
     border-bottom: 10px solid #f5f7fa;
     margin-bottom: 30px;
@@ -118,11 +134,13 @@ overflow: -moz-scrollbars-none;  // Firefox
     font-size: 1rem;
     color: #000000;
 }
+
 .card_single a:hover{
     font-family: 'Roboto', sans-serif;
     font-size: 1rem; color: #000000;
     text-decoration: none
 }
+
 /* Single Page - Comments - Form comments */
 
 .card-body{
@@ -132,12 +150,17 @@ overflow: -moz-scrollbars-none;  // Firefox
     -moz-border-radius : 20px;
     -webkit-border-radius : 20px;
 }
+
 .accordion{margin-top: 20px}
+
 .card-header{background-color: #FFFFFF;padding: 0px;border: none;}
 
 .btn-link{font-family: 'Francois One', sans-serif;font-size: 1.5rem; color: #000000;padding: 0px}
+
 .btn-link:hover{font-family: 'Francois One', sans-serif;font-size: 1.5rem; color: #000000;padding: 0px; text-decoration: none}
+
 .collapse h3{padding-top: 10px;font-family: 'Francois One', sans-serif;font-size: 1.4rem; color: #000000;}
+
 .btn-link span {padding-left: 20px}
 
 .form_comment input, textarea {
@@ -154,6 +177,7 @@ overflow: -moz-scrollbars-none;  // Firefox
     font-family: 'Roboto', sans-serif;
     font-size: 1rem
 }
+
 .form_comment textarea{height: 100px}
 
 /* Administration Page */
@@ -172,9 +196,11 @@ td { display: flex;
     -webkit-border-radius : 20px;
     box-shadow:0px 5px 10px #DCDCDC;
 }
+
 .card_admin h3 a{font-family: 'Yeseva One', cursive;font-size: 1.4rem; color: #000000;text-decoration: none;font-weight: normal}
 
 .card_admin h3{font-size: 1.2rem}
+
 .add_article{
     background-color: #e3eeff;
     padding: 10px;
@@ -185,10 +211,13 @@ td { display: flex;
     box-shadow:0px 5px 10px #DCDCDC;
     text-align: center;
 }
+
 .add_article:hover{background-color: #F4F4F4;}
+
 .add_article a{font-family: 'Francois One', sans-serif;font-size: 1rem; color: #000000;font-weight: normal}
 
 .card_admin button a{font-family: 'Roboto', sans-serif;font-size: 1rem; color: #000000;font-weight: normal; text-decoration: none}
+
 .card_admin button {
     background-color: #e3eeff;
     padding: 5px 15px 5px 15px;
@@ -199,11 +228,13 @@ td { display: flex;
     text-align: center;
     border: none;
 }
+
 .card_admin button:hover{background-color: #F4F4F4;}
 
-
 /* Add Article - Edit Article */
+
 .form_basic{margin: 10px}
+
 .form_basic input, textarea {
     border: none;
     background-color: #f5f7fa;
@@ -216,9 +247,9 @@ td { display: flex;
     padding: 10px;
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
-
     box-shadow:0px 5px 10px #DCDCDC;
 }
+
 .form_basic textarea{height: 150px}
 
 #submit{
@@ -231,6 +262,7 @@ td { display: flex;
     text-align: center;
     border: none;
 }
+
 #submit:hover{background-color: #F4F4F4;}
 
 .link_admin a{
@@ -241,6 +273,7 @@ td { display: flex;
     font-size: 1rem;
     color: #000000;
 }
+
 .link_admin a:hover{
     font-family: 'Roboto', sans-serif;
     font-size: 1rem; color: #000000;
@@ -249,8 +282,8 @@ td { display: flex;
 
 /* Profil */
 
-
 .card_admin .btn_admin a{font-family: 'Roboto', sans-serif;font-size: 1rem; color: #000000;font-weight: normal; text-decoration: none}
+
 .card_admin .btn_admin {
     background-color: #bef48c;
     padding: 5px 15px 5px 15px;
@@ -262,8 +295,8 @@ td { display: flex;
     border: none;
     margin-top: 80px;
 }
-.card_admin .btn_admin:hover{background-color: #F4F4F4;}
 
+.card_admin .btn_admin:hover{background-color: #F4F4F4;}
 
 /* update password */
 
@@ -306,17 +339,38 @@ footer {
     margin-bottom: 70px;
     margin-top: 50px;
     text-align: center;
-
 }
+
 footer img {width: 30px;margin: 10px}
 
 .illustration img{width: 100%;margin-top: 30px}
+
 .illustration {
     text-align: center;
     background: rgb(227,238,255);
     background: linear-gradient(0deg, rgba(227,238,255,0) 0%, rgba(227,238,255,1) 50%, rgba(227,238,255,1) 0%, rgba(255,255,255,0) 100%);
 }
+
 .illustration p {
     margin: 10px 10px;
 }
+
+.img_profil img{
+    width: 50%;
+}
+
+.custom-select {
+    color: #000000;
+    background-color: #f5f7fa;
+    border: none;
+    border-radius: 10px;
+}
+
+.input-group{
+    box-shadow: 0px 5px 10px #DCDCDC;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
 
