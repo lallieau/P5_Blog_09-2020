@@ -145,7 +145,6 @@ class BackController extends Controller
                 $this->session->set('update_password', 'Le mot de passe a été mis à jour');
                 header('Location: index.php?route=profile');
             }
-            return $this->view->render('update_password');
         }
     }
 

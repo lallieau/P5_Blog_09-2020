@@ -1,7 +1,7 @@
 <?php $this->title='Accueil'; ?>
 <?php $this->description='Page d\'accueil du blog de Lallie, retrouvez des articles suivant plusieurs thématiques...'; ?>
-<div class="illustration">
 
+<div class="illustration">
     <img src="img/illustration_blog_accueil.svg">
     <h1>Le blog de lallie</h1>
     <p>Bienvenue sur mon blog !</p>
@@ -13,7 +13,6 @@
     if($this->session->get('logout') || $this->session->get('add_comment'))
     {
     ?>
-
     <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center">
         <div class="toast" role="status" aria-live="polite" aria-atomic="true">
             <div class="toast-header">
@@ -30,9 +29,9 @@
             </div>
         </div>
     </div>
-        <?php
-        }
-        ?>
+    <?php
+    }
+    ?>
 
     <section class="card">
         <div class="card_text">
@@ -40,13 +39,8 @@
             <span class="citation">Un ton seul n'est qu'une couleur, deux tons c'est un accord, c'est la vie.</span>
             <span><p>Henri Matisse</p></span>
             <br>
-           <a href="index.php?route=articlesPage">Articles &rarr;</a>
+            <a href="index.php?route=articlesPage">Articles &rarr;</a>
         </div>
-<!--
-        <div class="card_img">
-            <img src="img/.img_accueil.png" alt="photo ou logo">
-        </div>
-        -->
     </section>
 
     <section class="article">
@@ -57,26 +51,29 @@
         {
         ?>
             <div class="card_article">
-                <h3><a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>"><?=htmlspecialchars($article->getTitle());?></a></h3>
+                <h3>
+                    <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">
+                        <?=htmlspecialchars($article->getTitle());?>
+                    </a>
+                </h3>
                 <?php
                 if (!$article->getEditAt())
                 {
-                    ?>
-                    <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
-                    <?php
+                ?>
+                <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
+                <?php
                 }
                 else
                 {
-                    ?>
-                    <p>Modifié le : <?= htmlspecialchars($article->getEditAt());?></p>
-                    <?php
+                ?>
+                <p>Modifié le : <?= htmlspecialchars($article->getEditAt());?></p>
+                <?php
                 }
                 ?>
                 <p><?=substr(htmlspecialchars($article->getChapo()), 0, 120).'...';?></p>
                 <a href="index.php?route=article&articleId=<?=htmlspecialchars($article->getId());?>">Lire plus...</a>
-
             </div>
-            <?php
+        <?php
         }
         ?>
         </article>

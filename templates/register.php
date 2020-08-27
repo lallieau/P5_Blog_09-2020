@@ -1,9 +1,11 @@
 <?php $this->title = "Inscription"; ?>
 <?php $this->description='Page d\'inscription, inscrivez vous pour accéder à la page profil...'; ?>
+
 <div class="container">
-<h1>S'inscrire</h1>
+    <h1>S'inscrire</h1>
 
     <form method="post" action="index.php?route=register" class="form_basic">
+
         <label for="pseudo">Pseudo</label><br>
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
         <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
@@ -21,6 +23,7 @@
         <?= isset($errors['password']) ? $errors['password'] : ''; ?>
 
         <input type="submit" value="S'inscrire" id="submit" name="submit">
+
     </form>
 </div>
 

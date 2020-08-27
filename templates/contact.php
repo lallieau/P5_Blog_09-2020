@@ -1,7 +1,8 @@
 <?php $this->title="Page Contact"; ?>
 <?php $this->description='Page contact, pour toutes questions ou suggestions au sujet des articles, contactez moi...'; ?>
+
 <div class="container">
-<h1>Contactez-moi</h1>
+    <h1>Contactez-moi</h1>
     <?php
     if($this->session->get('contact'))
     {
@@ -21,10 +22,10 @@
             </div>
         </div>
     </div>
-        <?php
+    <?php
     }
     ?>
-<div>
-    <?php include('form_contact.php'); ?>
-</div>
+    <div>
+        <?php include('form_contact.php'); ?>
+    </div>
 </div>

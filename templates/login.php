@@ -1,12 +1,12 @@
 <?php $this->title = "Connexion"; ?>
 <?php $this->description='Page de connexion, connectez vous pour pouvoir accéder à votre profil...'; ?>
-<div class="container">
-<h1>Se connecter</h1>
 
+<div class="container">
+    <h1>Se connecter</h1>
     <?php
     if($this->session->get('register') || $this->session->get('error_login'))
     {
-        ?>
+    ?>
     <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center">
         <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
@@ -21,12 +21,12 @@
             </div>
         </div>
     </div>
-        <?php
+    <?php
     }
     ?>
 
-
     <form method="post" action="index.php?route=login" class="form_basic">
+
         <label for="pseudo">Pseudo</label><br>
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
 
@@ -34,6 +34,7 @@
         <input type="password" id="password" name="password"><br>
 
         <input type="submit" value="Se connecter" id="submit" name="submit">
+
     </form>
 
     <a class="nav-link" href="index.php?route=register">Pas encore inscrit</a>

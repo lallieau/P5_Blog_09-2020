@@ -1,4 +1,5 @@
 <form method="post" action="index.php?route=newContact" class="form_basic">
+
     <label for="name">Nom</label><br>
     <input type="text" id="name" name="name" value="<?= isset($post) ? htmlspecialchars($post->get('name')): ''; ?>"><br>
     <?= isset($errors['name']) ? $errors['name'] : ''; ?>
@@ -12,4 +13,5 @@
     <?= isset($errors['content']) ? $errors['content'] : ''; ?>
 
     <input type="submit" value="Envoyer" id="submit" name="submit">
+
 </form>
