@@ -1,4 +1,5 @@
 <?php $this->title = "Inscription"; ?>
+<?php $this->description='Page d\'inscription, inscrivez vous pour accéder à la page profil...'; ?>
 <div class="container">
 <h1>S'inscrire</h1>
 

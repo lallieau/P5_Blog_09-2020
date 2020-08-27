@@ -1,5 +1,5 @@
 <?php $this->title = "Article"; ?>
-
+<?php $this->description='Page d\'article, voici un article sur...'; ?>
 <style type="text/css">
     body{
         background-image: url("<?= $article->getBg()?>");

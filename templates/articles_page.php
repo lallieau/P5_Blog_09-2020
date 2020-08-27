@@ -1,5 +1,5 @@
 <?php $this->title="Page Articles"; ?>
-
+<?php $this->description='Page articles, retrouvez tous les articles pour chaque thématiques...'; ?>
 <div class="container">
     <h1>Les articles</h1>
 

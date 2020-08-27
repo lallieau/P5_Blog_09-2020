@@ -1,5 +1,5 @@
 <?php $this->title = 'Mon profil'; ?>
-
+<?php $this->description='Page profil, accéder à toutes vos informations, modifier votre mot de passe...'; ?>
 <div class="container">
     <h1>Profil</h1>
 

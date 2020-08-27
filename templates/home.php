@@ -1,5 +1,5 @@
 <?php $this->title='Accueil'; ?>
-
+<?php $this->description='Page d\'accueil du blog de Lallie, retrouvez des articles suivant plusieurs thématiques...'; ?>
 <div class="illustration">
 
     <img src="img/illustration_blog_accueil.svg">

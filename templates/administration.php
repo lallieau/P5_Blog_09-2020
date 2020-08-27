@@ -1,4 +1,5 @@
 <?php $this->title = 'Administration'; ?>
+<?php $this->description='Page d\'administration, accessible seulement pour les administrateurs...'; ?>
 <div class="container">
     <h1>Administration</h1>
     <?php

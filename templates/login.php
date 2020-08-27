@@ -1,4 +1,5 @@
 <?php $this->title = "Connexion"; ?>
+<?php $this->description='Page de connexion, connectez vous pour pouvoir accéder à votre profil...'; ?>
 <div class="container">
 <h1>Se connecter</h1>
 
