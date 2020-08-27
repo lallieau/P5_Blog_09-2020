@@ -30,4 +30,17 @@ class Constraint
         }
         return null;
     }
+
+    public function imageControl($name,$value)
+    {
+        if (exif_imagetype($value) != IMAGETYPE_JPEG)
+        {
+            return '<p>Le fichier<strong>' .$name. '</strong> n\'est pas une image</p>';
+        }
+        elseif (exif_imagetype($value) != IMAGETYPE_PNG)
+        {
+            return '<p>Le fichier<strong>' .$name. '</strong> n\'est pas une image</p>';
+        }
+        return null;
+    }
 }

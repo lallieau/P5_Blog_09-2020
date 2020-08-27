@@ -39,11 +39,17 @@ class ArticleValidation extends Validation
             $error = $this->checkChapo($name, $value);
             $this->addError($name, $error);
         }
-        /*elseif($name === 'img')
+        elseif($name === 'img')
         {
             $error = $this->checkImg($name, $value);
             $this->addError($name, $error);
-        }*/
+        }
+
+        elseif($name === 'bg')
+        {
+            $error = $this->checkBg($name, $value);
+            $this->addError($name, $error);
+        }
     }
 
     private function addError($name, $error)
@@ -101,10 +107,31 @@ class ArticleValidation extends Validation
         }
     }
 
-    /*private function checkImg($name, $value)
+    private function checkImg($name, $value)
     {
+        if($this->constraint->notBlank($name, $value))
+        {
+            return $this->constraint->notBlank('img', $value);
+        }
 
-        vérifier si image
+        if($this->constraint->imageControl($name, $value))
+        {
+            return $this->constraint->imageControl('img', $value);
+        }
+
     }
- */
+
+    private function checkBg($name, $value)
+    {
+        if($this->constraint->notBlank($name, $value))
+        {
+            return $this->constraint->notBlank('bg', $value);
+        }
+
+        if($this->constraint->imageControl($name, $value))
+        {
+            return $this->constraint->imageControl('bg', $value);
+        }
+    }
+
 }

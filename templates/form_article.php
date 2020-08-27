@@ -18,9 +18,11 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 
     <label for="img">Image</label><br>
     <input id="img" name="img" type="file" value="<?= isset($post) ? $post->get('img'): ''; ?>"><br>
+    <?= isset($errors['img']) ? $errors['img'] : ''; ?>
 
     <label for="bg">Background</label><br>
     <input id="bg" name="bg" type="file" value="<?= isset($post) ? $post->get('bg'): ''; ?>"><br>
+    <?= isset($errors['bg']) ? $errors['bg'] : ''; ?>
 
     <input type="submit" value="<?= $submit; ?>" id="submit" name="submit">
 </form>
