@@ -17,6 +17,7 @@ class UserDAO extends DAO
         $user->setSexe($row['sexe']);
         return $user;
     }
+
     public function getUsers()
     {
         $sql = 'SELECT user.id, user.pseudo, user.createdAt, role.name, user.sexe FROM user INNER JOIN role ON user.role_id = role.id ORDER BY user.id DESC';

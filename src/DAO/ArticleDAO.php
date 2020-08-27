@@ -21,6 +21,7 @@ class ArticleDAO extends DAO
 
         return $article;
     }
+
     public function getArticles()
     {
         $sql = 'SELECT article.id, article.title, article.content, article.chapo, user.pseudo, article.createdAt, article.editAt, article.img, article.bg FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC';
@@ -58,8 +59,6 @@ class ArticleDAO extends DAO
         $result->closeCursor();
         return $this->buildObject($article);
     }
-
-
 
     public function addArticle(Parameter $post, $userId)
     {
@@ -111,7 +110,6 @@ class ArticleDAO extends DAO
 
     public function deleteArticle($articleId)
     {
-
         $sql = 'DELETE FROM comment WHERE article_id = ?';
         $this->createQuery($sql, [$articleId]);
 

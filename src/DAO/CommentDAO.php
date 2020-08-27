@@ -16,6 +16,7 @@ class CommentDAO extends DAO
 
         return $comment;
     }
+
     public function getCommentsFromArticle($articleId)
     {
         $sql = 'SELECT id, pseudo, content, createdAt, validation FROM comment WHERE article_id = ? ORDER BY createdAt DESC';
