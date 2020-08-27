@@ -77,9 +77,9 @@ class ContactValidation extends Validation
             return $this->constraint->notBlank('email', $value);
         }
 
-        //if($this->constraint->minLength($name, $value, 2))
+        if($this->constraint->controlEmail($name, $value))
         {
-            //return $this->constraint->minLength('chapo', $value, 2);
+            return $this->constraint->controlEmail('email', $value);
         }
     }
 
