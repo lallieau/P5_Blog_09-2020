@@ -30,4 +30,13 @@ class Constraint
         }
         return null;
     }
+
+    public function controlEmail($name, $value)
+    {
+        if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $value))
+        {
+            return '<p>Le champ <strong>' .$name. '</strong> doit contenir une adresse email.</p>';
+        }
+        return null;
+    }
 }

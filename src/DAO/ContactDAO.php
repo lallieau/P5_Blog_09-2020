@@ -8,11 +8,15 @@ class ContactDAO extends DAO
 {
     public function newContact(Parameter $post)
     {
-        $sql = 'INSERT INTO contact (contact.id, contact.name, contact.email, contact.content, contact.sendAt) VALUES (?,?,?,?,NOW())';
-        $this->createQuery($sql,[
-            $post->get('name'),
-            $post->get('email'),
-            $post->get('content')
-        ]);
+
+        $to      = 'lallie.audry@gmail.com';
+        $message = $post->get('content');
+        $headers = array(
+            'From' => $post->get('email') . $post->get('name'),
+            'Reply-To' => $post->get('email'),
+            'X-Mailer' => 'PHP/' . phpversion()
+        );
+
+        return mail($to, $message, implode($headers));
     }
 }

@@ -109,7 +109,7 @@ class Router
                 }
                 elseif ($route === 'newContact')
                 {
-                    $this->frontController->newContact();
+                    $this->frontController->newContact($this->request->getPost());
                 }
 
                 else
