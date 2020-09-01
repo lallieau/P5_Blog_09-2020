@@ -3,13 +3,8 @@ $route = isset($post) && $post->get('id') ? 'editArticle&articleId='.$post->get(
 $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 ?>
 
-<form method="post" action="index.php?route=<?= $route; ?>" enctype="multipart/form-data">
-    <label for="img">Image</label><br>
-    <input id="img" type="file" name="img"><br>
+<form method="post" action="index.php?route=<?= $route; ?>" enctype="multipart/form-data" class="form_basic">
 
-    <input type="submit" name="envoyer">
-</form>
-<form method="post" action="index.php?route=<?= $route; ?>" enctype="multipart/form-data">
     <label for="title">Titre</label><br>
     <input type="text" id="title" name="title" value="<?= isset($post) ? htmlspecialchars($post->get('title')): ''; ?>"><br>
     <?= isset($errors['title']) ? $errors['title'] : ''; ?>
@@ -22,5 +17,14 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
     <textarea id="content" name="content"><?= isset($post) ? htmlspecialchars($post->get('content')): ''; ?></textarea><br>
     <?= isset($errors['content']) ? $errors['content'] : ''; ?>
 
+    <label for="img">Image</label><br>
+    <input id="img" name="img" type="file" value="<?= isset($post) ? $post->get('img'): ''; ?>"><br>
+    <?= isset($errors['img']) ? $errors['img'] : ''; ?>
+
+    <label for="bg">Background</label><br>
+    <input id="bg" name="bg" type="file" value="<?= isset($post) ? $post->get('bg'): ''; ?>"><br>
+    <?= isset($errors['bg']) ? $errors['bg'] : ''; ?>
+
     <input type="submit" value="<?= $submit; ?>" id="submit" name="submit">
+
 </form>

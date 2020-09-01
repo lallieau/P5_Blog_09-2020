@@ -9,7 +9,7 @@ class FrontController extends Controller
 {
     public function home()
     {
-        $articles = $this->articleDAO->getArticles();
+        $articles = $this->articleDAO->getArticlesHome();
         return $this->view->render('home',[
             'articles' => $articles
         ]);
@@ -38,6 +38,7 @@ class FrontController extends Controller
 
     public function addComment(Parameter $post, $articleId)
     {
+
         if ($post->get('submit'))
         {
             $errors = $this->validation->validate($post, 'Comment');
@@ -46,8 +47,8 @@ class FrontController extends Controller
             if (!$errors)
             {
 
-                $this->commentDAO->addComment($post, $article->getId());
-                $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
+                $this->commentDAO->addComment($post, $articleId);
+                $this->session->set('add_comment', 'Le commentaire a bien été envoyé');
                 header('Location: index.php');
 
             }
@@ -99,7 +100,7 @@ class FrontController extends Controller
             {
                 $this->userDAO->register($post);
                 $this->session->set('register', 'Votre inscription a bien été effectuée');
-                header('Location: index.php');
+                header('Location: index.php?route=profile');
             }
             return $this->view->render('register', [
                 'post' => $post,
@@ -120,8 +121,9 @@ class FrontController extends Controller
                 $this->session->set('login', 'Content de vous revoir');
                 $this->session->set('id', $result['result']['id']);
                 $this->session->set('role', $result['result']['name']);
+                $this->session->set('sexe', $result['result']['sexe']);
                 $this->session->set('pseudo',$post->get('pseudo'));
-                header('Location: index.php');
+                header('Location: index.php?route=profile');
             }
             else
             {

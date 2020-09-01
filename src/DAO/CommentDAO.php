@@ -16,6 +16,7 @@ class CommentDAO extends DAO
 
         return $comment;
     }
+
     public function getCommentsFromArticle($articleId)
     {
         $sql = 'SELECT id, pseudo, content, createdAt, validation FROM comment WHERE article_id = ? ORDER BY createdAt DESC';
@@ -34,9 +35,7 @@ class CommentDAO extends DAO
 
     public function addComment(Parameter $post, $articleId)
     {
-        //var_dump($post->get('pseudo'), $post->get('content'), $articleId); die;
         $sql = 'INSERT INTO comment (pseudo, content, createdAt, validation, article_id) VALUES (?,?,NOW(),?,?)';
-
         $this->createQuery($sql, [$post->get('pseudo'), $post->get('content'), 0, $articleId]);
     }
 

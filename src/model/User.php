@@ -9,6 +9,7 @@ class User
     private $password;
     private $createdAt;
     private $role;
+    private $sexe;
 
     public function getId()
     {
@@ -55,4 +56,15 @@ class User
     {
         $this->role = $role;
     }
+
+    public function getSexe()
+    {
+        return $this->sexe;
+    }
+
+    public function setSexe($sexe)
+    {
+        $this->sexe = $sexe;
+    }
+
 }

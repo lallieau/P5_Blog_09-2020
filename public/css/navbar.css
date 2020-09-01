@@ -1,18 +1,17 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
-
-
-
-/* display the anchor link side by side  */
-nav {
+.mobil {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
     display: flex;
+    justify-content: center;
     background: #fff;
     /* considerable whitespace surrounding the navigation's items */
     padding: 5px;
     border-radius: 30px 30px 0 0 ;
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
 }
-/* remove default style and slightly separate the anchor links from one another */
-nav a {
+.mobil a {
     color: inherit;
     text-decoration: none;
     /* display the svg icon and span elements side by side, vertically aligned */
@@ -25,11 +24,9 @@ nav a {
     /* position relative for the pseudo element */
     position: relative;
     /* custom properties for the colors picked up by the elements when clicked (and updated for each link in the script) */
-    --hover-bg: #5b37b720;
-    --hover-c: #5b37b7;
+
 }
 
-/* include considerable negative margin to have the svg icon overlapping with the span element */
 a svg {
     margin-right: -2.5rem;
     width: 28px;
@@ -37,18 +34,15 @@ a svg {
     pointer-events: none;
     /* transition for the change in margin */
     transition: margin 0.2s ease-out;
-
 }
-/* by default hide the span element */
+
 a span {
     opacity: 0;
     visibility: hidden;
     font-size: 0.9rem;
     margin-left: 0.9rem;
 }
-/* include with a pseudo element relative to the anchor link a circle, with a fixed with and height */
-nav a:before {
-
+.mobil a:before {
     position: absolute;
     content: "";
     top: 50%;
@@ -59,31 +53,176 @@ nav a:before {
     transform: translate(0%, -50%) scale(0);
     visibility: visible;
     opacity: 1;
-
 }
-/* when active */
-/* specify the colors dictated by the custom properties */
-nav a.active {
-    background: var(--hover-bg);
-    color: var(--hover-c);
-}
-/* using the color specified by the then updated custom property show the circle of the pseudo element increasing its size and highlighting it momentarily */
-nav a.active:before {
-    background: var(--hover-c);
+.mobil a:active:before {
     opacity: 0;
     visibility: hidden;
     transform: translate(0%, -50%) scale(2);
     /* transition only when the class is applied */
     transition: all 0.4s ease-out;
 }
-/* remove the margin applied to the svg to make it overlay atop the anchor link */
-a.active svg {
+.mobil a:active{
+
+}
+
+a:active svg {
     margin-right: 0;
 }
-/* show the span element */
-a.active span {
+
+/* Home link */
+
+a.page_active svg {
+    margin-right: -2.5rem;
+    width: 28px;
+    height: 28px;
+    pointer-events: none;
+    /* transition for the change in margin */
+    transition: margin 0.2s ease-out;
+}
+a.page_active span {
+    opacity: 0;
+    visibility: hidden;
+    font-size: 0.9rem;
+    margin-left: 0.9rem;
+}
+
+.mobil a .page_active:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    height: 70px;
+    border-radius: 50%;
+    /* positioned to the left of the anchor link and scaled to 0 */
+    transform: translate(0%, -50%) scale(0);
     visibility: visible;
     opacity: 1;
+}
+.mobil a .page_active:active:before {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0%, -50%) scale(2);
+    /* transition only when the class is applied */
+    transition: all 0.4s ease-out;
+}
+.mobil a.page_active{
+    background: #5B37B720;
+    color: #5B37B7;
+}
+a.page_active:active svg {
+    margin-right: 0;
+}
+
+a.page_active span {
+    opacity:1;
+    visibility: visible;
+    margin-left: 2.9rem;
     transition: all 0.2s ease-out;
 }
 
+/* Articles link */
+
+.mobil a.articles{
+    background: #C9379D20;
+    color: #C9379D;
+}
+
+.mobil a.contact{
+    background: #E6A91920;
+    color: #E6A919;
+}
+.mobil a.profil{
+    background: #1892A620;
+    color: #1892A6;
+}
+
+/* header */
+
+.navbar{
+    display: block;
+    padding-left: 0;
+    padding-right: 0 ;
+    width: 100%;
+}
+
+.navbar-collapse{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+.navbar-nav{
+    margin-top: -50px;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100vh;
+}
+
+div.x,
+div.y,
+div.z {
+    position: absolute; margin: auto;
+    top: 0px; bottom: 0px;
+    background: #000000;
+    border-radius:2px;
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+}
+div.x, div.y, div.z { height: 2px; }
+div.x{width: 15px}
+div.y{width: 30px}
+div.z{width: 15px}
+div.y{top: 15px;}
+div.z{top: 29px; left: 35px}
+
+
+
+
+.navbar-brand{display: none}
+.navbar-light .navbar-toggler{color: transparent;border-color: transparent;}
+
+.navbar-toggler {
+    padding-left: 20px;
+    padding-top: 20px;
+    position: absolute;
+    z-index: 2;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000000;
+}
+
+.navbar-nav{
+padding-top: 70px;
+}
+
+.navbar-nav .nav-link {
+font-family: "Yeseva One";
+font-weight: normal;
+font-size: 1.5rem;
+color: #000000;
+padding-right: 0;
+padding-left: 70px;
+padding-bottom: 30px;
+}
+
+@media screen and (min-width: 1280px) {
+    .mobil{display: none;}
+
+
+
+    .navbar-nav{
+        padding-top: 170px;
+        padding-left: 200px;
+    }
+    .navbar-toggler {
+        padding-left: 120px;
+        padding-top: 120px;
+        position: absolute;
+        z-index: 2;
+    }
+    div.z{top: 29px; left: 135px;}
+}

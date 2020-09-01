@@ -31,11 +31,22 @@ class Constraint
         return null;
     }
 
+
     public function controlEmail($name, $value)
     {
-        if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $value))
+        if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $value)) {
+            return '<p>Le champ <strong>' . $name . '</strong> doit contenir une adresse email.</p>';
+        }
+    }
+    public function imageControl($name,$value)
+    {
+        if (exif_imagetype($value) != IMAGETYPE_JPEG)
         {
-            return '<p>Le champ <strong>' .$name. '</strong> doit contenir une adresse email.</p>';
+            return '<p>Le fichier<strong>' .$name. '</strong> n\'est pas une image</p>';
+        }
+        elseif (exif_imagetype($value) != IMAGETYPE_PNG)
+        {
+            return '<p>Le fichier<strong>' .$name. '</strong> n\'est pas une image</p>';
         }
         return null;
     }

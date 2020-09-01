@@ -1,0 +1,82 @@
+@media screen and (min-width: 480px){
+    .card {margin: 0px 50px 10px;}
+    .article {margin: 0px 50px 10px;}
+    .form_basic {margin: 0px 50px 10px;}
+    .card_admin {margin: 0px 50px 10px;}
+}
+
+@media screen and (min-width: 640px){
+    .form_basic {margin: 0px 10px 10px;}
+    .card_admin {margin: 0px 10px 10px;}
+    .card{margin: 0px 10px 10px}
+    .article {margin: 0px 20px 10px;}
+
+}
+
+@media screen and (min-width: 768px){
+
+    .home_card_article {
+        padding: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: hidden;
+        justify-content: center;
+    }
+
+    .card_article {
+        width: 40%;
+    }
+
+    .img_profil img{
+        width: 30%;
+    }
+    .illustration img {
+        width: 60%;
+    }
+    .illustration_article img{width: 40%;}
+}
+
+@media screen and (min-width: 992px) {
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+    .navbar-expand-lg .navbar-nav {
+        -ms-flex-direction: column;
+        flex-direction: column;}
+    .navbar-expand-lg .navbar-collapse:not(.show){display: none!important;}
+
+    .card_article{height: 100%}
+    .card {
+        margin: 0px 80px 10px;}
+    .card_admin {
+        margin: 0px 80px 10px;}
+    .form_basic {
+        margin: 0px 80px 10px;}
+    .update_password .form_basic {
+        margin: 30px 10px 10px;
+    }
+    .add_article{
+        margin: 0px 80px 10px;}
+}
+
+@media screen and (min-width: 1024px) {
+    p {font-size: 1.3rem}
+    label {font-size: 1.3rem;}
+    .form_basic textarea {font-size: 1.3rem;}
+    .illustration img {
+        width: 50%;
+    }
+    .img_profil img{
+        width: 20%;
+    }
+    .illustration_article img{width: 20%;}
+
+}
+
+@media screen and (min-width: 1880px)
+{
+    .illustration img {
+        width: 40%;
+    }
+
+}

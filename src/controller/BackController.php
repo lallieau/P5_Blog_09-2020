@@ -9,12 +9,13 @@ class BackController extends Controller
     private function checkLoggedIn()
     {
         if(!$this->session->get('pseudo')) {
-            $this->session->set('need_login', 'Vous devez vous connecter pour accéder à cette page');
+            $this->session->set('need_login', 'Vous devez vous connecter');
             header('Location: index.php?route=login');
         } else {
             return true;
         }
     }
+
     private function checkAdmin()
     {
         $this->checkLoggedIn();
@@ -46,6 +47,7 @@ class BackController extends Controller
         if($this->checkAdmin()) {
             if ($post->get('submit'))
             {
+
                 $errors = $this->validation->validate($post, 'Article');
 
                 if (!$errors)
@@ -62,13 +64,19 @@ class BackController extends Controller
             return $this->view->render('add_article');
         }
     }
+
     public function editArticle(Parameter $post, $articleId)
     {
-        if($this->checkAdmin()) {
+        if($this->checkAdmin())
+        {
             $article = $this->articleDAO->getArticle($articleId);
-            if ($post->get('submit')) {
+
+            if ($post->get('submit'))
+            {
                 $errors = $this->validation->validate($post, 'Article');
-                if (!$errors) {
+
+                if (!$errors)
+                {
                     $this->articleDAO->editArticle($post, $articleId, $this->session->get('id'));
                     $this->session->set('edit_article', 'L\' article a bien été modifié');
                     header('Location: index.php?route=administration');
@@ -77,19 +85,22 @@ class BackController extends Controller
                     'post' => $post,
                     'errors' => $errors
                 ]);
-
             }
+
             $post->set('id', $article->getId());
             $post->set('title', $article->getTitle());
             $post->set('chapo', $article->getChapo());
             $post->set('content', $article->getContent());
             $post->set('author', $article->getAuthor());
+            $post->set('img', $article->getImg());
+            $post->set('bg', $article->getBg());
 
             return $this->view->render('edit_article', [
-                'post' => $post
+                'post' => $post,
             ]);
         }
     }
+
     public function deleteArticle($articleId)
     {
         if($this->checkAdmin()) {
@@ -99,13 +110,13 @@ class BackController extends Controller
         }
     }
 
-
     public function validateComment($commentId)
     {
         $this->commentDAO->validateComment($commentId);
         $this->session->set('validate_comment', 'Le commentaire a bien été validé');
         header('Location: index.php?route=administration');
     }
+
     public function noValidateComment($commentId)
     {
         if($this->checkAdmin()) {
@@ -114,6 +125,7 @@ class BackController extends Controller
             header('Location: index.php?route=administration');
         }
     }
+
     public function deleteComment($commentId)
     {
         if($this->checkAdmin()) {
@@ -129,6 +141,7 @@ class BackController extends Controller
             return $this->view->render('profile');
         }
     }
+
     public function updatePassword(Parameter $post)
     {
         if($this->checkLoggedIn()) {
@@ -137,7 +150,6 @@ class BackController extends Controller
                 $this->session->set('update_password', 'Le mot de passe a été mis à jour');
                 header('Location: index.php?route=profile');
             }
-            return $this->view->render('update_password');
         }
     }
 
@@ -157,6 +169,7 @@ class BackController extends Controller
             $this->logoutOrDelete('delete_account');
         }
     }
+
     public function deleteUser($userId)
     {
         if($this->checkAdmin()) {
