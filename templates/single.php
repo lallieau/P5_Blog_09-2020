@@ -1,9 +1,9 @@
 <?php $this->title = "Article"; ?>
 
-<h1>Le blog</h1>
-<h2>Lallie Audry</h2>
+<div class="card_theme">
 
-<div>
+    <div class="card_theme_text_single">
+
     <h2><?=htmlspecialchars($article->getTitle());?></h2>
     <p><?=htmlspecialchars($article->getChapo());?></p>
     <p><?=htmlspecialchars($article->getContent());?></p>
@@ -22,30 +22,36 @@
         <?php
     }
     ?>
+    </div>
 </div>
 <br>
 
 <a href="index.php">Retour à l'acceuil</a>
-<div id="comments" class="text-left">
-    <h3>Ajouter un commentaire</h3>
-    <?php include('form_comment.php'); ?>
 
-    <h3>Commentaires</h3>
-    <?php
-    foreach($comments as $comment)
-    {
-        if($comment->isValidation())
-        {
-        ?>
+    <p><a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Commentaires</a></p>
+    <div class="row">
+        <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
+                    <?php
+                    foreach($comments as $comment)
+                    {
+                        if($comment->isValidation())
+                        {
+                            ?>
 
-            <h4><?=htmlspecialchars($comment->getPseudo());?></h4>
-            <p><?=htmlspecialchars($comment->getContent());?></p>
-            <p>Posté le <?=htmlspecialchars($comment->getCreatedAt());?></p>
-        <p><a href="index.php?route=deleteComment&commentId=<?= $comment->getId(); ?>">Supprimer le commentaire</a></p>
-        <?php
-    }
-    }
-    ?>
+                            <h4><?=htmlspecialchars($comment->getPseudo());?></h4>
+                            <p><?=htmlspecialchars($comment->getContent());?></p>
+                            <p>Posté le <?=htmlspecialchars($comment->getCreatedAt());?></p>
+                            <?php
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</div>
+<?php include('form_comment.php'); ?>
+
 

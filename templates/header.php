@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8"/>
     <title>header</title>
-    <link href="twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.php">lallie audry</a>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="index.php"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
