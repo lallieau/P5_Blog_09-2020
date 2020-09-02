@@ -65,19 +65,18 @@ class ArticleDAO extends DAO
     {
 
         $uploads_dir = 'img/';
+        if(isset($_FILES)) {
+            if (isset($_FILES['img'])) {
+                $imgName = isset($_FILES['img']['name']);
+                move_uploaded_file(isset($_FILES['img']['tmp_name']), $uploads_dir . $imgName);
+                $img = "$uploads_dir.$imgName";
+            }
 
-        if(isset($_FILES['img']))
-        {
-            $imgName = isset($_FILES['img']['name']);
-            move_uploaded_file(isset($_FILES['img']['tmp_name']), $uploads_dir . $imgName);
-            $img = "$uploads_dir.$imgName";
-        }
-
-        if(isset($_FILES['bg']))
-        {
-            $bgName = isset($_FILES['bg']['name']);
-            move_uploaded_file(isset($_FILES['bg']['tmp_name']), $uploads_dir . $bgName);
-            $bg = "$uploads_dir.$bgName";
+            if (isset($_FILES['bg'])) {
+                $bgName = isset($_FILES['bg']['name']);
+                move_uploaded_file(isset($_FILES['bg']['tmp_name']), $uploads_dir . $bgName);
+                $bg = "$uploads_dir.$bgName";
+            }
         }
 
         $sql = 'INSERT INTO article (title, content, createdAt, user_id, chapo, editAt, img, bg) VALUES (?,?, NOW(), ?, ?, null, ?, ?)';
@@ -94,20 +93,22 @@ class ArticleDAO extends DAO
     public function editArticle(Parameter $post, $articleId, $userId)
     {
         $uploads_dir = 'img/';
+        if(isset($_FILES)){
+            if(isset($_FILES['img']))
+            {
+                $imgName = isset($_FILES['img']['name']);
+                move_uploaded_file(isset($_FILES['img']['tmp_name']), $uploads_dir . $imgName);
+                $img = "$uploads_dir.$imgName";
+            }
 
-        if(isset($_FILES['img']))
-        {
-            $imgName = isset($_FILES['img']['name']);
-            move_uploaded_file(isset($_FILES['img']['tmp_name']), $uploads_dir . $imgName);
-            $img = "$uploads_dir.$imgName";
+            if(isset($_FILES['bg']))
+            {
+                $bgName = isset($_FILES['bg']['name']);
+                move_uploaded_file(isset($_FILES['bg']['tmp_name']), $uploads_dir . $bgName);
+                $bg = "$uploads_dir.$bgName";
+            }
         }
 
-        if(isset($_FILES['bg']))
-        {
-            $bgName = isset($_FILES['bg']['name']);
-            move_uploaded_file(isset($_FILES['bg']['tmp_name']), $uploads_dir . $bgName);
-            $bg = "$uploads_dir.$bgName";
-        }
 
         $sql = 'UPDATE article SET title = :title, content = :content, chapo = :chapo, editAt = NOW(), user_id = :user_id, img = :img, bg = :bg WHERE id = :articleId';
         $this->createQuery($sql, [
