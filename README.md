@@ -13,14 +13,13 @@ Languages used :
 
 - Html and Css
 - Php and MySQL
-
-Screenshots :
-
-<img src="https://github.com/lallieau/blog/blob/master/public/img/capture_home.png" alt="Your image title" width="250"/><img src="https://github.com/lallieau/blog/blob/master/public/img/capture_articles.png" alt="Your image title" width="250"/><img src="https://github.com/lallieau/blog/blob/master/public/img/capture_profil.png" alt="Your image title" width="250"/>
-
 Responsive :
 
 The blog was built in mobile first and adapts to any screen size.
+
+Screenshots :
+
+<img src="https://github.com/lallieau/blog/blob/master/public/img/capture_home.png" alt="Your image title" width="250" margin="10px"/><img src="https://github.com/lallieau/blog/blob/master/public/img/capture_articles.png" alt="Your image title" width="250" margin="10px"/><img src="https://github.com/lallieau/blog/blob/master/public/img/capture_profil.png" alt="Your image title" width="250" margin="10px"/>
 
 Content :
 
