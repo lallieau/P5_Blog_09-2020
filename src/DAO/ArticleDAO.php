@@ -68,15 +68,15 @@ class ArticleDAO extends DAO
 
         if(isset($_FILES['img']))
         {
-            $imgName = $_FILES['img']['name'];
-            move_uploaded_file($_FILES['img']['tmp_name'], $uploads_dir . $imgName);
+            $imgName = isset($_FILES['img']['name']);
+            move_uploaded_file(isset($_FILES['img']['tmp_name']), $uploads_dir . $imgName);
             $img = "$uploads_dir.$imgName";
         }
 
         if(isset($_FILES['bg']))
         {
-            $bgName = $_FILES['bg']['name'];
-            move_uploaded_file($_FILES['bg']['tmp_name'], $uploads_dir . $bgName);
+            $bgName = isset($_FILES['bg']['name']);
+            move_uploaded_file(isset($_FILES['bg']['tmp_name']), $uploads_dir . $bgName);
             $bg = "$uploads_dir.$bgName";
         }
 
@@ -97,15 +97,15 @@ class ArticleDAO extends DAO
 
         if(isset($_FILES['img']))
         {
-            $imgName = $_FILES['img']['name'];
-            move_uploaded_file($_FILES['img']['tmp_name'], $uploads_dir . $imgName);
+            $imgName = isset($_FILES['img']['name']);
+            move_uploaded_file(isset($_FILES['img']['tmp_name']), $uploads_dir . $imgName);
             $img = "$uploads_dir.$imgName";
         }
 
         if(isset($_FILES['bg']))
         {
-            $bgName = $_FILES['bg']['name'];
-            move_uploaded_file($_FILES['bg']['tmp_name'], $uploads_dir . $bgName);
+            $bgName = isset($_FILES['bg']['name']);
+            move_uploaded_file(isset($_FILES['bg']['tmp_name']), $uploads_dir . $bgName);
             $bg = "$uploads_dir.$bgName";
         }
 
