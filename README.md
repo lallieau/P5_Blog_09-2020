@@ -16,7 +16,7 @@ Languages used :
 
 Screenshots :
 
-.........
+![Optional Text](../public/img/capture_articles.png)![Optional Text](../public/img/capture_home.png)![Optional Text](../public/img/capture_profil.png)
 
 Responsive :
 
