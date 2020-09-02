@@ -19,7 +19,7 @@ The blog was built in mobile first and adapts to any screen size.
 
 Screenshots :
 
-<img src="https://github.com/lallieau/blog/blob/master/public/img/capture_home.png" alt="Your image title" width="250"/> <img src="https://github.com/lallieau/blog/blob/master/public/img/capture_articles.png" alt="Your image title" width="250"/> <img src="https://github.com/lallieau/blog/blob/master/public/img/capture_profil.png" alt="Your image title" width="250"/>
+<img src="https://github.com/lallieau/blog/blob/master/public/img/capture_home.png" alt="Your image title" width="150"/> <img src="https://github.com/lallieau/blog/blob/master/public/img/capture_articles.png" alt="Your image title" width="150"/> <img src="https://github.com/lallieau/blog/blob/master/public/img/capture_profil.png" alt="Your image title" width="150"/>
 
 Content :
 
