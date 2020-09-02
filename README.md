@@ -1,34 +1,34 @@
-# Projet Blog PHP
+# Project Blog PHP
 
-Bienvenue sur mon premier projet ! 
-Ceci est un travail/exercice d'apprentissage du langage PHP.
+Welcome to my first project!
+This is a PHP language learning assignment / exercise.
 
-C'est un blog qui présente des articles correspondant à différentes thématiques. 
-Il permet l'intéraction des utilisateurs par le biais de commentaires postés pour chaque article.
+It is a blog that presents articles corresponding to different themes.
+It allows user interaction via comments posted for each article.
 
-Début du projet : Juillet 2020
-Fin du projet : Septembre 2020
+Project start: July 2020
+End of project: September 2020
 
-# Langages utilisés
+// Languages used //
 
-- Html et Css
-- Php et MySQL
+- Html and Css
+- Php and MySQL
 
-# Screenshots
+// Screenshots //
 
+.........
 
+// Responsive //
 
-# Responsive
+The blog was built in mobile first and adapts to any screen size.
 
-Le blog a été construit en mobile first et s'adapte à toute taille d'écran.
+// Content //
 
-# Contenu
+This blog follows the MVC model, designed from A to Z.
+It contains a database.
+..........
 
-Ce blog suit le modèle MVC, conçu de A à Z.
-Il contient une base de données. 
-/////
+// Installation //
 
-# Installation
-
-/////
+..........
 
