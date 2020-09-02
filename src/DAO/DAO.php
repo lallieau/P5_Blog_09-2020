@@ -28,7 +28,7 @@ abstract class DAO
 
         catch(Exception $errorConnection)
         {
-            die('Erreur de connexion :'.$errorConnection->getMessage());
+            return('Erreur de connexion :'.$errorConnection->getMessage());
         }
     }
 
