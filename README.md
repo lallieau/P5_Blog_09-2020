@@ -16,9 +16,7 @@ Languages used :
 
 Screenshots :
 
-<img src="https://github.com/lallieau/blog/blob/master/public/img/capture_home.png" alt="Your image title" width="250"/>
-<img src="https://github.com/lallieau/blog/blob/master/public/img/capture_articles.png" alt="Your image title" width="250"/>
-<img src="https://github.com/lallieau/blog/blob/master/public/img/capture_profil.png" alt="Your image title" width="250"/>
+<img src="https://github.com/lallieau/blog/blob/master/public/img/capture_home.png" alt="Your image title" width="250"/><img src="https://github.com/lallieau/blog/blob/master/public/img/capture_articles.png" alt="Your image title" width="250"/><img src="https://github.com/lallieau/blog/blob/master/public/img/capture_profil.png" alt="Your image title" width="250"/>
 
 Responsive :
 
