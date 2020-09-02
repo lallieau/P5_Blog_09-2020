@@ -9,26 +9,26 @@ It allows user interaction via comments posted for each article.
 Project start: July 2020
 End of project: September 2020
 
-// Languages used //
+Languages used :
 
 - Html and Css
 - Php and MySQL
 
-// Screenshots //
+Screenshots :
 
 .........
 
-// Responsive //
+Responsive :
 
 The blog was built in mobile first and adapts to any screen size.
 
-// Content //
+Content :
 
 This blog follows the MVC model, designed from A to Z.
 It contains a database.
 ..........
 
-// Installation //
+Installation :
 
 ..........
 
