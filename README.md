@@ -20,6 +20,8 @@ Screenshots :
 ![](https://github.com/lallieau/blog/blob/master/public/img/capture_home.png {width=40px height=400px})
 ![](https://github.com/lallieau/blog/blob/master/public/img/capture_profil.png {width=40px height=400px})
 
+<img src="https://github.com/lallieau/blog/blob/master/public/img/capture_profil.png" alt="Your image title" width="250"/>
+
 Responsive :
 
 The blog was built in mobile first and adapts to any screen size.
