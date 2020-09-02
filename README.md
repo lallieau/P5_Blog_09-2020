@@ -16,7 +16,7 @@ Languages used :
 
 Screenshots :
 
-![](blog/public/img/capture_articles.png)
+![](https://github.com/lallieau/blog/blob/master/public/img/capture_articles.png)
 ![](blog/public/img/capture_home.png)
 ![](blog/public/img/capture_profil.png)
 
