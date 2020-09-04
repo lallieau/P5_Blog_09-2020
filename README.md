@@ -10,13 +10,13 @@ Bienvenue dans mon premier projet!
 Ceci est un exercice d'apprentissage du langage PHP.
 
 Contenu :
-Blog en php orienté objet.
-Utilisation du modele MVC.
-Page d'accueil.
-Articles.
-Espace d'administration.
-Espace profil.
-Formulaire de contact.
+- Blog en php orienté objet
+- Utilisation du modele MVC
+- Page d'accueil
+- Articles
+- Espace d'administration
+- Espace profil
+- Formulaire de contact
 
 Langues utilisées:
 - Html et Css
