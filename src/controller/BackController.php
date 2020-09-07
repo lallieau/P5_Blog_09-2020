@@ -159,6 +159,7 @@ class BackController extends Controller
         {
             $this->logoutOrDelete('logout');
         }
+
     }
 
     public function deleteAccount()

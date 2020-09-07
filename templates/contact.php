@@ -26,6 +26,6 @@
     }
     ?>
     <div>
-        <?php include('form_contact.php'); ?>
+        <?php include'form_contact.php'; ?>
     </div>
 </div>
