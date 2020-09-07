@@ -9,13 +9,14 @@ class ContactDAO extends DAO
     public function newContact(Parameter $post)
     {
         $to      = 'lallieau.blog@gmail.com';
+        $subject = 'Formulaire de contact';
         $message = $post->get('content');
         $headers = array(
-            'From' => $post->get('email') . $post->get('name'),
+            'From' => $post->get('name'),
             'Reply-To' => $post->get('email'),
             'X-Mailer' => 'PHP/' . phpversion()
         );
 
-        return mail($to, $message, implode($headers));
+        return mail($to, $subject, $message, implode($headers));
     }
 }
