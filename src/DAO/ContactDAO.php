@@ -8,8 +8,7 @@ class ContactDAO extends DAO
 {
     public function newContact(Parameter $post)
     {
-
-        $to      = 'lallie.audry@gmail.com';
+        $to      = 'lallieau.blog@gmail.com';
         $message = $post->get('content');
         $headers = array(
             'From' => $post->get('email') . $post->get('name'),
