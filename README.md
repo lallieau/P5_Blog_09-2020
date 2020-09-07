@@ -45,7 +45,7 @@ Aller au niveau de la table user.
 Ajouter un user.
 Remplir les cases :
 - Pseudo,
-- Pasword (bien hasher le mot de passe avant d'enregistrer, ici : http://www.passwordtool.hu/php5-password-hash-generator),
+- Password (bien hasher le mot de passe avant d'enregistrer, ici : http://www.passwordtool.hu/php5-password-hash-generator),
 - Role_id : 1 pour admin,
 - Sexe : 1 (homme), 2 (femme).
 
