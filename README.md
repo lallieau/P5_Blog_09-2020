@@ -1,5 +1,7 @@
 # Projet 5 Blog PHP (OC)
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/543da12634be43908cfba582bff22c56)](https://www.codacy.com/manual/lallieau/blog?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lallieau/blog&amp;utm_campaign=Badge_Grade)
+
 Début du projet : juillet 2020
 
 Fin du projet : septembre 2020
