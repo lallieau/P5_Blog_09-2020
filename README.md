@@ -6,7 +6,7 @@ Fin du projet: septembre 2020
 
 ## Présentation du projet
 
-Bienvenue dans mon premier projet!
+Bienvenue dans mon premier projet !
 Ceci est un exercice d'apprentissage du langage PHP.
 
 Contenu :
