@@ -219,10 +219,8 @@ padding-bottom: 30px;
         padding-left: 200px;
     }
     .navbar-toggler {
-        padding-left: 120px;
-        padding-top: 120px;
         position: absolute;
         z-index: 2;
     }
-    div.z{top: 29px; left: 135px;}
+    div.z{top: 29px; }
 }
