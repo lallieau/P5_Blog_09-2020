@@ -22,7 +22,8 @@ Contenu :
 
 Langues utilisées:
 - Html et Css
-- Php et MySQL
+- PHP Version 7.3.12
+- MySQL
 
 Captures d'écran :
 
@@ -38,7 +39,8 @@ Les étapes pour installer :
 - Cloner le projet sur votre machine.
 - Démarrer votre serveur local.
 - Upload du fichier db.sql qui est dans le dossier /sql à la racine du projet, sur votre interface de gestion de base de donnée fournie avec votre serveur local (phpmyadmin...).
-- Changement des informations de connexion à la base de donnée : /config/dev.php
+- Changement des informations de connexion à la base de donnée : /config/dev.php.
+- Dans la console taper composer install.
 
 ## Obtenir un compte admin
 Se connecter au SGBD correspondant à votre serveur local.
