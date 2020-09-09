@@ -31,7 +31,6 @@ class Constraint
         return null;
     }
 
-
     public function controlEmail($name, $value)
     {
         if (!preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $value))
@@ -39,12 +38,5 @@ class Constraint
             return '<p>Le champ <strong>' . $name . '</strong> doit contenir une adresse email.</p>';
         }
     }
-    public function imageControl($name,$value)
-    {
-        if (!preg_match("#[^\s]+(\.(?i))(jpg|png|gif)$#", $value))
-        {
-            return '<p>Le fichier<strong>' .$name. '</strong> n\'est pas une image</p>';
-        }
-        return null;
-    }
+
 }

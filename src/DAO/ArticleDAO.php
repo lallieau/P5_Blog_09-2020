@@ -67,15 +67,15 @@ class ArticleDAO extends DAO
         $uploads_dir = 'img/';
         if(isset($_FILES)) {
             if (isset($_FILES['img'])) {
-                $imgName = isset($_FILES['img']['name']);
-                move_uploaded_file(isset($_FILES['img']['tmp_name']), $uploads_dir . $imgName);
-                $img = "$uploads_dir.$imgName";
+                $imgName = $_FILES['img']['name'];
+                move_uploaded_file($_FILES['img']['tmp_name'], $uploads_dir . $imgName);
+                $img = $uploads_dir . $imgName;
             }
 
             if (isset($_FILES['bg'])) {
-                $bgName = isset($_FILES['bg']['name']);
-                move_uploaded_file(isset($_FILES['bg']['tmp_name']), $uploads_dir . $bgName);
-                $bg = "$uploads_dir.$bgName";
+                $bgName = $_FILES['bg']['name'];
+                move_uploaded_file($_FILES['bg']['tmp_name'], $uploads_dir . $bgName);
+                $bg = $uploads_dir . $bgName;
             }
         }
 
@@ -93,19 +93,17 @@ class ArticleDAO extends DAO
     public function editArticle(Parameter $post, $articleId, $userId)
     {
         $uploads_dir = 'img/';
-        if(isset($_FILES)){
-            if(isset($_FILES['img']))
-            {
-                $imgName = isset($_FILES['img']['name']);
-                move_uploaded_file(isset($_FILES['img']['tmp_name']), $uploads_dir . $imgName);
-                $img = "$uploads_dir.$imgName";
+        if(isset($_FILES)) {
+            if (isset($_FILES['img'])) {
+                $imgName = $_FILES['img']['name'];
+                move_uploaded_file($_FILES['img']['tmp_name'], $uploads_dir . $imgName);
+                $img = $uploads_dir . $imgName;
             }
 
-            if(isset($_FILES['bg']))
-            {
-                $bgName = isset($_FILES['bg']['name']);
-                move_uploaded_file(isset($_FILES['bg']['tmp_name']), $uploads_dir . $bgName);
-                $bg = "$uploads_dir.$bgName";
+            if (isset($_FILES['bg'])) {
+                $bgName = $_FILES['bg']['name'];
+                move_uploaded_file($_FILES['bg']['tmp_name'], $uploads_dir . $bgName);
+                $bg = $uploads_dir . $bgName;
             }
         }
 
