@@ -56,5 +56,5 @@ Penser à changer les differentes informations : src/DAO/ContactDAO
 
 ## Démarrage
 Lancer votre serveur local.
-Pointer le serveur local sur : /blog/public
+Pointer le serveur local sur : /blog/
 
