@@ -2,28 +2,24 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/543da12634be43908cfba582bff22c56)](https://www.codacy.com/manual/lallieau/blog?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lallieau/blog&amp;utm_campaign=Badge_Grade)
 
-Début du projet : juillet 2020
+Début du projet : février 2021
 
-Fin du projet : septembre 2020
+Fin du projet : mars 2021
 
 ## Présentation du projet
 
-Bienvenue dans mon premier projet !
-Ceci est un exercice d'apprentissage du langage PHP.
+Bienvenue dans mon premier projet de la formation développeur front-end !
+Ceci est un exercice d'apprentissage des langages HTML et CSS en fonction d'une maquette mobile et desktop.
+
+Lien pour visualiser le projet:
+https://lallieau.github.io/P2_Reservia_010121/
 
 Contenu :
-- Blog en php orienté objet
-- Utilisation du modele MVC
-- Page d'accueil
-- Articles
-- Espace d'administration
-- Espace profil
-- Formulaire de contact
+Vous retrouverez dans ce projet une page présentant différents hébergements proposés à la location. Ces hébergements sont présentés sous forme de carte.
+Cette maquette est séparée en cinq parties (header, section hébergements, section hébergements en vedette, section activités et footer).
 
-Langues utilisées:
+Languages utilisés:
 - Html et Css
-- PHP Version 7.3.12
-- MySQL
 
 Captures d'écran :
 
@@ -31,32 +27,12 @@ Captures d'écran :
 
 ## Pré-requis
 Ce qu'il est requis pour commencer :
-- Serveur local (Mamp, Lamp, wamp...).
-- Editeur de texte (Sublime, Vs code, Php Storm...).
+- Un IDE (ex : VS Code)
 
 ## Installation
 Les étapes pour installer :
 - Cloner le projet sur votre machine.
-- Démarrer votre serveur local.
-- Upload du fichier db.sql qui est dans le dossier /sql à la racine du projet, sur votre interface de gestion de base de donnée fournie avec votre serveur local (phpmyadmin...).
-- Changement des informations de connexion à la base de donnée : /config/dev.php.
-- Dans la console taper composer install.
+https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository
 
-## Obtenir un compte admin
-Se connecter au SGBD correspondant à votre serveur local.
-Ouvrir la database "blog".
-Aller au niveau de la table user.
-Ajouter un user.
-Remplir les cases :
-- Pseudo,
-- Password (bien hasher le mot de passe avant d'enregistrer, ici : http://www.passwordtool.hu/php5-password-hash-generator),
-- Role_id : 1 pour admin,
-- Sexe : 1 (homme), 2 (femme).
 
-## Paramétrage du formulaire de contact
-Penser à changer les differentes informations : src/DAO/ContactDAO
-
-## Démarrage
-Lancer votre serveur local.
-Pointer le serveur local sur : /blog/
 
